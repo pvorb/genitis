@@ -18,8 +18,6 @@
 	#about { font-size: .8em; margin: 3em 0 4em; }
 	.fig > div { padding: 0 0 1px; }
 
-	#container, #container div { overflow: hidden; }
-
 	/* top bar */
 	#title > span:after, #title > a:after { content: ':'; }
 	#title, #branch, #sf, .nav.extra ul { font-size: 1.1em; font-weight: normal; margin: 0; }
@@ -56,6 +54,8 @@
 	#branch li.active a { background: #c11; }
 	#branch li.active:hover a, #branch li.active:focus { background: #c52; }
 
+	#container, #container div { overflow: hidden; }
+
 	/*#error:before { color: #f00; content: '!'; float: right; margin-left: .3em; font-size: 5em; }*/
 }
 
@@ -68,7 +68,7 @@
 	body { min-width: 860px; margin: 0 0 0 6em; width: 86%; }
 	#container .content { float: left; width: 58%; margin-right: 4%; }
 	#container .note { float: right; width: 38%; }
-	#container .note {  }
+	#container .note > div, #container .note > ul, #container .note > ol { border-bottom: 1px solid #bbb; padding: 0 0 .5em; }
 
 	body > .nav.extra { position: absolute; left: 54%; top: 0; overflow: hidden; }
 	body > .nav.extra > ul { float: left; }
