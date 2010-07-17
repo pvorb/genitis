@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+@media all {
+	/* general */
+	img, abbr { border: 0; }
+	q { quotes: "" "" "" ""; }
+
+	html { font: 100%/1.4 "Palatino Linotype", sans-serif; }
+	body { margin: 0 .5em; }
+	#title, #branch, body > .nav.extra, h1, h2, h3, h4, h5, h6 { font-family: Candara, Helvetica, sans-serif; }
+	p { margin: .5em 0 .5em; }
+	abbr, *[title] { cursor: help; }
+	a, a[title], *[title] a, a *[title] { cursor: pointer; }
+	cite:before { content: '– '; }
+
+	/* content */
+	h1, h2, h3, h4, h5, h6 { font-weight: normal; margin: .6em 0 .4em; }
+	#about { font-size: .8em; margin: 3em 0 4em; }
+	.fig > div { padding: 0 0 1px; }
+
+	#container, #container div { overflow: hidden; }
+
+	/* top bar */
+	#title > span:after, #title > a:after { content: ':'; }
+	#title, #branch, #sf, .nav.extra ul { font-size: 1.1em; font-weight: normal; margin: 0; }
+	#branch, .nav.path, .nav.extra ul { display: block; list-style: none; padding: .2em 0; }
+	body > .nav.extra > ul { padding-right: .5em; }
+	body > .nav.extra a:hover { border-bottom: 1px solid; } 
+	body > .nav.path { margin: 0 0 1em; }
+	#branch li, .nav.path li { display: inline; }
+	#branch a, #sf legend { padding: .1em .2em; }
+	.nav.extra a { margin: .1em .2em; }
+	.nav.path li:before { content: '/ '; }
+	.nav.path li:first-child:before { content: ''; }
+	
+	#container ul { list-style-type: square; }
+}
+
+@media screen, projection, handheld {
+	a { color: #a00; text-decoration: none; }
+	a:hover { border-bottom: 1px solid; }
+	a:visited { color: #821; }
+	abbr { border-bottom: 1px dotted; }
+
+	h1:target, h2:target, h3:target { background: #eee; border-style: dotted; border-width: 1px 0 1px; padding: 0 .3em; }
+
+	/* top bar */
+	#title { display: block; position: absolute; left: 0; right: 0; width: auto; }
+	#title, #about { padding: .2em .3em; }
+	#title { background: #000; color: #fff; }
+	#title a { color: #fff; }
+	#branch { position: relative; }
+	#branch a { color: #fff; border: none; }
+	#branch li a { background: #800; border-radius: 2px; }
+	#branch li:hover a, #branch li:focus a { background: #a41; }
+	#branch li.active a { background: #c11; }
+	#branch li.active:hover a, #branch li.active:focus { background: #c52; }
+
+	/*#error:before { color: #f00; content: '!'; float: right; margin-left: .3em; font-size: 5em; }*/
+}
+
+@media handheld {
+	#branch { position: absolute; left: 5em; }
+}
+
+@media screen, projection {
+	html { min-width: 920px; max-width: 72em; }
+	body { min-width: 860px; margin: 0 0 0 6em; width: 86%; }
+	#container .content { float: left; width: 58%; margin-right: 4%; }
+	#container .note { float: right; width: 38%; }
+	#container .note {  }
+
+	body > .nav.extra { position: absolute; left: 54%; top: 0; overflow: hidden; }
+	body > .nav.extra > ul { float: left; }
+
+	body > .nav.extra a, body > .nav.extra ul, #sf { background: #000; color: #fff; }
+	#sf { margin-right: 0; padding: 0; text-align: right; float: right; }
+	#sf fieldset { border: 1px solid #333; margin: 2px; padding: 2px; }
+	#sf input, #sf legend { margin: 0; }
+}
+
+@media print {
+	a { border-bottom: 1pt solid; color: #000; text-decoration: none; }
+	#title a, body > .nav.path a { border-bottom: none; }
+	#title { font-weight: bold; }
+	body > .nav.extra, #branch { display: none; }
+
+	div.note { border-top: 1pt solid #bbb; padding: 1em 0 0; margin: 1em 0 0; }
+
+	a[href^="http://"]:after { border-bottom: none; content: " ("attr(href)")"; }
+	a[href^="https://"]:after { border-bottom: none; content: " ("attr(href)")"; }
+	a[href^="ftp://"]:after { border-bottom: none; content: " ("attr(href)")"; }
+	a[href^="mailto:"]:after { border-bottom: none; content: " ("attr(href)")"; }
+}
