@@ -61,10 +61,11 @@ for ($i = 0; $i < sizeof($file_ext); $i++) {
 	}
 }
 
+// Redirections
 include '../lib/redirections.php';
+require_once '../lib/functions.php';
 if (isset($redirections[$path]))
 	redirect(301, $redirections[$path]);
 
 // Redirect to a 404 error, no content file has been found
-require_once '../lib/functions.php';
 redirect(404, ERROR_PAGE_404, $path);

@@ -8,7 +8,7 @@
  * @package org.genitis.yuki
  */
 
-define('ERROR_PAGE_404', '/error/404/');
+define('ERROR_PAGE_404', 'error/404/');
 //define('ENDL', "\n");
 //define('INDENT', "\t");
 define('LANG', 'de');
