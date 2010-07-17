@@ -55,8 +55,6 @@
 	#branch li.active:hover a, #branch li.active:focus { background: #c52; }
 
 	#container, #container div { overflow: hidden; }
-
-	/*#error:before { color: #f00; content: '!'; float: right; margin-left: .3em; font-size: 5em; }*/
 }
 
 @media handheld {
