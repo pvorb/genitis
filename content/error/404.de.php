@@ -28,7 +28,7 @@ if (isset($_GET['s'])) {
 		</ol>
 		<div id="container" class="main">
 			<div id="error" class="sec-1">
-				<h1 id="1-page-not-found">Seite nicht gefunden</h1>
+				<h1 id="item-1">Seite nicht gefunden</h1>
 				<div class="content">
 <?php if (isset($missing_page)): ?>
 					<p>Die Seite <code class="url">http://www.genitis.org/<?php echo $missing_page ?></code> konnte nicht gefunden werden.</p>
@@ -51,7 +51,7 @@ if (isset($_GET['s'])) {
 							<input name="submit" type="submit" value="Suchen" />
 						</fieldset>
 					</form>
-					<h2 id="1-1-problems">Problematik</h2>
+					<h2 id="item-1-1">Problematik</h2>
 					<p>Manchmal ist es nötig, eine <abbr title="Uniform Resource Locator">URL</abbr> zu ändern. <a href="http://www.w3.org/Provider/Style/URI.html" hreflang="en" title="Cool URIs don’t change">Gutes Design kann dies jedoch verhindern.</a></p>
 					<p>Da jedoch niemand perfekt ist, – ich am allerwenigsten – passiert es doch ab und zu, dass mal eine URL geändert wird.</p>
 					<p>Damit kommen die Probleme:</p>
@@ -73,7 +73,7 @@ if (isset($_GET['s'])) {
 						</div>
 					</div>
 					<div class="info">
-						<h2>Der 404-Fehler</h2>
+						<h2 id="item-1-2">Der 404-Fehler</h2>
 						<p>Der <em><a href="http://de.wikipedia.org/wiki/HTTP-Statuscode" title="Wikipedia: HTTP-Statuscode"><abbr title="Hypertext Transfer Protocol">HTTP</abbr>-Statuscode</a> 404</em> wird angezeigt, wenn versucht wird, eine nicht vorhandene Ressource anzufordern. <a href="http://de.wikipedia.org/wiki/Toter_Link" title="Wikipedia: Toter Link">Mehr zum Thema</a></p>
 					</div>
 				</div>
