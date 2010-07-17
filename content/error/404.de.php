@@ -27,7 +27,7 @@ if (isset($_GET['s'])) {
 			<li><span title="Sie sind hier.">404</span></li>
 		</ol>
 		<div id="container" class="main">
-			<div id="error" class="sec-1">
+			<div class="sec-1">
 				<h1 id="item-1">Seite nicht gefunden</h1>
 				<div class="content">
 <?php if (isset($missing_page)): ?>
@@ -64,7 +64,7 @@ if (isset($_GET['s'])) {
 				</div>
 				<div class="note">
 					<div class="teaser fig">
-						<div>
+						<div class="img">
 							<a href="http://www.flickr.com/photos/random_j/303093542/"><img src="../../res/img/zelda-error-110213.png" alt="I am error 110213." /></a>
 						</div>
 						<div class="subtitle">
