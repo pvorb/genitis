@@ -66,7 +66,10 @@
 	body { min-width: 860px; margin: 0 0 0 6em; width: 86%; }
 	#container .content { float: left; width: 58%; margin-right: 4%; }
 	#container .note { float: right; width: 38%; }
-	#container .note > div, #container .note > ul, #container .note > ol { border-bottom: 1px solid #bbb; padding: 0 0 .5em; }
+	#container .note > div, #container .note > ul, #container .note > ol { border-bottom: 1px solid #bbb; padding: .5em 0; }
+	#container .content > *:first-child, #container .note > * > *:first-child { margin-top: 0; }
+	#container .note > *:first-child { padding-top: 0; }
+	#container .note h2, #container .note h3, #container .note h4 { margin-top: 0; }
 
 	body > .nav.extra { position: absolute; left: 54%; top: 0; overflow: hidden; }
 	body > .nav.extra > ul { float: left; }
