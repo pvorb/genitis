@@ -11,7 +11,8 @@
 define('ERROR_PAGE_404', 'error/404/');
 //define('ENDL', "\n");
 //define('INDENT', "\t");
-define('LANG', 'de');
+define('USES_MULTIPLE_LANGUAGES', TRUE);
+define('DEFAULT_LANG', 'de');
 
 $file_ext = array(
 	'.html',

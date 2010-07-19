@@ -30,34 +30,34 @@ function redirect($type, $location, $search = FALSE) {
 	exit;
 }
 
-/**
- * This class enables you to get real uuids using the OSSP library.
- * Note you need php-uuid installed.
- *
- * @author Marius Karthaus, Paul Vorbach
- */
-class uuid {
-
-	protected $uuidobject;
-
-	/**
-	 * On long running deamons i've seen a lost resource. This checks the resource and creates it if needed.
-	 */
-	protected function create() {
-		if (!is_resource($this->uuidobject)) {
-			uuid_create(&$this->uuidobject);
-		}
-	}
-
-	/**
-	 * Return a type 5 (SHA-1 hash) uuid
-	 *
-	 * @return string
-	 */
-	public function uuid_v5() {
-		$this->create();
-		uuid_make($this->uuidobject, UUID_MAKE_V5);
-		uuid_export($this->uuidobject, UUID_FMT_STR, &$uuidstring);
-		return trim($uuidstring);
-	}
-}
+///**
+// * This class enables you to get real uuids using the OSSP library.
+// * Note you need php-uuid installed.
+// *
+// * @author Marius Karthaus, Paul Vorbach
+// */
+//class uuid {
+//
+//	protected $uuidobject;
+//
+//	/**
+//	 * On long running deamons i've seen a lost resource. This checks the resource and creates it if needed.
+//	 */
+//	protected function create() {
+//		if (!is_resource($this->uuidobject)) {
+//			uuid_create(&$this->uuidobject);
+//		}
+//	}
+//
+//	/**
+//	 * Return a type 5 (SHA-1 hash) uuid
+//	 *
+//	 * @return string
+//	 */
+//	public function uuid_v5() {
+//		$this->create();
+//		uuid_make($this->uuidobject, UUID_MAKE_V5);
+//		uuid_export($this->uuidobject, UUID_FMT_STR, &$uuidstring);
+//		return trim($uuidstring);
+//	}
+//}
