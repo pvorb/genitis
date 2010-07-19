@@ -36,12 +36,17 @@ if ($path == '') {
 if (USES_MULTIPLE_LANGUAGES) {
 	// Set a language
 	$lang = 'de';
-	if (isset($_GET['lang']))
+	if (isset($_GET['lang'])) {
 		$lang = $_GET['lang'];
+		unset($_GET['lang']);
+	}
 
 	// Append <code>.$lang</code> to <code>$file_path</code>
-	$content_lang .= '.'.$lang;
-	$index_lang .= '.'.$lang;
+	$content .= '.'.$lang;
+	$index .= '.'.$lang;
+} elseif (isset($_GET['lang'])) {
+	require_once '../lib/functions.php';
+	redirect(301, $path);
 }
 
 // Try to include the file with different file endings with the order that was
@@ -50,6 +55,7 @@ for ($i = 0; $i < sizeof($file_ext); $i++) {
 	// Append file extension
 	$content_path = $content.$file_ext[$i];
 	$index_path = $index.$file_ext[$i];
+
 
 	// Include content
 	if (file_exists($content_path)) {
