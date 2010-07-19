@@ -33,11 +33,15 @@ if ($path == '') {
 	$content = rtrim($content, '/'); // remove trailing slash
 }
 
-// Append <code>.LANG</code> to <code>$file_path</code> if <code>LANG</code>
-// is defined.
-if (defined('LANG')) {
-	$content .= '.'.LANG;
-	$index .= '.'.LANG;
+if (USES_MULTIPLE_LANGUAGES) {
+	// Set a language
+	$lang = 'de';
+	if (isset($_GET['lang']))
+		$lang = $_GET['lang'];
+
+	// Append <code>.$lang</code> to <code>$file_path</code>
+	$content_lang .= '.'.$lang;
+	$index_lang .= '.'.$lang;
 }
 
 // Try to include the file with different file endings with the order that was
@@ -47,15 +51,19 @@ for ($i = 0; $i < sizeof($file_ext); $i++) {
 	$content_path = $content.$file_ext[$i];
 	$index_path = $index.$file_ext[$i];
 
-	// Require functions
-	if ($file_ext[$i] == '.php')
-		require_once '../lib/functions.php';
-
 	// Include content
 	if (file_exists($content_path)) {
+		// Require functions
+		if ($file_ext[$i] == '.php')
+			require_once '../lib/functions.php';
+
 		include $content_path;
 		exit;
 	} elseif (file_exists($index_path)) {
+		// Require functions
+		if ($file_ext[$i] == '.php')
+			require_once '../lib/functions.php';
+
 		include $index_path;
 		exit;
 	}
