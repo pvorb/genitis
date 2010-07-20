@@ -4,7 +4,8 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 		<title> Genitis</title>
-		<link rel="stylesheet" href="../res/css/gorn.css" charset="UTF-8" />
+		<link rel="stylesheet" type="text/css" href="../res/css/gorn.css" />
+		<!--[if lte IE 8]><script src="../res/js/css3-mediaqueries.js"></script><![endif]-->
 		<meta name="author" content="Paul Vorbach" />
 		<meta name="description" content="Persönliche Internetpräsenz von Paul Vorbach und Sammelplatz aller seiner Aktivitäten" />
 		<meta name="keywords" content="Paul Vorbach, Genitis, persönliche Internetpräsenz, Homepage" />
@@ -20,17 +21,38 @@
 		</ol>
 		<div id="container" class="main">
 			<div class="sec-1">
-				<h1 id="item-1">Genitis</h1>
+				<h1 id="item-1"><a href="">Genitis – und eine ganz gaaaaaanz lange Überschrift, die eigentlich jedem Egal ist</a></h1>
 				<div class="content">
 					<p>Willkommen auf Genitis.org, der persönlichen Internetpräsenz von Paul Vorbach, Informatik-Student an der Universität Würzburg.</p>
 					<p>Erfahren Sie mehr über</p>
 					<ul>
 						<li><a href="projects/" title="Projekte">meine Projekte</a></li>
-						<li><a href="about/me/" title="Paul Vorbach">mich</a></li>
+						<li><a href="about/pvorb/" title="Paul Vorbach">mich</a></li>
 						<li><a href="about/" title="Über Genitis">Genitis</a></li>
 					</ul>
 				</div>
 				<div class="note">
+					<div class="info">
+						<h1>Header Level 1</h1>
+						<p><strong>Auf dem letzten Hause eines kleinen Dörfchens</strong> befand sich ein <abbr title="Behausung eines langbeinigen Vogels">Storchnest</abbr>. Die Storchmutter saß im Neste bei ihren vier Jungen, welche den Kopf mit dem kleinen <em>schwarzen Schnabel</em>, denn er war noch nicht rot geworden, hervorstreckten. Ein Stückchen davon stand auf der Dachfirste starr und steif der Storchvater <code>syntax</code>. Man hätte meinen können, er wäre aus Holz gedrechselt, so stille stand er. „Gewiss sieht es recht vornehm aus, dass meine Frau eine Schildwache bei dem Neste hat!“ dachte er. Und er stand unermüdlich auf <a href="#nirgendwo" title="Title für einem Bein">einem Beine</a>.</p>
+						
+						<h2>Header Level 2</h2>
+						<ol>
+							<li>Und was dann? fragten die Storchkinder.</li>
+							<li>Dann werden wir aber doch gepfählt, wie die Knaben behaupteten, und höre nur, jetzt sagen sie es schon wieder!</li>
+						</ol>
+						
+						<p>Unten auf der Straße spielte eine Schar Kinder und als sie die Störche erblickten, sang einer der dreistesten Knaben und allmählich alle <acronym title="zusammen">zus.</acronym> einen Vers aus einem alten Storchliede, so gut sie sich dessen erinnern konnten:</p>
+						
+						<blockquote cite="Hans Andersen">
+							<p>
+								Störchlein, Störchlein, fliege,<br />
+								Damit ich dich nicht kriege,<br />
+								Deine Frau, die liegt im Neste dein Bei deinen lieben Kindelein: Das eine wird gepfählt, Das andere wird abgekehlt, Das dritte wird verbrannt, Das vierte dir entwandt!
+							</p>
+							<p><cite>Hans Andersen</cite></p>
+						</blockquote>
+					</div>
 					<div class="meta">
 						<p>Letzter Stand: 18.07.2010</p>
 					</div>
@@ -38,7 +60,69 @@
 			</div>
 			<div class="sec-2">
 				<div class=content>
-					<h1></h1>
+					<h1>Header Level 1</h1>
+					<p><strong>Auf dem letzten Hause eines kleinen Dörfchens</strong> befand sich ein <abbr title="Behausung eines langbeinigen Vogels">Storchnest</abbr>. Die Storchmutter saß im Neste bei ihren vier Jungen, welche den Kopf mit dem kleinen <em>schwarzen Schnabel</em>, denn er war noch nicht rot geworden, hervorstreckten. Ein Stückchen davon stand auf der Dachfirste starr und steif der Storchvater <code>syntax</code>. Man hätte meinen können, er wäre aus Holz gedrechselt, so stille stand er. „Gewiss sieht es recht vornehm aus, dass meine Frau eine Schildwache bei dem Neste hat!“ dachte er. Und er stand unermüdlich auf <a href="#nirgendwo" title="Title für einem Bein">einem Beine</a>.</p>
+					
+					<h2>Header Level 2</h2>
+					<ol>
+						<li>Und was dann? fragten die Storchkinder.</li>
+						<li>Dann werden wir aber doch gepfählt, wie die Knaben behaupteten, und höre nur, jetzt sagen sie es schon wieder!</li>
+					</ol>
+					
+					<p>Unten auf der Straße spielte eine Schar Kinder und als sie die Störche erblickten, sang einer der dreistesten Knaben und allmählich alle <acronym title="zusammen">zus.</acronym> einen Vers aus einem alten Storchliede, so gut sie sich dessen erinnern konnten:</p>
+					
+					<blockquote cite="Hans Andersen">
+						<p>
+							Störchlein, Störchlein, fliege,<br />
+							Damit ich dich nicht kriege,<br />
+							Deine Frau, die liegt im Neste dein Bei deinen lieben Kindelein: Das eine wird gepfählt, Das andere wird abgekehlt, Das dritte wird verbrannt, Das vierte dir entwandt!
+						</p>
+						<p><cite>Hans Andersen</cite></p>
+					</blockquote>
+					
+					<p>Höre nur, was die Jungen singen! sagten die kleinen Storchkinder. Sie sagen, wir sollen gebraten und verbrannt werden!</p>
+					
+					<h3>Header Level 3</h3>
+					<ul>
+						<li>Das eine wird gepfählt</li>
+						<li>Das andere wird abgekehlt!</li>
+					</ul>
+					
+<pre><code>
+			zu lang:	#header h1 a { display: block; width: 300px; height: 80px; }
+</code></pre>
+					<p> — – ­ " &amp; ˆ ¡ ¦ ¨ ¯ ´ ¸ ¿ ˜ ‘ ’ ‚ “ ” „ ‹ › &lt; &gt; ± « » × ÷ ¢ £ ¤ ¥ § © ¬ ® ° µ ¶ · † ‡ ‰ € ¼ ½ ¾ ¹ ² ³ á Á â Â à À å Å ã Ã ä Ä ª æ Æ ç Ç ð Ð é É ê Ê è È ë Ë ƒ í Í î Î ì Ì ï Ï ñ Ñ ó Ó ô Ô ò Ò º ø Ø õ Õ ö Ö œ Œ š Š ß þ Þ ú Ú û Û ù Ù ü Ü ý Ý ÿ Ÿ </p>
+					<table width="100%">
+						<caption>Komitees</caption>
+						<colgroup>
+							<col class="legend" width="1*" align="right" />
+						</colgroup>
+						<colgroup>
+							<col width="1*" align="left" />
+							<col width="2*" align="left" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Mitglieder</th>
+								<th>Anführer</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<td>Insgesamt:</td>
+								<td>128</td>
+								<td></td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<td>Abiball</td>
+								<td>12</td>
+								<td>Heinz Erhard</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -50,11 +134,12 @@
 				<fieldset>
 					<legend>Suche</legend>
 					<input name="s" type="text" />
+					<input name="submit" type="submit" value="OK" />
 				</fieldset>
 			</form>
 		</div>
 		<div id="about">
-			<p>© 2007 - 2010 – Genitis, <a href="about/me/">Paul Vorbach</a></p>
+			<p>© 2007 - 2010 – Genitis, <a href="about/pvorb/">Paul Vorbach</a></p>
 		</div>
 	</body>
 </html>
