@@ -1,51 +1,49 @@
 @charset "UTF-8";
 
 @media all {
+	html { font: 100%/1.4 "Palatino Linotype", sans-serif; }
+	body { margin: 0 20px 3em; }
+	#title { padding: .2em 10px; margin-bottom: .1em; width: auto; }
+	
 	/* general */
 	img, abbr { border: 0; }
 	q { quotes: "" "" "" ""; }
 
-	html { font: 100%/1.4 "Palatino Linotype", sans-serif; }
-	body { margin: 0 .5em; }
 	#title, #branch, body > .nav.extra, h1, h2, h3, h4, h5, h6 { font-family: Candara, Helvetica, sans-serif; }
-	p { margin: .5em 0 .5em; }
+	p, address { margin: .5em 0 .5em; }
 	abbr, *[title] { cursor: help; }
 	a, a[title], *[title] a, a *[title] { cursor: pointer; }
 	cite:before { content: '– '; }
-
-	/* content */
-	h1, h2, h3, h4, h5, h6 { font-weight: normal; margin: .6em 0 .4em; }
-	#about { font-size: .8em; margin: 3em 0 4em; }
-	.fig > div { padding: 0 0 1px; }
 
 	/* top bar */
 	#title > span:after, #title > a:after { content: ':'; }
 	#title, #branch, #sf, .nav.extra ul { font-size: 1.1em; font-weight: normal; margin: 0; }
 	#branch, .nav.path, .nav.extra ul { display: block; list-style: none; padding: .2em 0; }
-	body > .nav.extra > ul { padding-right: .5em; }
-	body > .nav.extra a:hover { border-bottom: 1px solid; } 
-	body > .nav.path { margin: 0 0 1em; }
+	body > .nav.extra a:hover { border-bottom: 1px solid; }
 	#branch li, .nav.path li { display: inline; }
 	#branch a, #sf legend { padding: .1em .2em; }
 	.nav.extra a { margin: .1em .2em; }
-	.nav.path li:before { content: '/ '; }
-	.nav.path li:first-child:before { content: ''; }
+	.nav.path li:after { content: ' /'; }
+	.nav.path li:last-child:after { content: ''; }
+
+	/* content */
+	h1, h2, h3, h4, h5, h6 { font-weight: normal; margin: .6em 0 .4em; }
+	h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0; }
+	#about { font-size: .8em; margin-top: 3em; margin-bottom: 4em; }
+	.fig > div { padding: 0 0 1px; }
 	
 	#container ul { list-style-type: square; }
+	
+	address { font-style: italic; }
+	address .email { display: inline-block; margin-top: .35em; }
+	/*address .phone:before { content: 'Tel.: '; font-style: normal; }
+	address .email:before { content: 'Mail: '; font-style: normal; }*/
+	pre, code { font-family: monospace; }
+	th, td { padding: .5em; }
 }
-
-@media screen, projection, handheld {
-	a { color: #a00; text-decoration: none; }
-	a:hover { border-bottom: 1px solid; }
-	a:visited { color: #821; }
-	abbr { border-bottom: 1px dotted; }
-
-	h1:target, h2:target, h3:target { background: #eee; border-style: dotted; border-width: 1px 0 1px; padding: 0 .3em; }
-
-	/* top bar */
-	#title { display: block; position: absolute; left: 0; right: 0; width: auto; }
-	#title, #about { padding: .2em .3em; }
-	#title { background: #000; color: #fff; }
+@media screen, projection, handheld, tv {
+	/*#title { position: absolute; top: 0; left: 0; right: 0; }*/
+	#title, #branch { background: #000; color: #fff; }
 	#title a { color: #fff; }
 	#branch { position: relative; }
 	#branch a { color: #fff; border: none; }
@@ -54,40 +52,82 @@
 	#branch li.active a { background: #c11; }
 	#branch li.active:hover a, #branch li.active:focus { background: #c52; }
 
+	a { color: #a00; text-decoration: none; }
+	a:hover, thead th { border-bottom: 1px solid; }
+	a:visited { color: #821; }
+	abbr { border-bottom: 1px dotted; }
+	
+	pre, code { overflow: auto; }
+
+	h1:target, h2:target, h3:target { background: #eee; border-style: dotted; border-width: 1px 0 1px; padding: 0 .3em; }
+
 	#container, #container div { overflow: hidden; }
 }
 
-@media handheld {
-	#branch { position: absolute; left: 5em; }
+/* Resolutions */
+@media screen and (max-width: 619px), projection and (max-width: 619px), tv and (max-width: 619px) {
+	body { margin: 0; max-width: 520px; }
+	body > * { margin-left: 8px; margin-right: 8px; }
+	#title { margin: 0; padding: .3em 4px; }
+	#title > * { padding: .2em 4px; }
+	#branch { position: absolute; right: 0; top: 0; margin: 0 auto; padding: .3em; width: auto; }
+	#branch li a { padding: .2em .3em; }
+	body > .nav.path { margin-top: 0; }
+	
+	#container .content img { width: 100%; }
 }
 
-@media screen, projection {
-	html { min-width: 920px; max-width: 72em; }
-	body { min-width: 860px; margin: 0 0 0 6em; width: 86%; }
-	#container .content { float: left; width: 58%; margin-right: 4%; }
-	#container .note { float: right; width: 38%; }
+@media screen and (min-width: 620px), projection and (min-width: 620px), tv and (min-width: 620px) {
+	body { margin-left: 100px; width: 520px; }
+
+	/* top bar */
+	#title { position: absolute; left: 0; right: 0; }
+	body > .nav.extra { position: absolute; top: 0; left: 370px; width: 240px; text-align: right; }
+	body > .nav.extra a { color: #fff; }
+	#sf input, #sf legend { margin: 0 .5em .5em; }
+	#sf { margin: 0; padding: 0; float: right; }
+	#sf fieldset { border: 1px solid #333; margin: 2px; padding: 2px; }
+
+	body > .nav.path { width: 270px; margin-bottom: 3em; margin-top: 0; }
+	
+	/* content */
+	#container .content img { width: 512px; }
+}
+
+@media screen and (min-width: 980px), projection and (min-width: 980px), tv and (min-width: 980px) {
+	body { margin-left: 100px; width: 860px; }
+	#container .content { width: 520px; margin-right: 20px; float: left; }
+	#container .note { width: 320px; float: right; position: relative; right: 0; }
+	
+	/* top bar */
+	#branch { width: 540px; }
+	
+	body > .nav.extra, body > .nav.extra legend { color: #fff; }
+	body > .nav.extra { position: absolute; top: 0; left: 640px; width: 320px; }
+	body > .nav.extra > ul { float: left; padding-right: .5em; }
+	#sf { background: #000; }
+	#sf input, #sf legend { margin: 0; }
+	
+	body > .nav.path { margin-bottom: 1em; }
+}
+
+
+@media screen, projection, tv {
 	#container .note > div, #container .note > ul, #container .note > ol { border-bottom: 1px solid #bbb; padding: .5em 0; }
 	#container .content > *:first-child, #container .note > * > *:first-child { margin-top: 0; }
 	#container .note > *:first-child { padding-top: 0; }
 	#container .note h2, #container .note h3, #container .note h4 { margin-top: 0; }
-
-	body > .nav.extra { position: absolute; left: 54%; top: 0; overflow: hidden; }
-	body > .nav.extra > ul { float: left; }
-
-	body > .nav.extra a, body > .nav.extra ul, #sf { background: #000; color: #fff; }
-	#sf { margin-right: 0; padding: 0; text-align: right; float: right; }
-	#sf fieldset { border: 1px solid #333; margin: 2px; padding: 2px; }
-	#sf input, #sf legend { margin: 0; }
 }
 
 @media print {
 	a { border-bottom: 1pt solid; color: #000; text-decoration: none; }
+	thead tr { border-bottom: 1pt solid #000; }
+	
 	#title a, body > .nav.path a { border-bottom: none; }
 	#title { font-weight: bold; }
 	body > .nav.extra, #branch { display: none; }
 
 	div.note { border-top: 1pt solid #bbb; padding: 1em 0 0; margin: 1em 0 0; }
-
 	a[href^="http://"]:after { border-bottom: none; content: " ("attr(href)")"; }
 	a[href^="https://"]:after { border-bottom: none; content: " ("attr(href)")"; }
 	a[href^="ftp://"]:after { border-bottom: none; content: " ("attr(href)")"; }
