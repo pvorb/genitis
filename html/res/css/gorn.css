@@ -41,6 +41,7 @@
 	pre, code { font-family: monospace; }
 	th, td { padding: .5em; }
 }
+
 @media screen, projection, handheld, tv {
 	/*#title { position: absolute; top: 0; left: 0; right: 0; }*/
 	#title, #branch { background: #000; color: #fff; }
@@ -65,7 +66,9 @@
 }
 
 /* Resolutions */
-@media screen and (max-width: 619px), projection and (max-width: 619px), tv and (max-width: 619px) {
+
+/* Handheld screens */
+@media screen and (max-width: 619px), projection and (max-width: 619px), tv and (max-width: 619px), handheld {
 	body { margin: 0; max-width: 520px; }
 	body > * { margin-left: 8px; margin-right: 8px; }
 	#title { margin: 0; padding: .3em 4px; }
@@ -77,6 +80,7 @@
 	#container .content img { width: 100%; }
 }
 
+/* Small (e.g. netbook) screens */
 @media screen and (min-width: 620px), projection and (min-width: 620px), tv and (min-width: 620px) {
 	body { margin-left: 100px; width: 520px; }
 
@@ -94,10 +98,18 @@
 	#container .content img { width: 512px; }
 }
 
+/* Handheld AND Netbook screens */
+@media screen and (max-width: 959px), projection and (max-width: 959px), tv and (max-width: 959px), handheld {
+	#container .content, #container .note { border-bottom: 1px solid #000; }
+}
+
+/* Larger screens */
 @media screen and (min-width: 980px), projection and (min-width: 980px), tv and (min-width: 980px) {
 	body { margin-left: 100px; width: 860px; }
 	#container .content { width: 520px; margin-right: 20px; float: left; }
-	#container .note { width: 320px; float: right; position: relative; right: 0; }
+	#container .note { width: 320px; float: right; position: relative; right: 0; border-bottom: 1px solid #bbb; padding-bottom: .5em; margin-bottom: .5em; }
+	#container .note > *:first-child { margin-top: 0; }
+	#container .note > *:last-child { margin-bottom: 0; }
 	
 	/* top bar */
 	#branch { width: 540px; }
@@ -113,7 +125,6 @@
 
 
 @media screen, projection, tv {
-	#container .note > div, #container .note > ul, #container .note > ol { border-bottom: 1px solid #bbb; padding: .5em 0; }
 	#container .content > *:first-child, #container .note > * > *:first-child { margin-top: 0; }
 	#container .note > *:first-child { padding-top: 0; }
 	#container .note h2, #container .note h3, #container .note h4 { margin-top: 0; }
