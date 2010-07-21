@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "utf-8";
 
 @media all {
 	html { font: 100%/1.4 "Palatino Linotype", sans-serif; }
@@ -120,7 +120,7 @@
 	#sf { background: #000; }
 	#sf input, #sf legend { margin: 0; }
 	
-	body > .nav.path { margin-bottom: 1em; }
+	body > .nav.path { width: 520px; margin-bottom: 1em; margin-top: 0; }
 }
 
 
