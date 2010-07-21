@@ -27,7 +27,7 @@ if (isset($_GET['s'])) {
 			<li><span>Fehler</span></li>
 			<li><span title="Sie sind hier.">404</span></li>
 		</ol>
-		<div id="container" class="main">
+		<div id="container">
 			<h1 id="item-1">Seite nicht gefunden</h1>
 			<div class="content">
 <?php if (isset($missing_page)): ?>
