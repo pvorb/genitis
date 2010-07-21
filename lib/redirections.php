@@ -9,7 +9,7 @@
  */
 
 $redirections = array(
-	'dev/' => 'projects/dev/',
+	'dev/' => 'projects/',
 	'dev/web/g08/' => 'projects/web/g08/',
 	'dev/sia/' => 'projects/edu/sia/'
 );
