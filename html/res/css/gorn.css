@@ -40,6 +40,14 @@
 	address .email:before { content: 'Mail: '; font-style: normal; }*/
 	pre, code { font-family: monospace; }
 	th, td { padding: .5em; }
+
+	code .kwd { color: #808; }
+	code .str { color: red; }
+	code .fld { color: #00c; }
+	code .ilc { color: #181; }
+	code .rtn { color: #900; }
+	code .doc { color: #06c; }
+	code .kwd, code .rtn, code .doc-kwd, strong, b { font-weight: 700; }
 }
 
 @media screen, projection, handheld, tv {
@@ -65,7 +73,7 @@
 	#container, #container div { overflow: hidden; }
 }
 
-/* Resolutions */
+/*** Resolutions ***/
 
 /* Handheld screens */
 @media screen and (max-width: 619px), projection and (max-width: 619px), tv and (max-width: 619px), handheld {
@@ -90,17 +98,17 @@
 	body > .nav.extra a { color: #fff; }
 	#sf input, #sf legend { margin: 0 .5em .5em; }
 	#sf { margin: 0; padding: 0; float: right; }
-	#sf fieldset { border: 1px solid #333; margin: 2px; padding: 2px; }
+	#sf fieldset { border: 1px solid #bbb; margin: 2px; padding: 2px; }
 
 	body > .nav.path { width: 270px; margin-bottom: 3em; margin-top: 0; }
-	
+
 	/* content */
 	#container .content img { width: 512px; }
 }
 
 /* Handheld AND Netbook screens */
-@media screen and (max-width: 959px), projection and (max-width: 959px), tv and (max-width: 959px), handheld {
-	#container .content, #container .note { border-bottom: 1px solid #000; }
+@media screen and (max-width: 979px), projection and (max-width: 979px), tv and (max-width: 979px), handheld {
+	#container .content, #container .note { border-bottom: 1px solid #bbb; }
 }
 
 /* Larger screens */
@@ -118,6 +126,7 @@
 	body > .nav.extra { position: absolute; top: 0; left: 640px; width: 320px; }
 	body > .nav.extra > ul { float: left; padding-right: .5em; }
 	#sf { background: #000; }
+	#sf fieldset { border: 1px solid #333; }
 	#sf input, #sf legend { margin: 0; }
 	
 	body > .nav.path { width: 520px; margin-bottom: 1em; margin-top: 0; }
