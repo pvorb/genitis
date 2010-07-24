@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+	<url>
+		<loc>http://www.genitis.org/</loc>
+		<lastmod>2010-07-22</lastmod>
+		<changefreq>always</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>http://www.genitis.org/projects/web/g08/</loc>
+		<lastmod>2010-07-22</lastmod>
+		<changefreq>never</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://www.genitis.org/projects/web/pv/</loc>
+		<lastmod>2010-07-22</lastmod>
+		<changefreq>never</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://www.genitis.org/about/legal/</loc>
+		<lastmod>2010-07-22</lastmod>
+		<changefreq>never</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://www.genitis.org/about/pvorb/</loc>
+		<lastmod>2010-07-22</lastmod>
+		<changefreq>never</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://www.genitis.org/about/version/</loc>
+		<lastmod>2010-07-22</lastmod>
+		<changefreq>never</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>http://www.genitis.org/about/version/2/</loc>
+		<lastmod>2010-07-23</lastmod>
+		<changefreq>never</changefreq>
+		<priority>0.8</priority>
+	</url>
+</urlset>
