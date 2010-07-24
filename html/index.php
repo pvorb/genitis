@@ -8,29 +8,27 @@
  * @package org.genitis.yuki
  */
 
-// Requires <em>conf.php</em>
+// Requires conf.php
 require_once '../lib/conf.php';
 
-// Set <code>$_GET['q']</code> as <code>$path</code>, default is
-// <code>''</code>.
+// Set $_GET['q'] as $path, default is ''.
 $path = '';
 if (isset($_GET['q'])) {
 	$path = $_GET['q'];
 	unset($_GET['q']);
 }
 
-// Set <code>$content</code> and <code>$index</code>
+// Set $content and $index
 if ($path == '') {
-	$content = '.';
-	$index = '../content/index';
-} elseif (strrpos($path, 'index/')) {
+	$content = '.'; // does never exist
+	$index = 'index';
+} elseif (strrpos($path, 'index/') === 0) {
 	// Redirect to a 404 error, no content file has been found
 	require_once '../lib/functions.php';
 	redirect(404, ERROR_PAGE_404, $path);
 } else {
-	$content = '../content/'.$path;
-	$index = $content.'index';
-	$content = rtrim($content, '/'); // remove trailing slash
+	$index = $path.'index';
+	$content = rtrim($path, '/'); // remove trailing slash
 }
 
 if (USES_MULTIPLE_LANGUAGES) {
@@ -41,7 +39,7 @@ if (USES_MULTIPLE_LANGUAGES) {
 		unset($_GET['lang']);
 	}
 
-	// Append <code>.$lang</code> to <code>$file_path</code>
+	// Append .$lang to $file_path
 	$content .= '.'.$lang;
 	$index .= '.'.$lang;
 } elseif (isset($_GET['lang'])) {
@@ -50,7 +48,7 @@ if (USES_MULTIPLE_LANGUAGES) {
 }
 
 // Try to include the file with different file endings with the order that was
-// specified in lib/conf.php in variable <code>$file_ext</code>.
+// specified in lib/conf.php in variable $file_ext.
 for ($i = 0; $i < sizeof($file_ext); $i++) {
 	// Append file extension
 	$content_path = $content.$file_ext[$i];

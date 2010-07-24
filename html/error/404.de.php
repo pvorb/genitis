@@ -11,10 +11,14 @@ if (isset($_GET['s'])) {
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 		<title>Seite nicht gefunden | Genitis</title>
 		<link rel="stylesheet" href="../../res/css/gorn.css" charset="UTF-8" />
-		<!--[if lte IE 8]><script src="../../res/js/css3-mediaqueries.js"></script><![endif]-->
 		<meta name="author" content="Paul Vorbach" />
 		<meta name="description" content="Fehlerseite, die Angezeigt wird, wenn eine Ressource nicht gefunden werden kann. Erörterung über die Vermeidung solcher Fehler auf Genitis.org." />
 		<meta name="keywords" content="Fehler, Fehlermeldung, 404, HTTP" />
+		<style type="text/css" media="screen, projection, tv, handheld">
+			html { background: #b5bfcd url("../img/fog.jpg") no-repeat center right; }
+			h1 { color: #445; }
+			#container .note { border-bottom-color: #def; }
+		</style>
 	</head>
 	<body id="backend">
 		<div id="title"><a href="../../">Genitis</a></div>
@@ -63,19 +67,18 @@ if (isset($_GET['s'])) {
 				<p>Deshalb versuche ich, sämtliche URLs persistent zu halten, damit den Benutzern dieser <span xml:lang="en">Website</span> solche Dinge erspart bleiben.</p>
 			</div>
 			<div class="note">
-				<div class="teaser fig">
-					<div class="img">
-						<a href="http://www.flickr.com/photos/random_j/303093542/"><img src="../../res/img/zelda-error-110213.png" alt="I am error 110213." /></a>
-					</div>
-					<div class="subtitle">
-						Auch in <em>The Legend of Zelda</em> gibt es ähnliche Fehler.<br />
-						<cite><a href="http://www.flickr.com/photos/random_j/" xml:lang="en">J from the UK</a></cite>, <a href="http://creativecommons.org/licenses/by/2.0/deed.de" xml:lang="en">CC Attribution-License 2.0</a>
-					</div>
-				</div>
-				<div class="info">
-					<h2 id="item-1-2">Der 404-Fehler</h2>
-					<p>Der <em><a href="http://de.wikipedia.org/wiki/HTTP-Statuscode" title="Wikipedia: HTTP-Statuscode"><abbr title="Hypertext Transfer Protocol">HTTP</abbr>-Statuscode</a> 404</em> wird angezeigt, wenn versucht wird, eine nicht vorhandene Ressource anzufordern. <a href="http://de.wikipedia.org/wiki/Toter_Link" title="Wikipedia: Toter Link">Mehr zum Thema</a></p>
-				</div>
+				<p><a href="http://www.flickr.com/photos/brostad/3378697018/" hreflang="en" title="Winter fog">Hintergrundbild</a> von <a href="http://www.flickr.com/photos/brostad/" hreflang="en">Bernt Rostad</a></p>
+			</div>
+			<!--<div class="note teaser fig">
+				<a href="http://www.flickr.com/photos/random_j/303093542/"><img src="../img/zelda-error-110213.png" alt="I am error 110213." /></a>
+				<p class="desc">
+					Ein netter Bürger aus <em>The Legend of Zelda</em> klärt auf.<br />
+					<cite><a href="http://www.flickr.com/photos/random_j/" xml:lang="en">J from the UK</a></cite>, <a href="http://creativecommons.org/licenses/by/2.0/deed.de" xml:lang="en">CC Attribution-License 2.0</a>
+				</p>
+			</div>-->
+			<div class="note info">
+				<h2 id="item-1-2">Der 404-Fehler</h2>
+				<p>Der <em><a href="http://de.wikipedia.org/wiki/HTTP-Statuscode" title="Wikipedia: HTTP-Statuscode"><abbr title="Hypertext Transfer Protocol">HTTP</abbr>-Statuscode</a> 404</em> wird angezeigt, wenn versucht wird, eine nicht vorhandene Ressource anzufordern. <a href="http://de.wikipedia.org/wiki/Toter_Link" title="Wikipedia: Toter Link">Mehr zum Thema</a></p>
 			</div>
 		</div>
 		<div class="nav extra">
@@ -93,5 +96,6 @@ if (isset($_GET['s'])) {
 		<div id="about">
 			<p>© 2007 - 2010 – Genitis, <a href="../../about/pvorb/">Paul Vorbach</a></p>
 		</div>
+		<!--[if lte IE 8]><script src="../../res/js/css3-mediaqueries.js"></script><![endif]-->
 	</body>
 </html>

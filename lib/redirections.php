@@ -11,5 +11,6 @@
 $redirections = array(
 	'dev/' => 'projects/',
 	'dev/web/g08/' => 'projects/web/g08/',
-	'dev/sia/' => 'projects/edu/sia/'
+	'dev/sia/' => 'projects/edu/sia/',
+	'blog/' => 'log/'
 );

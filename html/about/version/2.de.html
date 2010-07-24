@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Gorn (Version 2) | Genitis</title>
+		<link rel="stylesheet" href="../../../res/css/gorn.css" charset="UTF-8" />
+		<meta name="author" content="Paul Vorbach" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+	</head>
+	<body id="backend">
+		<div id="title"><a href="../../../">Genitis</a></div>
+		<ul id="branch" class="nav">
+			<li><a href="../../../projects/">Projekte</a></li>
+			<li><a href="../../../about/">Über</a></li>
+		</ul>
+		<ol class="nav path">
+			<li><a href="../../../">Startseite</a></li>
+			<li><a href="../../">Über</a></li>
+			<li><a href="../">Versionen</a></li>
+			<li><span title="Sie sind hier.">2</span></li>
+		</ol>
+		<div id="container">
+			<h1 id="item-1">Gorn (Version 2)</h1>
+			<div class="content">
+				<p>Seit Juli 2010 wird diese Website vom schlichten Design <em>Gorn</em> geziert.</p>
+				<p>Der Name stammt von der gleichnamigen Figur aus der <a href="http://de.wikipedia.org/wiki/Gothic_(Spieleserie)">Computerspiele-Serie <em>Gothic</em></a>.</p>
+			</div>
+			<h2 id="item-1-1">Technische Umsetzung</h2>
+			<div class="content">
+				<p>Konkret bestehen drei Layouts jeder Seite. (Zum Vergrößern klicken)</p>
+				<div class="fig">
+					<a href="../img/gorn-wide.png" rel="overlay gorn" title="Breite Version"><img src="../img/gorn-wide.min.png" alt="Breite Version" width="520" height="226" /></a>
+					<p class="desc">Eine breite Version für Bildschirme mit mindestens 980 Pixeln Breite</p>
+				</div>
+				<div class="fig">
+					<a href="../img/gorn-smaller.png" rel="overlay gorn" title="Schmale Version"><img src="../img/gorn-smaller.min.png" alt="Schmale Version" width="333" height="226" /></a>
+					<p class="desc">Eine schmale Version für Bildschirme zwischen 620 und 980 Pixeln Breite</p>
+				</div>
+				<div class="fig">
+					<a href="../img/gorn-handheld.png" rel="overlay gorn" title="Handheld-Version"><img src="../img/gorn-handheld.min.png" alt="Handheld-Version" width="328" height="226" /></a>
+					<p class="desc">Eine Version für kleine tragbare Geräte wie Smartphones oder PDAs</p>
+				</div>
+				<p>Zudem wird für die Darstellung großer Bilder oder sonstiger Inhalte – auch auf dieser Seite – die <a href="http://colorpowered.com/colorbox/">ColorBox</a> von Jack Moore verwendet, welche unter der <a href="http://www.opensource.org/licenses/mit-license.php">MIT-Lizenz</a> verfügbar ist.</p>
+			</div>
+			<div class="note info">
+				<p>Gorn ist das erste Design, das die CSS 3-Technik <em xml:lang="en">media queries</em> einsetzt, sodass für unterschiedliche Bildschirmgrößen unterschiedliche Anordnungen der einzelnen Elemente entstehen.</p>
+				<p>Die Idee dafür habe ich aus einem <a href="http://www.alistapart.com/articles/responsive-web-design/" hreflang="en" title="Responsive Web Design">Artikel des Online-Magazins <em>A List Apart</em></a>, den ich nur empfehlen kann.</p>
+				<p>Dafür sind keinerlei Änderungen am Inhalt nötig, alles wird per CSS erledigt. Allerdings ist – wie so oft – der Internet Explorer der Spielverderber, denn er versteht CSS 3 noch nicht (bis einschließlich Version 8). Mit Hilfe <a href="http://code.google.com/p/css3-mediaqueries-js/">eines JavaScripts</a> kann man ihm jedoch auf die Sprünge helfen.</p>
+			</div>
+			<h2 id="item-1-2">Einflüsse</h2>
+			<div class="content">
+				<div class="fig">
+					<a href="../img/anmutunddemut-takeshi.png" rel="overlay influence" title="Theme „Takeshi“ von Anmut und Demut"><img src="../img/anmutunddemut-takeshi.png" alt="anmutunddemut.de – Takeshi Theme" /></a>
+					<p class="desc">Das <a href="http://anmutunddemut.de/2009/11/03/neues-theme-quottakeshiquot">Takeshi-Theme von Anmut und Demut</a> hat das Design maßgeblich beeinflusst. Vor allem die Ähnlichkeit zwischen den schwarzen Leisten am oberen Bildschirmrand ist unverkennbar.</p>
+				</div>
+				<div class="fig">
+					<a href="../img/meiert-2010-07.png" rel="overlay influence" title="meiert.com"><img src="../img/meiert-2010-07.png" alt="meiert.com" /></a>
+					<p class="desc">Die CSS-Technik der Titelleiste stammt jedoch eher von <a href="http://meiert.com/">Meiert.com</a>.</p>
+				</div>
+			</div>
+		</div>
+		<div class="nav extra">
+			<ul>
+				<li><a href="../../../about/legal/">Impressum</a></li>
+			</ul>
+			<form id="sf" action="../../../search/" method="get">
+				<fieldset>
+					<legend>Suche</legend>
+					<input name="s" type="text" />
+					<input name="submit" type="submit" value="OK" />
+				</fieldset>
+			</form>
+		</div>
+		<div id="about">
+			<p>© 2010 – Genitis, <a href="../../../about/pvorb/">Paul Vorbach</a></p>
+		</div>
+		<!--[if lte IE 8]><script src="../../../res/js/css3-mediaqueries.js"></script><![endif]-->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../../../res/js/jquery.colorbox-1.3.9.js"></script>
+		<script type="text/javascript">$('a[rel="overlay gorn"]').colorbox();$('a[rel="overlay influence"]').colorbox();</script>
+	</body>
+</html>
