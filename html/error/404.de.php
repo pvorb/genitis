@@ -10,7 +10,7 @@ if (isset($_GET['s'])) {
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 		<title>Seite nicht gefunden | Genitis</title>
-		<link rel="stylesheet" href="../../res/css/gorn.css" charset="UTF-8" />
+		<link rel="stylesheet" href="../../res/css/gorn.css" />
 		<meta name="author" content="Paul Vorbach" />
 		<meta name="description" content="Fehlerseite, die Angezeigt wird, wenn eine Ressource nicht gefunden werden kann. Erörterung über die Vermeidung solcher Fehler auf Genitis.org." />
 		<meta name="keywords" content="Fehler, Fehlermeldung, 404, HTTP" />
@@ -23,7 +23,7 @@ if (isset($_GET['s'])) {
 	<body id="backend">
 		<div id="title"><a href="../../">Genitis</a></div>
 		<ul id="branch" class="nav">
-			<li><a href="../../projects/">Projekte</a></li>
+			<li><a href="../../project/">Projekte</a></li>
 			<li><a href="../../about/">Über</a></li>
 		</ul>
 		<ol class="nav path">
