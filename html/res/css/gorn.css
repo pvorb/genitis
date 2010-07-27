@@ -5,6 +5,8 @@
 	body { margin: 0 20px 3em; }
 	#title { padding: .2em 10px; margin-bottom: .1em; width: auto; }
 	
+	em > em { letter-spacing: 1pt; }
+	
 	/* general */
 	img, abbr { border: 0; }
 	q { quotes: "" "" "" ""; }
@@ -77,7 +79,7 @@
 
 /* Handheld screens */
 @media screen and (max-width: 619px), projection and (max-width: 619px), tv and (max-width: 619px), handheld {
-	body { margin: 0; max-width: 520px; }
+	body { margin: 0; max-width: 536px; }
 	body > * { margin-left: 8px; margin-right: 8px; }
 	#title { margin: 0; padding: .3em 4px; }
 	#title > * { padding: .2em 4px; }
