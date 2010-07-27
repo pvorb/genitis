@@ -15,9 +15,9 @@ if (isset($_GET['s'])) {
 		<meta name="description" content="Fehlerseite, die Angezeigt wird, wenn eine Ressource nicht gefunden werden kann. Erörterung über die Vermeidung solcher Fehler auf Genitis.org." />
 		<meta name="keywords" content="Fehler, Fehlermeldung, 404, HTTP" />
 		<style type="text/css" media="screen, projection, tv, handheld">
-			html { background: #b5bfcd url("../img/fog.jpg") no-repeat center right; }
+			html { background: #b5bfcd url("../img/fog.jpg") no-repeat center right; height: 100%; }
 			h1 { color: #445; }
-			#container .note { border-bottom-color: #def; }
+			#container .content, #container .note { border-bottom-color: #def; }
 		</style>
 	</head>
 	<body id="backend">
@@ -66,9 +66,6 @@ if (isset($_GET['s'])) {
 				<p>Die größten Nachteile entstehen aber für den Benutzer, für den es nicht immer leicht ist, seine gewünschten Inhalte wiederzufinden. Und eigentlich ist es auch nicht seine Aufgabe, danach zu suchen.</p>
 				<p>Deshalb versuche ich, sämtliche URLs persistent zu halten, damit den Benutzern dieser <span xml:lang="en">Website</span> solche Dinge erspart bleiben.</p>
 			</div>
-			<div class="note">
-				<p><a href="http://www.flickr.com/photos/brostad/3378697018/" hreflang="en" title="Winter fog">Hintergrundbild</a> von <a href="http://www.flickr.com/photos/brostad/" hreflang="en">Bernt Rostad</a></p>
-			</div>
 			<!--<div class="note teaser fig">
 				<a href="http://www.flickr.com/photos/random_j/303093542/"><img src="../img/zelda-error-110213.png" alt="I am error 110213." /></a>
 				<p class="desc">
@@ -94,7 +91,8 @@ if (isset($_GET['s'])) {
 			</form>
 		</div>
 		<div id="about">
-			<p>© 2007 - 2010 – Genitis, <a href="../../about/pvorb/">Paul Vorbach</a></p>
+			<p class="note"><a href="http://www.flickr.com/photos/brostad/3378697018/" hreflang="en" title="Winter fog">Hintergrundbild</a> von <a href="http://www.flickr.com/photos/brostad/" hreflang="en">Bernt Rostad</a></p>
+			<p>© 2008 - 2010 – Genitis, <a href="../../about/pvorb/">Paul Vorbach</a></p>
 		</div>
 		<!--[if lte IE 8]><script src="../../res/js/css3-mediaqueries.js"></script><![endif]-->
 	</body>
