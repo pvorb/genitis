@@ -3,7 +3,7 @@
 	q { quotes: "" "" "" ""; }
 }
 
-@media screen , projection , print , handheld {
+@media screen, projection, print, handheld {
 	* { font-weight: 400; }
 	html { font: 100%/ 1.5 serif; }
 	h1,h2,h3,h4 { font-family: serif; }
@@ -46,7 +46,7 @@
 	a { color: #000; text-decoration: underline; }
 }
 
-@media handheld , projection , screen {
+@media handheld, projection, screen {
 	body { text-align: center; background: #eee; }
 	body, #title, #intro .nav, pre { margin: 0; padding: 0; }
 	#intro, #container, #about { padding: 1em; }
@@ -73,7 +73,7 @@
 	.sh { background:#000; color:#fff; display:block; padding:0.4em; }
 }
 
-@media screen , projection {
+@media screen, projection {
 	#intro .extra, #search, #container .info, #container .nav, #container .comment { float: right; }
 	#intro, #container, #about { min-width: 800px; overflow: hidden; text-align: left; }
 	#container, #about { max-width: 60em; width: 70%; margin: 0 auto; }
