@@ -86,7 +86,7 @@ if (isset($_GET['s'])) {
 			</form>
 		</div>
 		<div id="about">
-			<p>© 2008 - 2010 – Genitis, <a href="../../about/pvorb/">Paul Vorbach</a></p>
+			<p>© 2008 - 2010 – Genitis, Paul Vorbach</p>
 		</div>
 		<!--[if lte IE 8]><script src="../../res/js/css3-mediaqueries.js"></script><![endif]-->
 	</body>
