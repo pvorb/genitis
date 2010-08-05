@@ -22,7 +22,6 @@ if (isset($_GET['s'])) {
 			<li><a href="../../about/">Über</a></li>
 		</ul>
 		<ol id="path" class="nav">
-			<li><a href="../../">Startseite</a></li>
 			<li><span>Fehler</span></li>
 			<li><span title="Sie sind hier.">404</span></li>
 		</ol>
