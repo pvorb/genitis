@@ -20,13 +20,14 @@
 	/* top bar */
 	#title > span:after, #title > a:after { content: ':'; }
 	#title, #branch, #sf, .nav.extra ul { font-size: 1.1em; font-weight: normal; margin: 0; }
-	#branch, .nav.path, .nav.extra ul { display: block; list-style: none; padding: .2em 0; }
+	#branch, #seq, #path, .nav.extra ul { display: block; list-style: none; padding: .2em 0; }
 	body > .nav.extra a:hover { border-bottom: 1px solid; }
-	#branch li, .nav.path li { display: inline; }
+	#branch li, #seq li, #path li { display: inline; }
 	#branch a, #sf legend { padding: .1em .2em; }
 	.nav.extra a { margin: .1em .2em; }
-	.nav.path li:after { content: ' /'; }
-	.nav.path li:last-child:after { content: ''; }
+	#seq { font-weight: bold; }
+	#path li:after { content: ' /'; }
+	#path li:last-child:after { content: ''; }
 	
 	/* content */
 	h1, h2, h3, h4, h5, h6 { font-weight: normal; margin: .6em 0 .4em; }
@@ -85,7 +86,8 @@
 	#title > * { padding: .2em 4px; }
 	#branch { position: absolute; right: 0; top: 0; margin: 0 auto; padding: .3em; width: auto; }
 	#branch li a { padding: .2em .3em; }
-	body > .nav.path { margin-top: 0; }
+	#seq { float: right; margin-bottom: 0; }
+	#seq, #path { margin-top: 0; }
 	body > .nav.extra { margin-top: 1em; margin-bottom: 1em; }
 	
 	#container .content img { width: 100%; }
@@ -98,13 +100,15 @@
 	
 	/* top bar */
 	#title { position: absolute; left: 0; right: 0; }
+	#seq { position: absolute; left: 0; }
 	body > .nav.extra { position: absolute; top: 0; left: 370px; width: 240px; text-align: right; }
 	body > .nav.extra a { color: #fff; }
 	#sf input, #sf legend { margin: 0 .5em .5em; }
 	#sf { margin: 0; padding: 0; float: right; }
 	#sf fieldset { border-color: #bbb; margin: 2px; padding: 2px; }
 	
-	body > .nav.path { width: 270px; margin-bottom: 3em; margin-top: 0; }
+	#seq { width: 100px; margin: 0; padding: .2em 10px; }
+	#path { width: 270px; margin-bottom: 3em; margin-top: 0; }
 	
 	/* content */
 	#container .content img { width: 520px; }
@@ -137,7 +141,7 @@
 	#sf fieldset { border-color: 1px solid #333; }
 	#sf input, #sf legend { margin: 0; }
 	
-	body > .nav.path { width: 520px; margin-bottom: 1em; margin-top: 0; }
+	#path { width: 520px; margin-bottom: 1em; margin-top: 0; }
 }
 
 
@@ -151,9 +155,10 @@
 	a { border-bottom: 1pt solid; color: #000; text-decoration: none; }
 	thead tr { border-bottom: 1pt solid #000; }
 	
-	#title a, body > .nav.path a { border-bottom: none; }
-	#title { font-weight: bold; }
-	body > .nav.extra, #branch { display: none; }
+	#title a, #path a { border-bottom: none; }
+	#path { margin: .2em 0; }
+	#title { font-weight: bold; padding: 0; }
+	#branch, #seq, body > .nav.extra { display: none; }
 	
 	div.note { border-top: 1pt solid #bbb; padding: 1em 0 0; margin: 1em 0 0; }
 	a[href^="http://"]:after { border-bottom: none; content: " ("attr(href)")"; }

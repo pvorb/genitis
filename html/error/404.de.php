@@ -14,19 +14,14 @@ if (isset($_GET['s'])) {
 		<meta name="author" content="Paul Vorbach" />
 		<meta name="description" content="Fehlerseite, die Angezeigt wird, wenn eine Ressource nicht gefunden werden kann. Erörterung über die Vermeidung solcher Fehler auf Genitis.org." />
 		<meta name="keywords" content="Fehler, Fehlermeldung, 404, HTTP" />
-		<style type="text/css" media="screen, projection, tv, handheld">
-			html { background: #b5bfcd url("../img/fog.jpg") no-repeat center right; height: 100%; }
-			h1 { color: #445; }
-			#container .content, #container .note { border-bottom-color: #def; }
-		</style>
 	</head>
-	<body id="backend">
+	<body>
 		<div id="title"><a href="../../">Genitis</a></div>
 		<ul id="branch" class="nav">
 			<li><a href="../../project/">Projekte</a></li>
 			<li><a href="../../about/">Über</a></li>
 		</ul>
-		<ol class="nav path">
+		<ol id="path" class="nav">
 			<li><a href="../../">Startseite</a></li>
 			<li><span>Fehler</span></li>
 			<li><span title="Sie sind hier.">404</span></li>
@@ -66,13 +61,13 @@ if (isset($_GET['s'])) {
 				<p>Die größten Nachteile entstehen aber für den Benutzer, für den es nicht immer leicht ist, seine gewünschten Inhalte wiederzufinden. Und eigentlich ist es auch nicht seine Aufgabe, danach zu suchen.</p>
 				<p>Deshalb versuche ich, sämtliche URLs persistent zu halten, damit den Benutzern dieser <span xml:lang="en">Website</span> solche Dinge erspart bleiben.</p>
 			</div>
-			<!--<div class="note teaser fig">
+			<div class="note teaser fig">
 				<a href="http://www.flickr.com/photos/random_j/303093542/"><img src="../img/zelda-error-110213.png" alt="I am error 110213." /></a>
 				<p class="desc">
 					Ein netter Bürger aus <em>The Legend of Zelda</em> klärt auf.<br />
 					<cite><a href="http://www.flickr.com/photos/random_j/" xml:lang="en">J from the UK</a></cite>, <a href="http://creativecommons.org/licenses/by/2.0/deed.de" xml:lang="en">CC Attribution-License 2.0</a>
 				</p>
-			</div>-->
+			</div>
 			<div class="note info">
 				<h2 id="item-1-2">Der 404-Fehler</h2>
 				<p>Der <em><a href="http://de.wikipedia.org/wiki/HTTP-Statuscode" title="Wikipedia: HTTP-Statuscode"><abbr title="Hypertext Transfer Protocol">HTTP</abbr>-Statuscode</a> 404</em> wird angezeigt, wenn versucht wird, eine nicht vorhandene Ressource anzufordern. <a href="http://de.wikipedia.org/wiki/Toter_Link" title="Wikipedia: Toter Link">Mehr zum Thema</a></p>
