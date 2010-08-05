@@ -85,7 +85,6 @@ if (isset($_GET['s'])) {
 			</form>
 		</div>
 		<div id="about">
-			<p class="note"><a href="http://www.flickr.com/photos/brostad/3378697018/" hreflang="en" title="Winter fog">Hintergrundbild</a> von <a href="http://www.flickr.com/photos/brostad/" hreflang="en">Bernt Rostad</a></p>
 			<p>© 2008 - 2010 – Genitis, <a href="../../about/pvorb/">Paul Vorbach</a></p>
 		</div>
 		<!--[if lte IE 8]><script src="../../res/js/css3-mediaqueries.js"></script><![endif]-->
