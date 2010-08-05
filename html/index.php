@@ -9,7 +9,7 @@
  */
 
 // Requires conf.php
-require_once '../lib/conf.php';
+require_once '../files/conf.php';
 
 // Set $_GET['q'] as $path, default is ''.
 $path = '';
@@ -24,7 +24,7 @@ if ($path == '') {
 	$index = 'index';
 } elseif (strrpos($path, 'index/') === 0) {
 	// Redirect to a 404 error, no content file has been found
-	require_once '../lib/functions.php';
+	require_once '../files/functions.php';
 	redirect(404, ERROR_PAGE_404, $path);
 } else {
 	$index = $path.'index';
@@ -43,7 +43,7 @@ if (USES_MULTIPLE_LANGUAGES) {
 	$content .= '.'.$lang;
 	$index .= '.'.$lang;
 } elseif (isset($_GET['lang'])) {
-	require_once '../lib/functions.php';
+	require_once '../files/functions.php';
 	redirect(301, $path);
 }
 
@@ -59,14 +59,14 @@ for ($i = 0; $i < sizeof($file_ext); $i++) {
 	if (file_exists($content_path)) {
 		// Require functions
 		if ($file_ext[$i] == '.php')
-			require_once '../lib/functions.php';
+			require_once '../files/functions.php';
 
 		include $content_path;
 		exit;
 	} elseif (file_exists($index_path)) {
 		// Require functions
 		if ($file_ext[$i] == '.php')
-			require_once '../lib/functions.php';
+			require_once '../files/functions.php';
 
 		include $index_path;
 		exit;
@@ -74,8 +74,8 @@ for ($i = 0; $i < sizeof($file_ext); $i++) {
 }
 
 // Redirections
-include '../lib/redirections.php';
-require_once '../lib/functions.php';
+include '../files/redirections.php';
+require_once '../files/functions.php';
 if (isset($redirections[$path]))
 	redirect(301, $redirections[$path]);
 
