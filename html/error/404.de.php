@@ -75,7 +75,7 @@ if (isset($_GET['s'])) {
 		</div>
 		<div class="nav extra">
 			<ul>
-				<li><a href="impressum/">Impressum</a></li>
+				<li><a href="../../about/legal/">Impressum</a></li>
 			</ul>
 			<form id="sf" action="../../search/" method="get">
 				<fieldset>
