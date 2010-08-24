@@ -12,6 +12,7 @@ if (isset($_GET['s'])) {
 		<title>Seite nicht gefunden | Genitis</title>
 		<link rel="stylesheet" href="../../res/css/gorn.css" />
 		<link rel="shortcut icon" href="../../res/img/php.ico" type="image/x-icon" />
+		<meta name="robots" content="noindex" />
 		<meta name="author" content="Paul Vorbach" />
 		<meta name="description" content="Fehlerseite, die Angezeigt wird, wenn eine Ressource nicht gefunden werden kann. Erörterung über die Vermeidung solcher Fehler auf Genitis.org." />
 		<meta name="keywords" content="Fehler, Fehlermeldung, 404, HTTP" />
