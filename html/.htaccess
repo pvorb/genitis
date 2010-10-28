@@ -3,9 +3,11 @@
 RewriteEngine	On
 RewriteBase	/
 
+RewriteCond	%{HTTP_HOST}	^(www\.)?ip\.genitis\.org
+RewriteRule	^(.*)$		/project/ip/
+
 RewriteCond	%{HTTP_HOST}	^genitis\.org$			[NC,OR]
-RewriteCond	%{HTTP_HOST}	^paulvorbach\.de$		[NC,OR]
-RewriteCond	%{HTTP_HOST}	^www\.paulvorbach\.de$		[NC]
+RewriteCond	%{HTTP_HOST}	^(www\.)?paulvorbach\.de$	[NC]
 RewriteRule	^(.*)$		http://www.genitis.org/$1	[L,R=301]
 
 ### HTML/PHP files ###
