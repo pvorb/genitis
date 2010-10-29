@@ -1,15 +1,14 @@
 #### For detail information on mod_rewrite see http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html ####
 
-RewriteEngine	On
-RewriteBase	/
+RewriteEngine		On
+RewriteBase			/
 
-RewriteCond	%{HTTP_HOST}	^(www\.)?ip\.genitis\.org
-RewriteRule	^(.*)$		/project/ip/
+RewriteCond			%{HTTP_HOST}	^(www\.)?ip\.genitis\.org
+RewriteRule			^(.*)$			/project/ip/
 
-RewriteCond	%{HTTP_HOST}	^genitis\.org$			[NC,OR]
-RewriteCond	%{HTTP_HOST}	^(www\.)?paulvorbach\.de$	[NC]
-RewriteRule	^(.*)$		http://www.genitis.org/$1	[L,R=301]
-
+RewriteCond			%{HTTP_HOST}	^genitis\.org$					[NC,OR]
+RewriteCond			%{HTTP_HOST}	^(www\.)?paulvorbach\.de$		[NC]
+RewriteRule			^(.*)$			http://www.genitis.org/$1		[L,R=301]
 
 ##################################
 # Handle Directories
