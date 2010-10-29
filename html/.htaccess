@@ -4,7 +4,7 @@ RewriteEngine		On
 RewriteBase			/
 
 RewriteCond			%{HTTP_HOST}	^(www\.)?ip\.genitis\.org
-RewriteRule			^(.*)$			/project/ip/
+RewriteRule			^(.*)$			http://www.genitis.org/project/ip	[L,R=301]
 
 RewriteCond			%{HTTP_HOST}	^genitis\.org$					[NC,OR]
 RewriteCond			%{HTTP_HOST}	^(www\.)?paulvorbach\.de$		[NC]
