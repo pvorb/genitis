@@ -41,6 +41,11 @@
 	address .email { display: inline-block; margin-top: .35em; }
 	pre, code { font-family: monospace; }
 	th, td { padding: .5em; }
+
+	dl { margin: 0 1em; overflow: hidden; }
+	dt { float: left; font-weight: bold; padding-bottom: 2px; width: 150px; }
+	dt:after { content: ':'; }
+	dd { margin-left: 160px; padding-bottom: .5em; }
 	
 	code .kwd { color: #808; }
 	code .str { color: red; }
