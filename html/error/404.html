@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET['s'])) {
 	$missing_page = explode(' ', $_GET['s']);
-	$missing_page = implode('/', $missing_page).'/';
+	$missing_page = implode('/', $missing_page);
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -44,7 +44,7 @@ if (isset($_GET['s'])) {
 					<li><p>Sie haben eine Adresse falsch in das Adressfeld Ihres Browsers eingetragen.</p></li>
 				</ol>
 				<p>Vielleicht kann Ihnen die Suche weiterhelfen.</p>
-				<form class="sf" action="../../search/" method="get">
+				<form class="sf" action="../../search" method="get">
 					<fieldset>
 						<legend>Suche</legend>
 						<input name="s" type="text" size="40" <?php if (isset($_GET['s'])) echo 'value="'.$_GET['s'].'" '; ?>/>
@@ -76,9 +76,9 @@ if (isset($_GET['s'])) {
 		</div>
 		<div class="nav extra">
 			<ul>
-				<li><a href="../../about/legal/">Impressum</a></li>
+				<li><a href="../../about/legal">Impressum</a></li>
 			</ul>
-			<form id="sf" action="../../search/" method="get">
+			<form id="sf" action="../../search" method="get">
 				<fieldset>
 					<legend>Suche</legend>
 					<input name="s" type="text" <?php if (isset($_GET['s'])) echo 'value="'.$_GET['s'].'" '; ?>/>
