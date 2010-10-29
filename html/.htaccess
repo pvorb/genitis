@@ -10,38 +10,44 @@ RewriteCond	%{HTTP_HOST}	^genitis\.org$			[NC,OR]
 RewriteCond	%{HTTP_HOST}	^(www\.)?paulvorbach\.de$	[NC]
 RewriteRule	^(.*)$		http://www.genitis.org/$1	[L,R=301]
 
-### HTML/PHP files ###
 
-## Check for *.*.html (Comment these lines out if you use single languages.)
-RewriteCond	%{REQUEST_FILENAME}	-f
-RewriteCond	%{REQUEST_URI}		^(.*)\.(.*)\.html$	[OR]
-RewriteCond	%{REQUEST_URI}		^(.*)\.(.*)\.php$
-## Replace with */?lang=*
-RewriteRule	.			%1/\?\l\a\n\g\=%2	[L,R=301]
+##################################
+# Handle Directories
+##################################
 
-## Check for *.html
-RewriteCond	%{REQUEST_FILENAME}	-f
-RewriteCond	%{REQUEST_URI}		^(.*)\.html$
-RewriteRule	.			%1/			[L,R=301]
-#[OR]
-#RewriteCond	%{REQUEST_URI}		^(.*)\.php$
-## Replace with */
-#RewriteRule	.			%1/			[L,R=301]
+# Map /dir -> /dir/ if /dir/ is a directory.
+RewriteCond			%{REQUEST_FILENAME}/	-d
+RewriteCond			%{REQUEST_URI}			!(.*)/$
+RewriteRule			^(.*)$					/$1/					[L,R=301]
 
-## Remove multiple trailing slashes
-RewriteCond	%{REQUEST_FILENAME}	!-f
-RewriteCond	%{REQUEST_URI}		^(.*)//(.*)$
-RewriteRule	.			%1/			[L,R=301]
+# Internally map to /index.php?dir=*
+RewriteCond			%{REQUEST_FILENAME}		-d
+RewriteCond			%{REQUEST_URI}			(.*)/$
+RewriteRule			^(.*)$					/index.php?dir=$1		[L,QSA,NC]
 
-## Add a trailing slash, if none exists
-RewriteCond	%{REQUEST_URI}		!(.*)\.(.*)$
-RewriteCond	%{REQUEST_URI}		!(.*)/$
-RewriteRule	^(.*)$			$1/			[L,R=301]
+##################################
+# Handle HTML files
+##################################
 
-## Everything that didn't mach any rule before and is not a file in the filesystem will be mapped to index.php
-RewriteCond	%{REQUEST_FILENAME}	!-f
-RewriteRule	^(.*)$			/index.php?q=$1		[L,QSA,NC]
+# Map file.html -> file
+RewriteRule			^(.*)\.html$			/$1						[L,R=301]
 
-## Default character set
-AddDefaultCharset	utf-8
+# Map path/index -> path/ //Remove index, because it is unnessecary.
+RewriteRule			^((.*/)*)index$			/$1						[L,R=301]
+
+# Map file/ -> file
+RewriteCond			%{REQUEST_FILENAME}		!-d
+RewriteRule			^(.*)/$					/$1						[L,R=301]
+
+# Internally map to /index.php?file=*
+RewriteCond			%{REQUEST_FILENAME}.html	-f
+RewriteCond			%{REQUEST_URI}			!(.*)/$
+RewriteRule			^(.*)$					/index.php?file=$1		[L,QSA,NC]
+
+# Map bad requests to /error/404?s=*
+RewriteCond			%{REQUEST_FILENAME}		!-d
+RewriteCond			%{REQUEST_FILENAME}/	!-d
+RewriteCond			%{REQUEST_FILENAME}		!-f
+RewriteCond			%{REQUEST_FILENAME}.html	!-f
+RewriteRule			^(.*)$					/error/404?s=$1			[L,R=307]
 
