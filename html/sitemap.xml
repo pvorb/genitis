@@ -32,19 +32,19 @@
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>http://www.genitis.org/project/web/g08/</loc>
+		<loc>http://www.genitis.org/project/web/g08</loc>
 		<lastmod>2010-08-17</lastmod>
 		<changefreq>never</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>http://www.genitis.org/project/web/pv/</loc>
+		<loc>http://www.genitis.org/project/web/pv</loc>
 		<lastmod>2010-08-17</lastmod>
 		<changefreq>never</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>http://www.genitis.org/about/legal/</loc>
+		<loc>http://www.genitis.org/about/legal</loc>
 		<lastmod>2010-08-17</lastmod>
 		<changefreq>never</changefreq>
 		<priority>0.5</priority>
@@ -56,13 +56,13 @@
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>http://www.genitis.org/about/version/1/</loc>
+		<loc>http://www.genitis.org/about/version/1</loc>
 		<lastmod>2010-08-17</lastmod>
 		<changefreq>never</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>http://www.genitis.org/about/version/2/</loc>
+		<loc>http://www.genitis.org/about/version/2</loc>
 		<lastmod>2010-08-17</lastmod>
 		<changefreq>never</changefreq>
 		<priority>0.8</priority>
