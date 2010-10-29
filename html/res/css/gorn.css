@@ -42,11 +42,9 @@
 	pre, code { font-family: monospace; }
 	th, td { padding: .5em; }
 
-	dl { margin: 0 1em; overflow: hidden; }
-	dt { float: left; font-weight: bold; padding-bottom: 2px; width: 150px; }
-	dt:after { content: ':'; }
-	dd { margin-left: 160px; padding-bottom: .5em; }
-	
+	dt { display: list-item; list-style: square; margin-left: 2.5em; }
+	dd { margin-left: 2.5em; margin-bottom: .5em; }
+
 	code .kwd { color: #808; }
 	code .str { color: red; }
 	code .fld { color: #00c; }
