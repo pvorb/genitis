@@ -10,67 +10,40 @@
 
 // Requires conf.php
 require_once '../files/conf.php';
+define('DIR_PUB', dirname(__FILE__));
 
-// Set $_GET['q'] as $path, default is ''.
-$path = '';
-if (isset($_GET['q'])) {
-	$path = $_GET['q'];
-	unset($_GET['q']);
-}
+$file = NULL;
+$dir = NULL;
 
-// Set $content and $index
-if ($path == '') {
-	$content = '.'; // does never exist
-	$index = 'index';
-} elseif (strrpos($path, 'index/') === 0) {
-	// Redirect to a 404 error, no content file has been found
-	require_once '../files/functions.php';
-	redirect(404, ERROR_PAGE_404, $path);
+if (isset($_GET['file'])) {
+	$file = $_GET['file'];
+	unset($_GET['file']);
+	$path = DIR_PUB.DIR_SEP.$file;
+
+	if (strrpos($file, '/') === strlen($file) - 1) {
+		include $path.'index'.FILE_EXT;
+	} elseif (file_exists($path.FILE_EXT)) {
+		include $path.FILE_EXT;
+		exit;
+	} else {
+		redirect(404, ERROR_PAGE_404, $file);
+	}
+
+} elseif (isset($_GET['dir'])) {
+	$dir = $_GET['dir'];
+	unset($_GET['dir']);
+	$path = DIR_PUB.DIR_SEP.$dir;
+
+	if ($dir == '' || $dir == '/') {
+		include 'index'.FILE_EXT;
+	} elseif (file_exists($path)) {
+		include $path.'index'.FILE_EXT;
+	} else {
+		redirect(404, ERROR_PAGE_404, $dir);
+	}
+
 } else {
-	$index = $path.'index';
-	$content = rtrim($path, '/'); // remove trailing slash
-}
-
-if (USES_MULTIPLE_LANGUAGES) {
-	// Set a language
-	$lang = 'de';
-	if (isset($_GET['lang'])) {
-		$lang = $_GET['lang'];
-		unset($_GET['lang']);
-	}
-
-	// Append .$lang to $file_path
-	$content .= '.'.$lang;
-	$index .= '.'.$lang;
-} elseif (isset($_GET['lang'])) {
-	require_once '../files/functions.php';
-	redirect(301, $path);
-}
-
-// Try to include the file with different file endings with the order that was
-// specified in lib/conf.php in variable $file_ext.
-for ($i = 0; $i < sizeof($file_ext); $i++) {
-	// Append file extension
-	$content_path = $content.$file_ext[$i];
-	$index_path = $index.$file_ext[$i];
-
-
-	// Include content
-	if (file_exists($content_path)) {
-		// Require functions
-		if ($file_ext[$i] == '.php')
-			require_once '../files/functions.php';
-
-		include $content_path;
-		exit;
-	} elseif (file_exists($index_path)) {
-		// Require functions
-		if ($file_ext[$i] == '.php')
-			require_once '../files/functions.php';
-
-		include $index_path;
-		exit;
-	}
+	include 'index'.FILE_EXT;
 }
 
 // Redirections
@@ -79,5 +52,3 @@ require_once '../files/functions.php';
 if (isset($redirections[$path]))
 	redirect(301, $redirections[$path]);
 
-// Redirect to a 404 error, no content file has been found
-redirect(404, ERROR_PAGE_404, $path);
