@@ -50,6 +50,12 @@
 		<priority>0.1</priority>
 	</url>
 	<url>
+		<loc>http://yuki.genitis.org</loc>
+		<lastmod>2010-10-31</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
 		<loc>http://www.genitis.org/about/legal</loc>
 		<lastmod>2010-08-17</lastmod>
 		<changefreq>never</changefreq>
