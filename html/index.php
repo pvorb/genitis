@@ -1,6 +1,6 @@
 <?php
 /**
- * This file grabs needed html files.
+ * This file includes requested HTML files.
  *
  * @author Paul Vorbach <vorbach@genitis.org>
  * @license http://opensource.org/licenses/mit-license.php MIT License
@@ -9,46 +9,55 @@
  */
 
 // Requires conf.php
-require_once '../files/conf.php';
-define('DIR_PUB', dirname(__FILE__));
+require '../files/conf.php';
+define('DIR_PUB', dirname(__FILE__).DIR_SEP);
 
-$file = NULL;
-$dir = NULL;
-
+// Check for GET parameter 'file'
 if (isset($_GET['file'])) {
-	$file = $_GET['file'];
+	$url = $_GET['file']; // request string
 	unset($_GET['file']);
-	$path = DIR_PUB.DIR_SEP.$file;
 
-	if (strrpos($file, '/') === strlen($file) - 1) {
-		include $path.'index'.FILE_EXT;
-	} elseif (file_exists($path.FILE_EXT)) {
+	// Requested file (without file extension)
+	$path = DIR_PUB.DIR_SEP.$url;
+
+	// If the file exists, include it.
+	if (file_exists($path.FILE_EXT)) {
 		include $path.FILE_EXT;
 		exit;
-	} else {
-		redirect(404, ERROR_PAGE_404, $file);
 	}
-
-} elseif (isset($_GET['dir'])) {
-	$dir = $_GET['dir'];
-	unset($_GET['dir']);
-	$path = DIR_PUB.DIR_SEP.$dir;
-
-	if ($dir == '' || $dir == '/') {
-		include 'index'.FILE_EXT;
-	} elseif (file_exists($path)) {
-		include $path.'index'.FILE_EXT;
-	} else {
-		redirect(404, ERROR_PAGE_404, $dir);
-	}
-
-} else {
-	include 'index'.FILE_EXT;
 }
+// Check for GET parameter 'dir'
+elseif (isset($_GET['dir'])) {
+	$url = $_GET['dir']; // request string
+	unset($_GET['dir']);
 
-// Redirections
-include '../files/redirections.php';
-require_once '../files/functions.php';
-if (isset($redirections[$path]))
-	redirect(301, $redirections[$path]);
+	// Requested folder
+	$path = DIR_PUB.DIR_SEP.$url;
 
+	// If dir is empty, redirect to the root index.html file.
+	if ($url == '' || $url == '/') {
+		include 'index'.FILE_EXT;
+		exit;
+	}
+	// If folder exists, include its index.html.
+	elseif (file_exists($path)) {
+		include $path.'index'.FILE_EXT;
+		exit;
+	}
+}
+// Check for GET parameter 'err'
+elseif (isset($_GET['err'])) {
+	// Include files for necessary redirections.
+	include DIR_LIB.'redirections.php';
+	require DIR_LIB.'functions.php';
+
+	$url = $_GET['err']; // request string
+	unset($_GET['err']);
+
+	// If a redirection for $url is defined, make a redirect as defined.
+	if (isset($redirections[$url]))
+		redirect(301, $redirections[$url]);
+	// Otherwise redirect to a 404 error.
+	else
+		redirect(404, ERROR_PAGE_404, $url);
+}

@@ -49,10 +49,9 @@ RewriteCond			%{REQUEST_FILENAME}.html	-f
 RewriteCond			%{REQUEST_URI}			!(.*)/$
 RewriteRule			^(.*)$					/index.php?file=$1		[L,QSA,NC]
 
-# Map bad requests to /error/404?s=*
+# Internally map bad requests to /index.php?err=*
 RewriteCond			%{REQUEST_FILENAME}		!-d
 RewriteCond			%{REQUEST_FILENAME}/	!-d
 RewriteCond			%{REQUEST_FILENAME}		!-f
 RewriteCond			%{REQUEST_FILENAME}.html	!-f
-RewriteRule			^(.*)$					/error/404?s=$1			[L,R=307]
-
+RewriteRule			^(.*)$					/index.php?err=$1		[L,QSA,NC]
