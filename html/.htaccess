@@ -7,6 +7,11 @@ RewriteCond			%{HTTP_HOST}	^ip\.genitis\.org
 RewriteCond			%{REQUEST_URI}	^(.*)$
 RewriteRule			.*				index.php?file=project/ip%2		[L,NC]
 
+RewriteCond			%{HTTP_HOST}	^yuki\.genitis\.org
+RewriteCond			%{REQUEST_URI}	^(.*)$
+RewriteRule			.*				index.php?file=project/yuki/%2		[L,NC]
+
+
 RewriteCond			%{HTTP_HOST}	^genitis\.org$					[NC,OR]
 RewriteCond			%{HTTP_HOST}	^(www\.)?paulvorbach\.de$		[NC]
 RewriteRule			^(.*)$			http://www.genitis.org/$1		[L,R=301]
