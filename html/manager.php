@@ -4,7 +4,6 @@
  *
  * @author Paul Vorbach <vorbach@genitis.org>
  * @license http://opensource.org/licenses/mit-license.php MIT License
- * @version 0.1.0
  * @package org.genitis.yuki
  */
 
@@ -33,5 +32,5 @@ elseif (isset($_GET['err'])) {
 		redirect(301, $redirections[$url]);
 	// Otherwise redirect to a 404 error.
 	else
-		redirect(404, ERROR_PAGE_404, $url);
+		redirect(404, ERROR_404, $url);
 }

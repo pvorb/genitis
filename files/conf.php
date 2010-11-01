@@ -10,7 +10,6 @@
 
 define('DOMAIN', 'http://www.genitis.org');
 
-define('DIR_SEP', DIRECTORY_SEPARATOR);
 define('DIR_LIB', dirname(__FILE__).DIR_SEP);
 
 define('ERROR_404', 'error/404');
