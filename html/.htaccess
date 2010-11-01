@@ -3,14 +3,13 @@
 RewriteEngine		On
 RewriteBase			/
 
-RewriteCond			%{HTTP_HOST}	^ip\.genitis\.org
-RewriteCond			%{REQUEST_URI}	^(.*)$
-RewriteRule			.*				index.php?file=project/ip		[L,NC]
+RewriteCond			%{HTTP_HOST}	^ip\.genitis\.org				[OR]
+RewriteCond			%{HTTP_HOST}	^ip\.localhost
+RewriteRule			^(.*)$			index.php?dir&url=project/ip/$1		[L,QSA,NC]
 
-RewriteCond			%{HTTP_HOST}	^yuki\.genitis\.org
-RewriteCond			%{REQUEST_URI}	^(.*)$
-RewriteRule			.*				index.php?dir=project/yuki/		[L,NC]
-
+RewriteCond			%{HTTP_HOST}	^yuki\.genitis\.org				[OR]
+RewriteCond			%{HTTP_HOST}	^yuki\.localhost
+RewriteRule			^(.*)$			index.php?dir&url=project/yuki/$1		[L,QSA,NC]
 
 RewriteCond			%{HTTP_HOST}	^genitis\.org$					[NC,OR]
 RewriteCond			%{HTTP_HOST}	^(www\.)?paulvorbach\.de$		[NC]
@@ -28,7 +27,7 @@ RewriteRule			^(.*)$					/$1/					[L,R=301]
 # Internally map to /index.php?dir=*
 RewriteCond			%{REQUEST_FILENAME}		-d
 RewriteCond			%{REQUEST_URI}			(.*)/$
-RewriteRule			^(.*)$					/index.php?dir=$1		[L,QSA,NC]
+RewriteRule			^(.*)$					/index.php?dir&url=$1		[L,QSA,NC]
 
 ##################################
 # Handle HTML files
@@ -47,7 +46,7 @@ RewriteRule			^(.*)/$					/$1						[L,R=301]
 # Internally map to /index.php?file=*
 RewriteCond			%{REQUEST_FILENAME}.html	-f
 RewriteCond			%{REQUEST_URI}			!(.*)/$
-RewriteRule			^(.*)$					/index.php?file=$1		[L,QSA,NC]
+RewriteRule			^(.*)$					/index.php?file&url=$1		[L,QSA,NC]
 
 # Internally map bad requests to /index.php?err=*
 RewriteCond			%{REQUEST_FILENAME}		!-d
