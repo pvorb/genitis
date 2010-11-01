@@ -5,11 +5,11 @@ RewriteBase			/
 
 RewriteCond			%{HTTP_HOST}	^ip\.genitis\.org
 RewriteCond			%{REQUEST_URI}	^(.*)$
-RewriteRule			.*				index.php?file=project/ip%2		[L,NC]
+RewriteRule			.*				index.php?file=project/ip		[L,NC]
 
 RewriteCond			%{HTTP_HOST}	^yuki\.genitis\.org
 RewriteCond			%{REQUEST_URI}	^(.*)$
-RewriteRule			.*				index.php?file=project/yuki/%2		[L,NC]
+RewriteRule			.*				index.php?dir=project/yuki/		[L,NC]
 
 
 RewriteCond			%{HTTP_HOST}	^genitis\.org$					[NC,OR]
