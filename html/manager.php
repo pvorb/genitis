@@ -7,7 +7,8 @@
  * @package org.genitis.yuki
  */
 
-define('DIR_PUB', dirname(__FILE__).DIRECTORY_SEPARATOR);
+define('DIR_SEP', DIRECTORY_SEPARATOR);
+define('DIR_PUB', dirname(__FILE__).DIR_SEP);
 // Requires conf.php
 require '../files/conf.php';
 
