@@ -25,7 +25,11 @@ function redirect($type, $location, $search = FALSE) {
 		case 307: header('HTTP/1.1 307 Temporary Redirect'); break;
 		case 404: header('HTTP/1.1 404 Not Found'); break;
 	}
-	header('Location: '.DOMAIN.'/'.$location.($search != FALSE ? '?s='.trim(strtr($search, array('/' => '+', '%20' => '+')), '+') : ''));
+
+	if (strpos($location, 'http') === 0) // If starts with ‘http://’
+		header('Location: '.$location.($search != FALSE ? '?s='.trim(strtr($search, array('/' => '+', '%20' => '+')), '+') : ''));
+	else // Else if location is relative
+		header('Location: '.DOMAIN.'/'.$location.($search != FALSE ? '?s='.trim(strtr($search, array('/' => '+', '%20' => '+')), '+') : ''));
 	exit;
 }
 
