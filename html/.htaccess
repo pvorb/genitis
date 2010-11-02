@@ -16,41 +16,42 @@ RewriteCond			%{HTTP_HOST}	^(www\.)?paulvorbach\.de$		[NC]
 RewriteRule			^(.*)$			http://www.genitis.org/$1		[L,R=301]
 
 ##################################
-# Handle Directories
+# Handle directories
 ##################################
 
-# Map /dir -> /dir/ if /dir/ is a directory.
-RewriteCond			%{REQUEST_FILENAME}/	-d
-RewriteCond			%{REQUEST_URI}			!(.*)/$
-RewriteRule			^(.*)$					/$1/					[L,R=301]
+# Map /dir to /dir/, if /dir/ is a directory.
+RewriteCond			%{REQUEST_FILENAME}/		-d
+RewriteCond			%{REQUEST_URI}				!(.*)/$
+RewriteRule			^(.*)$						/$1/						[L,R=301]
 
-# Internally map to /index.php?dir=*
-RewriteCond			%{REQUEST_FILENAME}		-d
-RewriteCond			%{REQUEST_URI}			(.*)/$
-RewriteRule			^(.*)$					/manager.php?dir&url=$1		[L,QSA,NC]
+# Map path/to/file to /index.php?dir&url=path/to/file.
+RewriteCond			%{REQUEST_FILENAME}			-d
+RewriteCond			%{REQUEST_URI}				(.*)/$
+RewriteRule			^(.*)$						/manager.php?dir&url=$1		[L,QSA,NC]
 
 ##################################
-# Handle HTML files
+# Handle files
 ##################################
 
-# Map file.html -> file
-RewriteRule			^(.*)\.html$			/$1						[L,R=301]
+# Redirect file.html to file.
+RewriteRule			^(.*)\.html$				/$1							[L,R=301]
 
-# Map path/index -> path/ //Remove index, because it is unnessecary.
-RewriteRule			^((.*/)*)index$			/$1						[L,R=301]
+# Redirect path/index to path/. Remove index, because it is unnessecary.
+RewriteRule			^((.*/)*)index$				/$1							[L,R=301]
 
-# Map file/ -> file
-RewriteCond			%{REQUEST_FILENAME}		!-d
-RewriteRule			^(.*)/$					/$1						[L,R=301]
+# Redirect file/ to file.
+RewriteCond			%{REQUEST_FILENAME}			!-d
+RewriteRule			^(.*)/$						/$1							[L,R=301]
 
-# Internally map to /index.php?file=*
-RewriteCond			%{REQUEST_FILENAME}.html	-f
-RewriteCond			%{REQUEST_URI}			!(.*)/$
-RewriteRule			^(.*)$					/manager.php?file&url=$1		[L,QSA,NC]
+# Map path/to/file to /index.php?file&url=path/to/file, if the file exists.
+RewriteCond			%{REQUEST_FILENAME}.html	-f							[OR]
+RewriteCond			%{REQUEST_FILENAME}.php		-f
+RewriteCond			%{REQUEST_URI}				!(.*)/$
+RewriteRule			^(.*)$						/manager.php?file&url=$1	[L,QSA,NC]
 
-# Internally map bad requests to /index.php?err=*
-RewriteCond			%{REQUEST_FILENAME}		!-d
-RewriteCond			%{REQUEST_FILENAME}/	!-d
-RewriteCond			%{REQUEST_FILENAME}		!-f
+# Map bad requests to /index.php?err&url=path/to/file, if the file does not exist.
+RewriteCond			%{REQUEST_FILENAME}			!-d
+RewriteCond			%{REQUEST_FILENAME}/		!-d
+RewriteCond			%{REQUEST_FILENAME}			!-f
 RewriteCond			%{REQUEST_FILENAME}.html	!-f
-RewriteRule			^(.*)$					/index.php?err&url=$1		[L,QSA,NC]
+RewriteRule			^(.*)$						/manager.php?err&url=$1		[L,QSA,NC]
