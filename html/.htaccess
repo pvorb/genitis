@@ -5,11 +5,11 @@ RewriteBase			/
 
 RewriteCond			%{HTTP_HOST}	^ip\.genitis\.org				[OR]
 RewriteCond			%{HTTP_HOST}	^ip\.localhost
-RewriteRule			^(.*)$			manager.php?dir&url=project/ip/$1		[L,QSA,NC]
+RewriteRule			^(.*)$			/manager.php?dir&url=project/ip/$1		[L,QSA,NC]
 
 RewriteCond			%{HTTP_HOST}	^yuki\.genitis\.org				[OR]
 RewriteCond			%{HTTP_HOST}	^yuki\.localhost
-RewriteRule			^(.*)$			manager.php?dir&url=project/yuki/$1		[L,QSA,NC]
+RewriteRule			^(.*)$			/manager.php?dir&url=project/yuki/$1		[L,QSA,NC]
 
 RewriteCond			%{HTTP_HOST}	^genitis\.org$					[NC,OR]
 RewriteCond			%{HTTP_HOST}	^(www\.)?paulvorbach\.de$		[NC]
@@ -53,4 +53,4 @@ RewriteCond			%{REQUEST_FILENAME}		!-d
 RewriteCond			%{REQUEST_FILENAME}/	!-d
 RewriteCond			%{REQUEST_FILENAME}		!-f
 RewriteCond			%{REQUEST_FILENAME}.html	!-f
-RewriteRule			^(.*)$					/index.php?err&url=$1		[L,QSA,NC]
+RewriteRule			^(.*)$					/manager.php?err&url=$1		[L,QSA,NC]
