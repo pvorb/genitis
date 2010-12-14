@@ -11,7 +11,7 @@
 	img, abbr { border: 0; }
 	q { quotes: "" "" "" ""; }
 	
-	#title, #branch, body > .nav.extra, h1, h2, h3, h4, h5, h6, dt { font-family: Candara, Helvetica, sans-serif; font-size-adjust: 0.47; }
+	#title, #branch, body > .nav.extra, h1, h2, h3, h4, h5, h6, dt { font-family: Candara, sans-serif; font-size-adjust: 0.47; }
 	p, address, .content .fig { margin: .5em 0; }
 	abbr, *[title] { cursor: help; }
 	a, a[title], *[title] a, a *[title] { cursor: pointer; }
