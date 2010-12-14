@@ -75,9 +75,6 @@ if (isset($_GET['s'])) {
 			</div>
 		</div>
 		<div class="nav extra">
-			<ul>
-				<li><a href="../../about/legal">Impressum</a></li>
-			</ul>
 			<form id="sf" action="../../search" method="get">
 				<fieldset>
 					<legend>Suche</legend>
@@ -87,7 +84,7 @@ if (isset($_GET['s'])) {
 			</form>
 		</div>
 		<div id="about">
-			<p>© 2008 - 2010 – Genitis, Paul Vorbach</p>
+			<p>© 2008 - 2010 – Genitis, Paul Vorbach. <a href="../../about/legal">Impressum</a>.</p>
 		</div>
 		<!--[if lte IE 8]><script src="../../res/js/css3-mediaqueries.js"></script><![endif]-->
 	</body>
