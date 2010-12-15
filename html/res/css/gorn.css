@@ -64,7 +64,7 @@
 	#branch li:hover a, #branch li:focus a { background: #a41; }
 	#branch li.active a { background: #c11; }
 	#branch li.active:hover a, #branch li.active:focus { background: #c52; }
-	#sf fieldset { border: 1px solid; }
+	#sf fieldset { border: 1px solid #bbb; }
 	
 	a { color: #a00; text-decoration: none; }
 	a:hover, thead th { border-bottom: 1px solid; }
@@ -104,11 +104,11 @@
 	/* top bar */
 	#title { position: absolute; left: 0; right: 0; }
 	#seq { position: absolute; left: 0; }
-	body > .nav.extra { position: absolute; top: 0; left: 370px; width: 240px; text-align: right; }
+	body > .nav.extra { position: absolute; top: 1.8em; left: 370px; width: 240px; text-align: right; }
 	body > .nav.extra a { color: #fff; }
 	#sf input, #sf legend { margin: 0 .5em .5em; }
 	#sf { margin: 0; padding: 0; float: right; }
-	#sf fieldset { border-color: #bbb; margin: 2px; padding: 2px; }
+	#sf fieldset { margin: 2px; padding: 2px; }
 	
 	#seq { width: 100px; margin: 0; padding: .2em 10px; }
 	#path { width: 270px; margin-bottom: 3em; margin-top: 0; }
@@ -141,7 +141,7 @@
 	body > .nav.extra { position: absolute; top: 0; left: 640px; width: 320px; }
 	body > .nav.extra > ul { float: left; padding-right: .5em; }
 	#sf { background: #000; }
-	#sf fieldset { border-color: 1px solid #333; }
+	#sf fieldset { border-color: #333; }
 	#sf input, #sf legend { margin: 0; }
 	
 	#path { width: 520px; margin-bottom: 1em; margin-top: 0; }
