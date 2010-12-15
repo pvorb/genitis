@@ -7,6 +7,13 @@
  * @package org.genitis.yuki
  */
 
+function get_server() {
+	return (isset($_SERVER['HTTPS'])
+			? 'https://' : 'http://').$_SERVER['SERVER_NAME'].((isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] != 80)
+			? ':'.$_SERVER['SERVER_PORT']
+			: NULL);
+}
+
 /**
  * Redirects to the URL given in $location where $type is the HTTP status code
  * and $search is a string which contains keywords that will be sent in
@@ -25,12 +32,37 @@ function redirect($type, $location, $search = FALSE) {
 		case 307: header('HTTP/1.1 307 Temporary Redirect'); break;
 		case 404: header('HTTP/1.1 404 Not Found'); break;
 	}
-
-	if (strpos($location, 'http') === 0) // If starts with ‘http://’
-		header('Location: '.$location.($search != FALSE ? '?s='.trim(strtr($search, array('/' => '+', '%20' => '+')), '+') : ''));
-	else // Else if location is relative
-		header('Location: '.DOMAIN.'/'.$location.($search != FALSE ? '?s='.trim(strtr($search, array('/' => '+', '%20' => '+')), '+') : ''));
+	// Determine the protocol, domain and (optionally) port of the server.
+	$server = get_server();
+	header('Location: '.$server.'/'.$location.($search != FALSE ? '?s='.trim(strtr($search, array('/' => '+', '%20' => '+')), '+') : ''));
 	exit;
+}
+
+/**
+ * Loads the modules in the given array.
+ *
+ * @param array $array array of strings with path strings relative to 'lib/mod/'.
+ */
+function load_modules(&$modules) {
+	foreach ($modules as $mod) {
+		require_once 'mod/'.$mod;
+	}
+}
+
+/**
+ * Returns the current date as defined in DATE_FORMAT.
+ * @return string
+ */
+function current_date() {
+	return date(DATE_FORMAT);
+}
+
+/**
+ * Return the current time as defined in TIME_FORMAT.
+ * @return string
+ */
+function current_time() {
+	return date(TIME_FORMAT);
 }
 
 /**
@@ -54,21 +86,25 @@ function get_file($url) {
 	redirect(404, ERROR_404, $url);
 }
 
+/**
+ * Includes the contents of the index file of a requested
+ * @param unknown_type $url
+ */
 function get_dir($url) {
 	// Requested folder
 	$path = DIR_PUB.$url;
 
+	global $file_ext;
 	// If dir is empty, redirect to the root index.html file.
-	if (($url == '' || $url == '/') && file_exists(DIR_PUB.'index.html')) {
-		include DIR_PUB.'index.html';
+	if (($url == '' || $url == '/') && file_exists(DIR_PUB.DEFAULT_FILE.$file_ext[0])) {
+		include DIR_PUB.DEFAULT_FILE.$file_ext[0];
 		exit;
 	}
 	// If folder exists, include its index.html.
 	elseif (file_exists($path)) {
-		global $file_ext;
 		foreach ($file_ext as $ext) {
-			if (file_exists($path.'index'.$ext)) {
-				include $path.'index'.$ext;
+			if (file_exists($path.DEFAULT_FILE.$ext)) {
+				include $path.DEFAULT_FILE.$ext;
 				exit;
 			}
 		}
