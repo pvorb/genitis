@@ -19,12 +19,12 @@ RewriteRule	^(.*)$				http://www.genitis.org/$1		[L,R=301]
 # Handle directories
 ##################################
 
-# Map /dir to /dir/, if /dir/ is a directory.
+# Map ‘/dir’ to ‘/dir/’, if ‘/dir/’ is a directory.
 RewriteCond	%{REQUEST_FILENAME}/		-d
 RewriteCond	%{REQUEST_URI}			!(.*)/$
 RewriteRule	^(.*)$				/$1/					[L,R=301]
 
-# Map path/to/file to /index.php?dir&url=path/to/file.
+# Map ‘path/to/file’ to ‘/index.php?dir&url=path/to/file’.
 RewriteCond	%{REQUEST_FILENAME}		-d
 RewriteCond	%{REQUEST_URI}			(.*)/$
 RewriteRule	^(.*)$				/manager.php?dir&url=$1			[L,QSA,NC]
@@ -33,23 +33,23 @@ RewriteRule	^(.*)$				/manager.php?dir&url=$1			[L,QSA,NC]
 # Handle files
 ##################################
 
-# Redirect file.html to file.
+# Redirect ‘file.html’ to ‘file’.
 RewriteRule	^(.*)\.html$			/$1					[L,R=301]
 
-# Redirect path/index to path/. Remove index, because it is unnessecary.
+# Redirect ‘path/index’ to ‘path/’. Remove index, because it is unnessecary.
 RewriteRule	^((.*/)*)index$			/$1					[L,R=301]
 
-# Redirect file/ to file.
+# Redirect ‘file/’ to ‘file’.
 RewriteCond	%{REQUEST_FILENAME}		!-d
 RewriteRule	^(.*)/$				/$1					[L,R=301]
 
-# Map path/to/file to /index.php?file&url=path/to/file, if the file exists.
+# Map ‘path/to/file’ to ‘/index.php?file&url=path/to/file’, if the file exists.
 RewriteCond	%{REQUEST_FILENAME}.html	-f					[OR]
 RewriteCond	%{REQUEST_FILENAME}.php		-f
 RewriteCond	%{REQUEST_URI}			!(.*)/$
 RewriteRule	^(.*)$				/manager.php?file&url=$1		[L,QSA,NC]
 
-# Map bad requests to /index.php?err&url=path/to/file, if the file does not exist.
+# Map bad requests to ‘/index.php?err&url=path/to/file’, if the file does not exist.
 RewriteCond	%{REQUEST_FILENAME}		!-d
 RewriteCond	%{REQUEST_FILENAME}/		!-d
 RewriteCond	%{REQUEST_FILENAME}		!-f
