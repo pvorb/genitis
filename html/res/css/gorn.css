@@ -82,7 +82,12 @@
 /*** Resolutions ***/
 
 /* Handheld screens */
-@media screen and (max-width: 619px), projection and (max-width: 619px), tv and (max-width: 619px), handheld {
+@media
+	screen and (max-width: 619px),
+	projection and (max-width: 619px),
+	tv and (max-width: 619px),
+	handheld
+{
 	body { margin: 0; max-width: 536px; }
 	body > * { margin-left: 8px; margin-right: 8px; }
 	#title { margin: 0; padding: .3em 4px; }
@@ -98,7 +103,11 @@
 }
 
 /* Small (e.g. netbook) screens */
-@media screen and (min-width: 620px), projection and (min-width: 620px), tv and (min-width: 620px) {
+@media
+	screen and (min-width: 620px),
+	projection and (min-width: 620px),
+	tv and (min-width: 620px)
+{
 	body { margin-left: 100px; width: 520px; }
 	
 	/* top bar */
@@ -119,14 +128,22 @@
 }
 
 /* Handheld AND Netbook screens */
-@media screen and (max-width: 979px), projection and (max-width: 979px), tv and (max-width: 979px), handheld {
+@media
+	screen and (max-width: 979px),
+	projection and (max-width: 979px),
+	tv and (max-width: 979px), handheld
+{
 	#container .content, #container .note { border-bottom: 1px solid #bbb; margin-bottom: 1em; padding-bottom: 1em; }
 	#container .note:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 1px; }
 	#container > div :last-child { margin-bottom: 0; }
 }
 
 /* Larger screens */
-@media screen and (min-width: 980px), projection and (min-width: 980px), tv and (min-width: 980px) {
+@media
+	screen and (min-width: 980px),
+	projection and (min-width: 980px),
+	tv and (min-width: 980px)
+{
 	body { margin-left: 100px; width: 860px; }
 	#container > h1, #container > h2, #container > h3, #container > h4, #container > h5, #container > h6 { width: 100%; overflow: hidden; }  
 	#container .content { width: 520px; margin-right: 20px; float: left; }
