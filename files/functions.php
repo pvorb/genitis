@@ -35,7 +35,7 @@ function get_server() {
  * @param string $search string with keywords. Slashes and '%20' serve as
  *     seperators.
  */
-function redirect($type, $location, $search = FALSE) {
+function redirect($type, $location, $search = FALSE, $abs = FALSE) {
 	switch ($type) {
 		case 301: header('HTTP/1.1 301 Moved Permanently'); break;
 		case 307: header('HTTP/1.1 307 Temporary Redirect'); break;
@@ -43,7 +43,10 @@ function redirect($type, $location, $search = FALSE) {
 	}
 	// Determine the protocol, domain and (optionally) port of the server.
 	$server = get_server();
-	header('Location: '.$server.'/'.$location.($search != FALSE ? '?s='.trim(strtr($search, array('/' => '+', '%20' => '+')), '+') : ''));
+	if (!$abs)
+		header('Location: '.$server.'/'.$location.($search != FALSE ? '?s='.trim(strtr($search, array('/' => '+', '%20' => '+')), '+') : ''));
+	else
+		header('Location: '.$location);
 	exit;
 }
 
