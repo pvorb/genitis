@@ -17,7 +17,7 @@ $url = $_GET['url']; // request
 // Manage redirections
 require_once DIR_LIB.'redirections.php';
 // If a redirection for $url is defined, make a redirect as defined.
-if (isset($redirections[$url])) {
+if (!isset($_GET['sub']) && isset($redirections[$url])) {
 	// If the redirection does not include sth. like http://,
 	// make a relative redirect.
 	if (strpos($redirections[$url], '://') === FALSE)
