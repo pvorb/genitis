@@ -10,7 +10,7 @@
 define('DIR_SEP', DIRECTORY_SEPARATOR);
 define('DIR_PUB', dirname(__FILE__).DIR_SEP);
 // Requires conf.php
-require '../files/conf.php';
+require '../../files/conf.php';
 
 $url = $_GET['url']; // request
 
