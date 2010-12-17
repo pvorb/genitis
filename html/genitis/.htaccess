@@ -5,11 +5,11 @@ RewriteBase	/
 
 RewriteCond	%{HTTP_HOST}			^ip\.genitis\.org			[OR]
 RewriteCond	%{HTTP_HOST}			^ip\.localhost
-RewriteRule	^(.*)$				/genitis/manager.php?dir&url=project/ip/$1	[L,QSA,NC]
+RewriteRule	^(.*)$				manager.php?dir&url=project/ip/$1	[L,QSA,NC]
 
 RewriteCond	%{HTTP_HOST}			^yuki\.genitis\.org			[OR]
 RewriteCond	%{HTTP_HOST}			^yuki\.localhost
-RewriteRule	^(.*)$				/genitis/manager.php?dir&url=project/yuki/$1	[L,QSA,NC]
+RewriteRule	^(.*)$				manager.php?dir&url=project/yuki/$1	[L,QSA,NC]
 
 RewriteCond	%{HTTP_HOST}			^genitis\.org$				[NC,OR]
 RewriteCond	%{HTTP_HOST}			^(www\.)?paulvorbach\.de$		[NC]
@@ -24,10 +24,10 @@ RewriteCond	%{REQUEST_FILENAME}/		-d
 RewriteCond	%{REQUEST_URI}			!(.*)/$
 RewriteRule	^(.*)$				/$1/					[L,R=301]
 
-# Map path/to/file to /index.php?dir&url=path/to/file.
+# Map path/to/file to /manager.php?dir&url=path/to/file.
 RewriteCond	%{REQUEST_FILENAME}		-d
 RewriteCond	%{REQUEST_URI}			(.*)/$
-RewriteRule	^(.*)$				/genitis/manager.php?dir&url=$1			[L,QSA,NC]
+RewriteRule	^(.*)$				/manager.php?dir&url=$1			[L,QSA,NC]
 
 ##################################
 # Handle files
@@ -43,15 +43,15 @@ RewriteRule	^((.*/)*)index$			/$1					[L,R=301]
 RewriteCond	%{REQUEST_FILENAME}		!-d
 RewriteRule	^(.*)/$				/$1					[L,R=301]
 
-# Map path/to/file to /index.php?file&url=path/to/file, if the file exists.
+# Map path/to/file to /manager.php?file&url=path/to/file, if the file exists.
 RewriteCond	%{REQUEST_FILENAME}.html	-f					[OR]
 RewriteCond	%{REQUEST_FILENAME}.php		-f
 RewriteCond	%{REQUEST_URI}			!(.*)/$
-RewriteRule	^(.*)$				/genitis/manager.php?file&url=$1		[L,QSA,NC]
+RewriteRule	^(.*)$				/manager.php?file&url=$1		[L,QSA,NC]
 
 # Map bad requests to /index.php?err&url=path/to/file, if the file does not exist.
 RewriteCond	%{REQUEST_FILENAME}		!-d
 RewriteCond	%{REQUEST_FILENAME}/		!-d
 RewriteCond	%{REQUEST_FILENAME}		!-f
 RewriteCond	%{REQUEST_FILENAME}.html	!-f
-RewriteRule	^(.*)$				/genitis/manager.php?err&url=$1			[L,QSA,NC]
+RewriteRule	^(.*)$				/manager.php?err&url=$1			[L,QSA,NC]
