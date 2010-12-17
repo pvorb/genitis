@@ -7,11 +7,20 @@
  * @package org.genitis.yuki
  */
 
+function get_domain() {
+	$parts = explode('.', $_SERVER['SERVER_NAME']);
+	$parts_len = sizeof($parts);
+	if ($parts[$parts_len - 1] == 'localhost')
+		return 'localhost';
+	else
+		return $parts[$parts_len - 2].'.'.$parts[$parts_len - 1];
+}
+
 function get_server() {
-	return (isset($_SERVER['HTTPS'])
-			? 'https://' : 'http://').$_SERVER['SERVER_NAME'].((isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] != 80)
-			? ':'.$_SERVER['SERVER_PORT']
-			: NULL);
+	$server = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != '' ? 'https://' : 'http://';
+	$server .= get_domain();
+	$server .= (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] != 80) ? ':'.$_SERVER['SERVER_PORT'] : '';
+	return $server;
 }
 
 /**
