@@ -14,46 +14,22 @@
 		<priority>0.9</priority>
 	</url>
 	<url>
-		<loc>http://www.genitis.org/project/edu/</loc>
-		<lastmod>2010-08-17</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>http://www.genitis.org/project/edu/sia/</loc>
+		<loc>http://www.genitis.org/project/sia/</loc>
 		<lastmod>2010-08-17</lastmod>
 		<changefreq>never</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>http://www.genitis.org/project/web/</loc>
-		<lastmod>2010-08-17</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>http://www.genitis.org/project/web/g08</loc>
+		<loc>http://www.genitis.org/project/g08</loc>
 		<lastmod>2010-08-17</lastmod>
 		<changefreq>never</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>http://www.genitis.org/project/web/pv</loc>
+		<loc>http://www.genitis.org/project/pv</loc>
 		<lastmod>2010-10-28</lastmod>
 		<changefreq>never</changefreq>
 		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://ip.genitis.org</loc>
-		<lastmod>2010-10-29</lastmod>
-		<changefreq>never</changefreq>
-		<priority>0.1</priority>
-	</url>
-	<url>
-		<loc>http://yuki.genitis.org</loc>
-		<lastmod>2010-10-31</lastmod>
-		<changefreq>daily</changefreq>
-		<priority>0.8</priority>
 	</url>
 	<url>
 		<loc>http://www.genitis.org/about/legal</loc>
