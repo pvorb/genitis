@@ -156,7 +156,6 @@
 	
 	body > .nav.extra, body > .nav.extra legend { color: #fff; }
 	body > .nav.extra { position: absolute; top: 0; left: 640px; width: 320px; }
-	body > .nav.extra > ul { float: left; padding-right: .5em; }
 	#sf { background: #000; }
 	#sf fieldset { border-color: #333; }
 	#sf input, #sf legend { margin: 0; }
