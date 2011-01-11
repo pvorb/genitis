@@ -1,0 +1,48 @@
+#### For detail information on mod_rewrite see http://httpd.apache.org/docs/3.2/mod/mod_rewrite.html ####
+
+RewriteEngine	On
+RewriteBase	/
+
+RewriteCond	%{HTTP_HOST}			^www\.vorb\.de$				[NC]
+RewriteRule	^(.*)$				http://vorb.de/$1			[L,R=301]
+
+##################################
+# Handle directories
+##################################
+
+# Map /dir to /dir/, if /dir/ is a directory.
+RewriteCond	%{REQUEST_FILENAME}/		-d
+RewriteCond	%{REQUEST_URI}			!(.*)/$
+RewriteRule	^(.*)$				/$1/					[L,R=301]
+
+# Map path/to/file to /manager.php?dir&url=path/to/file.
+RewriteCond	%{REQUEST_FILENAME}		-d
+RewriteCond	%{REQUEST_URI}			(.*)/$
+RewriteRule	^(.*)$				/manager.php?dir&url=$1			[L,QSA,NC]
+
+##################################
+# Handle files
+##################################
+
+# Redirect file.html to file.
+RewriteRule	^(.*)\.html$			/$1					[L,R=301]
+
+# Redirect path/index to path/. Remove index, because it is unnessecary.
+RewriteRule	^((.*/)*)index$			/$1					[L,R=301]
+
+# Redirect file/ to file.
+RewriteCond	%{REQUEST_FILENAME}		!-d
+RewriteRule	^(.*)/$				/$1					[L,R=301]
+
+# Map path/to/file to /manager.php?file&url=path/to/file, if the file exists.
+RewriteCond	%{REQUEST_FILENAME}.html	-f					[OR]
+RewriteCond	%{REQUEST_FILENAME}.php		-f
+RewriteCond	%{REQUEST_URI}			!(.*)/$
+RewriteRule	^(.*)$				/manager.php?file&url=$1		[L,QSA,NC]
+
+# Map bad requests to /index.php?err&url=path/to/file, if the file does not exist.
+RewriteCond	%{REQUEST_FILENAME}		!-d
+RewriteCond	%{REQUEST_FILENAME}/		!-d
+RewriteCond	%{REQUEST_FILENAME}		!-f
+RewriteCond	%{REQUEST_FILENAME}.html	!-f
+RewriteRule	^(.*)$				/manager.php?err&url=$1			[L,QSA,NC]
