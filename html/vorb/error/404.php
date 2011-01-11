@@ -28,7 +28,7 @@ if (isset($_GET['s'])) {
 			<li><span title="Sie sind hier.">404</span></li>
 		</ol>
 		<div id="container">
-			<h1 id="1-not-found">Seite nicht gefunden</h1>
+			<h1 id="1-page-not-found">Seite nicht gefunden</h1>
 			<div class="content">
 <?php if (isset($missing_page)): ?>
 				<p>Die Seite <code class="url">http://vorb.de/<?php echo $missing_page ?></code> konnte nicht gefunden werden.</p>
@@ -70,7 +70,7 @@ if (isset($_GET['s'])) {
 				</p>
 			</div>
 			<div class="note info">
-				<h2 id="item-1-2">Der 404-Fehler</h2>
+				<h2 id="1-2-error-404">Der 404-Fehler</h2>
 				<p>Der <em><a href="http://de.wikipedia.org/wiki/HTTP-Statuscode" title="Wikipedia: HTTP-Statuscode"><abbr title="Hypertext Transfer Protocol">HTTP</abbr>-Statuscode</a> 404</em> wird angezeigt, wenn versucht wird, eine nicht vorhandene Ressource anzufordern. <a href="http://de.wikipedia.org/wiki/Toter_Link" title="Wikipedia: Toter Link">Mehr zum Thema</a></p>
 			</div>
 		</div>
@@ -84,7 +84,7 @@ if (isset($_GET['s'])) {
 			</form>
 		</div>
 		<div id="about">
-			<p>© 2008 - 2010 – Paul Vorbach. <a href="../../about/legal">Impressum</a>.</p>
+			<p>© 2008 - 2011 – Paul Vorbach. <a href="../../about/legal">Impressum</a>.</p>
 		</div>
 		<!--[if lte IE 8]><script src="../../res/js/css3-mediaqueries.js"></script><![endif]-->
 	</body>
