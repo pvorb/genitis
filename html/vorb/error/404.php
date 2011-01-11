@@ -19,6 +19,9 @@ if (isset($_GET['s'])) {
 	</head>
 	<body>
 		<div id="title"><a href="../../">vorb.de</a></div>
+		<ul id="branch" class="nav">
+			<li><a href="http://www.genitis.org">Genitis</a></li>
+		</ul>
 		<ol id="path" class="nav">
 			<li><span>Fehler</span></li>
 			<li><span title="Sie sind hier.">404</span></li>
