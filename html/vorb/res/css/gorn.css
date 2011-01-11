@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 @media all {
-	html { font: 100%/1.4 "Palatino Linotype", serif; font-size-adjust: 0.46; }
+	html { font: 100%/1.4 serif; }
 	body { margin: 0 20px 3em; }
 	#title { padding: .2em 10px; margin-bottom: .1em; width: auto; }
 	
@@ -60,15 +60,15 @@
 	#title a { color: #fff; }
 	#branch { position: relative; }
 	#branch a { color: #fff; border: none; }
-	#branch li a { background: #800; border-radius: 2px; }
-	#branch li:hover a, #branch li:focus a { background: #a41; }
+	#branch li a { background: #028; border-radius: 2px; }
+	#branch li:hover a, #branch li:focus a { background: #04f; }
 	#branch li.active a { background: #c11; }
-	#branch li.active:hover a, #branch li.active:focus { background: #c52; }
+	#branch li.active:hover a, #branch li.active:focus { background: #25c; }
 	#sf fieldset { border: 1px solid #bbb; }
 	
-	a { color: #a00; text-decoration: none; }
+	a { color: #139; text-decoration: none; }
 	a:hover, thead th { border-bottom: 1px solid; }
-	a:visited { color: #821; }
+	a:visited { color: #348; }
 	abbr { border-bottom: 1px dotted; }
 	
 	pre, code { overflow: auto; }
