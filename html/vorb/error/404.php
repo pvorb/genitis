@@ -83,7 +83,7 @@ if (isset($_GET['s'])) {
 			</form>
 		</div>
 		<div id="about">
-			<p>© 2008 - 2011 – Paul Vorbach. <a href="../../about/legal">Impressum</a>.</p>
+			<p>© 2011 – Paul Vorbach. <a href="../../about/legal">Impressum</a>.</p>
 		</div>
 		<!--[if lte IE 8]><script src="../../res/js/css3-mediaqueries.js"></script><![endif]-->
 	</body>
