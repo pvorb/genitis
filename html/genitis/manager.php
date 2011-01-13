@@ -7,15 +7,13 @@
  * @package org.genitis.yuki
  */
 
-define('DIR_SEP', DIRECTORY_SEPARATOR);
-define('DIR_PUB', dirname(__FILE__).DIR_SEP);
-// Requires conf.php
-require '../../files/conf.php';
+require '.conf.php';
+require DIR_LIB.'functions.php';
 
 $url = $_GET['url']; // request
 
 // Manage redirections
-require_once DIR_LIB.'redirections.php';
+require '.redirect.php';
 // If a redirection for $url is defined, make a redirect as defined.
 if (!isset($_GET['sub']) && isset($redirections[$url])) {
 	// If the redirection does not include sth. like http://,
