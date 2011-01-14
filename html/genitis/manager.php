@@ -7,13 +7,13 @@
  * @package org.genitis.yuki
  */
 
-require '.conf.php';
+require 'conf.php';
 require DIR_LIB.'functions.php';
 
 $url = $_GET['url']; // request
 
 // Manage redirections
-require '.redirect.php';
+require 'redirect.php';
 // If a redirection for $url is defined, make a redirect as defined.
 if (!isset($_GET['sub']) && isset($redirections[$url])) {
 	// If the redirection does not include sth. like http://,
