@@ -1,28 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<!DOCTYPE html>
+<html lang="de">
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta charset="utf-8"/>
 		<title>Projekte | Genitis</title>
-		<link rel="stylesheet" href="../res/css/gorn.css" />
-		<link rel="shortcut icon" href="../res/img/gorn.ico" />
-		<meta name="author" content="Paul Vorbach" />
-		<meta name="description" content="Hier finden Sie alle Projekte von Paul Vorbach." />
-		<meta name="keywords" content="Projekte, Paul Vorbach" />
+		<link rel="stylesheet" href="../res/css/gorn.css">
+		<link rel="icon" href="../res/img/gorn.ico">
+		<meta name="author" content="Paul Vorbach">
+		<meta name="keywords" content="Projekte, Paul Vorbach">
+		<meta name="description" content="Hier finden Sie alle Projekte von Paul Vorbach">
 	</head>
 	<body>
-		<div id="title"><a href="../">Genitis</a></div>
-		<ul id="branch" class="nav">
-			<li class="active"><a href="./">Projekte</a></li>
-			<li><a href="../about/">Über</a></li>
-		</ul>
-		<ol id="path" class="nav">
-			<li><span title="Sie sind hier.">Projekte</span></li>
-		</ol>
-		<div id="container">
-			<h1 id="projects">Projekte</h1>
-			<div class="content">
-				<h2 id="web">Websites</h2>
+		<header id="brand"><a href="../">Genitis</a></header>
+		<nav class="main">
+			<ul id="branches">
+				<li class="active"><a href="./">Projekte</a>
+				<li><a href="../about/">Über</a>
+			</ul>
+			<ol id="path">
+				<li><span>Projekte</span>
+			</ol>
+			<ol id="access">
+				<li><a href="#brand">Top</a>
+				<li><a href="#nav">Navigation</a>
+				<li><a href="#content">Content</a>
+			</ol>
+		</nav>
+		<section id="content">
+			<h1>Projekte</h1>
+			<article>
+				<h2 id="1-web">Websites</h2>
 				<dl>
 					<dt><a href="g08">Ganerben2008.de</a></dt>
 					<dd>Website des Abiturjahrgangs 2008 vom Ganerben-Gymnasium Künzelsau</dd>
@@ -31,22 +37,24 @@
 					<dt><a href="http://yuki.genitis.org">Yuki</a></dt>
 					<dd>Ein sehr einfach gehaltenes PHP-Framework für Websites und Weblogs</dd>
 				</dl>
-				<h2 id="edu">Ausbildung</h2>
+				<h2 id="2-edu">Ausbildung</h2>
 				<dl>
 					<dt><a href="sia/">Schüler-Ingenieur-Akademie 2007</a></dt>
-					<dd>Programmierung des Roboters <abbr title="Another Small and Unique Robot from Oberpfaffenhofen" xml:lang="en">ASURO</abbr></dd>
+					<dd>Programmierung des Roboters <abbr title="Another Small and Unique Robot from Oberpfaffenhofen" lang="en">ASURO</abbr></dd>
 					<dt><a href="http://franconica.uni-wuerzburg.de/Franconica/markbeschreibungen/index.html">Würzburger Markbeschreibungen</a></dt>
 					<dd><abbr title="Studentische Hilfskraft">HiWi</abbr>-Projekt am <a href="http://www2.informatik.uni-wuerzburg.de">Lehrstuhl für Informatik II</a> der Uni Würzburg im Auftrag der <a href="http://www.bibliothek.uni-wuerzburg.de">Universitätsbibliothek</a></dd>
 				</dl>
-				<h2>Sonstige</h2>
-				<p>Weitere und wesentlich aktuellere Projekte finden sich in meinem <a href="http://github.com/pvorb">GitHub-Profil</a>.
-				Darunter sind zwei (leider noch nicht ganz brauchbare) Versuche, ein eigenes
-				<a href="http://de.wikipedia.org/wiki/Content-Management-System" hreflang="de">CMS</a> in PHP zu schreiben. Für diese Website wird bereits <a href="http://yuki.genitis.org">Yuki</a> verwendet.</p>
-				<p>Alle meine Projekte auf GitHub stehen unter der freien <a href="../mit-license">MIT-Lizenz</a>.</p>
-				<p>Unter <a href="http://ip.genitis.org">ip.genitis.org</a> können Sie sich Ihre derzeitige IP-Adresse anzeigen lassen.</p>
-			</div>
-		</div>
-		<div class="nav extra">
+				<p>Unter <a href="http://ip.genitis.org">ip.genitis.org</a> können Sie sich Ihre derzeitige IP-Adresse anzeigen lassen.
+			</article>
+			<aside>
+				<p>Weitere und wesentlich aktuellere Projekte
+				finden sich in meinem <a href="http://github.com/pvorb">GitHub-Profil</a>. Darunter sind zwei (leider noch nicht ganz
+				brauchbare) Versuche, ein eigenes <a href="http://de.wikipedia.org/wiki/Content-Management-System" hreflang="de">CMS</a>
+				in PHP zu schreiben. Für diese Website wird bereits <a href="http://yuki.genitis.org">Yuki</a> verwendet.
+				<p>Alle meine Projekte auf GitHub stehen unter der freien <a href="../mit-license">MIT-Lizenz</a>.
+			</aside>
+		</section>
+		<nav class="extra">
 			<form id="sf" action="../search" method="get">
 				<fieldset>
 					<legend>Suche</legend>
@@ -54,10 +62,9 @@
 					<input name="submit" type="submit" value="OK" />
 				</fieldset>
 			</form>
-		</div>
-		<div id="about">
-			<p>© 2010 – Paul Vorbach. <a href="../about/legal">Impressum</a>.</p>
-		</div>
-		<!--[if lte IE 8]><script src="../res/js/css3-mediaqueries.js"></script><![endif]-->
+		</nav>
+		<footer id="about">
+			<p>© 2010 - 2011 – Paul Vorbach. <a href="../about/legal">Impressum</a>.
+		</footer>
 	</body>
 </html>
