@@ -7,7 +7,7 @@
  * @package org.genitis.yuki
  */
 
-require '.conf.php';
+require 'conf.php';
 require DIR_LIB.'functions.php';
 
 $url = $_GET['url']; // request
