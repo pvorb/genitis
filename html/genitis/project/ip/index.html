@@ -1,33 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<!DOCTYPE html>
+<html lang="de">
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta charset="utf-8">
 		<title>IP-Adresse | Genitis</title>
-		<base href="http://www.genitis.org/project/ip/" />
-		<link rel="stylesheet" type="text/css" href="../../res/css/gorn.css" />
-		<link rel="shortcut icon" href="../../res/img/gorn.ico" />
-		<meta name="author" content="Paul Vorbach" />
-		<meta name="description" content="Liefert die persönliche IP-Adresse" />
-		<meta name="keywords" content="IP, Address, IP-Adresse" />
+		<base href="http://www.genitis.org/project/ip/">
+		<link rel="stylesheet" href="../../res/css/gorn-2.css">
+		<link rel="icon" href="../../res/img/gorn.gif">
+		<meta name="author" content="Paul Vorbach">
+		<meta name="keywords" content="IP, Address, IP-Adresse">
+		<meta name="description" content="Zeigt Ihre aktuelle öffentliche IP-Adresse an">
 	</head>
 	<body>
-		<div id="title"><a href="../../">Genitis</a></div>
-		<ul id="branch" class="nav">
-			<li class="active"><a href="../">Projekte</a></li>
-			<li><a href="../../about/">Über</a></li>
-		</ul>
-		<ol id="path" class="nav">
-			<li><a href="../">Projekte</a></li>
-			<li><span title="Sie sind hier.">IP</span></li>
-		</ol>
-		<div id="container">
-			<h1 id="item-1"><?php echo $_SERVER['REMOTE_ADDR']; ?></h1>
-			<div class="content">
-				<p>… ist Ihre aktuelle IP-Adresse.</p>
-			</div>
-		</div>
-		<div class="nav extra">
+		<header id="brand"><a href="../../">Genitis</a></header>
+		<nav id="nav">
+			<ul id="branches">
+				<li class="active"><a href="../">Projekte</a>
+				<li><a href="../../about/">Über</a>
+			</ul>
+			<ol id="path">
+				<li><a href="../">Projekte</a>
+				<li><span>IP</span>
+			</ol>
+			<ol id="access">
+				<li><a href="#brand">Top</a>
+				<li><a href="#nav">Navigation</a>
+				<li><a href="#content">Content</a>
+			</ol>
+		</nav>
+		<article id="content">
+			<h1><?php echo $_SERVER['REMOTE_ADDR']; ?></h1>
+			<p>… ist Ihre aktuelle IP-Adresse.
+		</article>
+		<div id="search">
 			<form id="sf" action="../../search" method="get">
 				<fieldset>
 					<legend>Suche</legend>
@@ -36,9 +40,8 @@
 				</fieldset>
 			</form>
 		</div>
-		<div id="about">
-			<p>© 2008 - 2010 – Paul Vorbach. <a href="../../about/legal">Impressum</a>.</p>
-		</div>
-		<!--[if lte IE 8]><script src="../../res/js/css3-mediaqueries.js"></script><![endif]-->
+		<footer id="about">
+			<p>© 2010 - 2011 – Paul Vorbach. <a href="../../about/legal">Impressum</a>.
+		</footer>
 	</body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<title>Test 1</title>
+		<link rel="stylesheet" href="res/css/gorn-2.css">
+	</head>
+	<body>
+		<header id="brand"><a href="./">Genitis</a></header>
+		<nav id="nav">
+			<ul id="branches">
+				<li><a href="project/">Projekte</a>
+				<li><a href="about/">Über</a>
+			</ul>
+			<ul id="seq">
+				<li><a href="test-2" title="Nächster Test">»</a>
+			</ul>
+			<ol id="path">
+				<li><span>Test</span>
+			</ol>
+			<ol id="access">
+				<li><a href="#brand">Top</a>
+				<li><a href="#nav">Navigation</a>
+				<li><a href="#content">Content</a>
+			</ol>
+		</nav>
+		<section id="content">
+			<h1>Willkommen</h1>
+			<article>
+				<h2>Artikel 1</h2>
+				<p>Text zu Artikel 1<sup><a href="#ref-1">[1]</a></sup></p>
+				<section class="refs">
+					<h2>Referenzen</h2>
+					<ol>
+						<li><a href="article-1">Artikel 1</a>
+					</ol>
+				</section>
+				<footer>
+					<p>Veröffentlicht: <time pubdate>Mittwoch, 26.1.2011</time>
+				</footer>
+			</article>
+			<aside>
+				<h2>Randnotiz</h2>
+			</aside>
+			<article>
+				<h2>Artikel 2</h2>
+			</article>
+			<aside>
+				<h2>Randnotiz</h2>
+			</aside>
+		</section>
+		<div id="search">
+			<form id="sf" action="search" method="get">
+				<fieldset>
+					<legend>Suche</legend>
+					<input name="s" type="text">
+					<input name="submit" type="submit" value="OK">
+				</fieldset>
+			</form>
+		</div>
+		<footer id="about">
+			<p>© 2008 - 2011 – Paul Vorbach. <a href="about/legal">Impressum</a>.
+		</footer>
+	</body>
+</html>

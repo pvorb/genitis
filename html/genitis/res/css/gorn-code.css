@@ -1,0 +1,7 @@
+code .kwd { color: #808; }
+code .str { color: #f00; }
+code .fld { color: #00c; }
+code .ilc { color: #181; }
+code .rtn { color: #900; }
+code .doc { color: #06c; }
+code .kwd, code .rtn, code .doc-kwd { font-weight: 700; }
