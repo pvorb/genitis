@@ -4,7 +4,7 @@
 	html { font: 100%/1.4 serif; }
 	body { margin: 0 20px 3em; }
 	#brand { padding: .2em 10px; margin-bottom: .1em; width: auto; }
-	#access { visibility: hidden; margin: 0; width: 0; height: 0; }
+	#access { display: none; }
 	
 	/* general styles */
 	img, abbr { border: 0; }
@@ -24,19 +24,19 @@
 	
 	/* bar on top */
 	#brand > span:after, #brand > a:after { content: ':'; }
-	#brand, #branches, #sf, nav.extra ul { font-size: 1.1em; font-weight: normal; margin: 0; }
-	#branches, #seq, #path, nav.extra ul { display: block; list-style: none; padding: .2em 0; }
-	nav.extra a:hover { border-bottom: 1px solid; }
+	#brand, #branches, #sf, #search ul { font-size: 1.1em; font-weight: normal; margin: 0; }
+	#branches, #seq, #path, #search ul { display: block; list-style: none; padding: .2em 0; }
+	#search a:hover { border-bottom: 1px solid; }
 	#branches li, #seq li, #path li { display: inline; }
 	#branches a, #sf legend { padding: .1em .2em; }
-	nav.extra a { margin: .1em .2em; }
+	#search a { margin: .1em .2em; }
 	#seq { font-weight: bold; }
-	#path li:after { content: ' /'; }
+	#path li:after { content: ' / '; }
 	#path li:last-child:after { content: ''; }
 
 	h1, h2, h3, h4, h5, h6 { margin: .6em 0 .4em; }
 	h1:first-child, h2:first-child, h3:first-child { margin-top: 0; }
-	#brand, #branches, nav.extra, h1, h2, h3, h4, h5, h6, dt, #toc, article footer { font-family: Candara, sans-serif; font-weight: normal; }
+	#brand, #branches, #search, h1, h2, h3, h4, h5, h6, dt, #toc, article footer { font-family: Candara, sans-serif; font-weight: normal; }
 	#content ul { list-style-type: square; }
 	article footer { background: #ddd; padding: 0 .5em; border: 1px solid #bbb; border-width: 1px 0; }
 	body > footer { font-size: .8em; margin-top: 3em; margin-bottom: 4em; }
@@ -84,7 +84,7 @@
 	#branches li a { padding: .2em .3em; }
 	#seq { float: right; margin-bottom: 0; }
 	#seq, #path { margin-top: 0; }
-	nav.extra { margin-top: 1em; margin-bottom: 1em; }
+	#search { margin-top: 1em; margin-bottom: 1em; }
 	
 	#content .content img { width: 100%; }
 	#content .content img[width] { width: auto; height: auto; max-width: 100%; }
@@ -101,8 +101,8 @@
 	/* top bar */
 	#brand { position: absolute; left: 0; right: 0; }
 	#seq { position: absolute; left: 0; }
-	nav.extra { position: absolute; top: 1.8em; left: 370px; width: 240px; text-align: right; }
-	nav.extra a { color: #fff; }
+	#search { position: absolute; top: 1.8em; left: 370px; width: 240px; text-align: right; }
+	#search a { color: #fff; }
 	#sf input, #sf legend { margin: 0 .5em .5em; }
 	#sf { margin: 0; padding: 0; float: right; }
 	#sf fieldset { margin: 2px; padding: 2px; }
@@ -142,8 +142,8 @@
 	/* top bar */
 	#branches { width: 540px; }
 	
-	nav.extra, nav.extra legend { color: #fff; }
-	nav.extra { position: absolute; top: 0; left: 640px; width: 320px; }
+	#search, #sf legend { color: #fff; }
+	#search { position: absolute; top: 0; left: 640px; width: 320px; }
 	#sf { background: #000; }
 	#sf fieldset { border-color: #333; }
 	#sf input, #sf legend { margin: 0; }
@@ -165,7 +165,7 @@
 	#brand a, #path a { border-bottom: none; }
 	#path { margin: .2em 0; }
 	#brand { font-weight: bold; padding: 0; }
-	#branches, #seq, nav.extra { display: none; }
+	#branches, #seq, #search { display: none; }
 	
 	#content > aside { border-top: 1pt solid #bbb; padding: 1em 0 0; margin: 1em 0 0; }
 	a[href^="http://"]:after { border-bottom: none; content: " ("attr(href)")"; }

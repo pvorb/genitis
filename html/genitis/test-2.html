@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<title>Test 2</title>
+		<link rel="stylesheet" href="res/css/gorn-2.css">
+	</head>
+	<body>
+		<header id="brand"><a href="./">Genitis</a></header>
+		<nav id="nav">
+			<ul id="branches">
+				<li><a href="project/">Projekte</a>
+				<li><a href="about/">Über</a>
+			</ul>
+			<ul id="seq">
+				<li><a href="test-1" title="Vorheriger Test">«</a>
+			</ul>
+			<ol id="path">
+				<li><span>Test</span>
+			</ol>
+			<ol id="access">
+				<li><a href="#brand">Top</a>
+				<li><a href="#nav">Navigation</a>
+				<li><a href="#content">Content</a>
+			</ol>
+		</nav>
+		<article id="content">
+			<h1>Test-Artikel</h1>
+			<section id="toc">
+				<h2>Inhaltsverzeichnis</h2>
+				<ul>
+					<li><a href="#1-abschnitt">1 Abschnitt</a>
+					<li><a href="#2-abschnitt">2 Abschnitt</a>
+						<ul>
+							<li><a href="#2-1-abschnitt">2.1 Abschnitt</a>
+							<li><a href="#2-2-abschnitt">2.2 Abschnitt</a>
+						</ul>
+					<li><a href="#3-abschnitt">3 Abschnitt</a>
+				</ul>
+			</section>
+			<h2 id="1-abschnitt">1 Abschnitt</h2>
+			<p>Dies ist der erste Absatz von Abschnitt 1.
+
+			<h2 id="2-abschnitt">2 Abschnitt</h2>
+			<p>Dies ist der erste Absatz von Abschnitt 2.
+
+			<h3 id="2-1-abschnitt">2.1 Abschnitt</h3>
+			<p>Dies ist der erste Absatz von Abschnitt 2.1. Dies ist der erste Absatz von Abschnitt 2.2. Dies ist der erste Absatz von Abschnitt 2.2. Dies ist der erste Absatz von Abschnitt 2.2. Dies ist der erste Absatz von Abschnitt 2.2.
+
+			<h3 id="2-2-abschnitt">2.2 Abschnitt</h3>
+			<aside>
+				<p>Diese Randnotiz wird neben Abschnitt 2.1 angezeigt.
+			</aside>
+			<p>Dies ist der erste Absatz von Abschnitt 2.2. Dies ist der erste Absatz von Abschnitt 2.2. Dies ist der erste Absatz von Abschnitt 2.2. Dies ist der erste Absatz von Abschnitt 2.2. 
+
+			<h2 id="3-abschnitt">3 Abschnitt</h2>
+			<p>Dies ist der erste Absatz von Abschnitt 3.</p>
+
+			<footer>
+				<p>Veröffentlicht: <time>Mittwoch, 26.1.2011</time>
+			</footer>
+		</article>
+		<div id="search">
+			<form id="sf" action="search" method="get">
+				<fieldset>
+					<legend>Suche</legend>
+					<input name="s" type="text">
+					<input name="submit" type="submit" value="OK">
+				</fieldset>
+			</form>
+		</div>
+		<footer id="about">
+			<p>© 2008 - 2011 – Paul Vorbach. <a href="about/legal">Impressum</a>.
+		</footer>
+	</body>
+</html>
