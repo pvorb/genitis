@@ -20,7 +20,7 @@ if (isset($_GET['s'])) {
 	<body>
 		<div id="title"><a href="../../">vorb.de</a></div>
 		<ul id="branch" class="nav">
-			<li><a href="http://www.genitis.org">Genitis</a></li>
+			<li><a href="http://genitis.org">Genitis</a></li>
 		</ul>
 		<ol id="path" class="nav">
 			<li><span>Fehler</span></li>

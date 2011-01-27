@@ -31,7 +31,7 @@ if (isset($_GET['s'])) {
 			<h1 id="item-1">Seite nicht gefunden</h1>
 			<div class="content">
 <?php if (isset($missing_page)): ?>
-				<p>Die Seite <code class="url">http://www.genitis.org/<?php echo $missing_page ?></code> konnte nicht gefunden werden.</p>
+				<p>Die Seite <code class="url">http://genitis.org/<?php echo $missing_page ?></code> konnte nicht gefunden werden.</p>
 <?php else: ?>
 				<p>Die angeforderte Seite konnte nicht gefunden werden.</p>
 <?php endif; ?>
