@@ -39,6 +39,8 @@ $file_ext = array(
 );
 
 $modules = array(
+	'user-input/user-input.php',
+	'comment/comment.php'
 );
 
 // ---------------------

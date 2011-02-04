@@ -7,36 +7,38 @@
  * @package org.genitis.yuki
  */
 
+// Requires conf.php
 require 'conf.php';
 require DIR_LIB.'functions.php';
 
-$url = $_GET['url']; // request
+// Exit, if GET parameter 'url' is not set
+if (!isset($_GET['url']))
+	exit;
 
-// Manage redirections
-require 'redirect.php';
-// If a redirection for $url is defined, make a redirect as defined.
-if (!isset($_GET['sub']) && isset($redirections[$url])) {
-	// If the redirection does not include sth. like http://,
-	// make a relative redirect.
-	if (strpos($redirections[$url], '://') === FALSE)
-		redirect(301, $redirections[$url], FALSE, FALSE);
-	// Otherwise redirect absolutely.
-	else
-		redirect(301, $redirections[$url], FALSE, TRUE);
-}
+$url = $_GET['url']; // request
 
 // Check for GET parameter 'file'
 if (isset($_GET['file'])) {
+	// Load necessary modules
+	load_modules($modules);
 	// Include file
 	get_file($url);
 }
 // Check for GET parameter 'dir'
 elseif (isset($_GET['dir'])) {
+	// Load necessary modules
+	load_modules($modules);
 	// Include dir
 	get_dir($url);
 }
 // Check for GET parameter 'err'
 elseif (isset($_GET['err'])) {
-	// Redirect relatively to a 404 error.
-	redirect(404, ERROR_404, $url, FALSE);
+	require 'redirect.php';
+
+	// If a redirection for $url is defined, make a redirect as defined.
+	if (isset($redirections[$url]))
+		redirect(301, $redirections[$url]);
+	// Otherwise redirect to a 404 error.
+	else
+		redirect(404, ERROR_404, $url);
 }
