@@ -17,8 +17,7 @@
 	p + p { text-indent: 1em; }
 	em > em, strong > strong { letter-spacing: 1pt; }
 	sup, sub { font-size: 0.8em; }
-	address, figure { margin: .5em 0; }
-	address { font-style: italic; }
+	address { font-style: italic; margin: .5em 0; }
 	address .email { display: inline-block; margin-top: .35em; }
 	pre, code { font-family: monospace; }
 	dt { display: list-item; font-size: 1.25em; list-style: square; margin: .5em 0 .2em 2em; }
@@ -47,8 +46,8 @@
 	/* general content*/
 	h1, h2, h3, h4, h5, h6 { margin: .6em 0 .4em; }
 	h1:first-child, h2:first-child, h3:first-child { margin-top: 0; }
-	#brand, #branches, #search, h1, h2, h3, h4, h5, h6, dt, #toc, article footer { font-family: Candara, sans-serif; font-weight: normal; }
-	article footer { background: #bbb; padding: 0 .5em; border: 1px solid #ddd; border-width: 1px 0; }
+	#brand, #branches, #search, h1, h2, h3, h4, h5, h6, dt, #toc, article header, article footer { font-family: Candara, sans-serif; font-weight: normal; }
+	article footer, article header .meta { background: #ddd; padding: 0 10px; border: 1px solid #bbb; border-width: 1px 0; }
 	.fig > * { padding: 0 0 1px; }
 	.r { float: right; }
 	.l { float: left; }
@@ -103,7 +102,7 @@
 	
 	#content, #content article, #content section, #content aside { overflow: hidden; }
 
-	#comments, #comments form { margin: 1em 0; }
+	#comments { margin: 1em 0; }
 	#about { font-size: .8em; margin-top: 3em; margin-bottom: 4em; padding: 1em 0; }
 }
 
@@ -150,7 +149,7 @@
 	#path { width: 270px; margin-bottom: 3em; margin-top: 0; }
 	
 	/* content */
-	#content > * aside { float: right; width: 140px; border: solid #ddd; border-width: 1px 0; margin: 0 0 .5em .5em; }
+	/*#content > * aside { float: right; width: 140px; border: solid #ddd; border-width: 1px 0; margin: 0 0 .5em .5em; }*/
 }
 
 /* Handheld AND Netbook screens (everything up to 979px) */
@@ -172,7 +171,7 @@
 	body { margin-left: 100px; width: 860px; }   
 	
 	/* top bar */
-	#branches { width: 540px; }
+	#branches { width: 520px; }
 	
 	#search, #sf legend { color: #fff; }
 	#search { position: absolute; top: 0; left: 640px; width: 320px; }
@@ -181,23 +180,43 @@
 	#sf input, #sf legend { margin: 0; }
 	
 	#path { width: 520px; margin-bottom: 1em; margin-top: 0; }
-	
+
 	/* content */
+	#content header h1, #content header h2, #content header h3 { margin: 0 0 .1em; }
+
+	#content h1,
+	#content p,
+	#comments article,
+	#comments form { width: 520px; }
+
+	#content p, #comments form { float: left; }
+	#content header p { margin-bottom: .8em; width: 500px; }
+	#content header figure,
+	#content aside { float: right; }
+	#content aside * { width: 320px; }
+	#content aside { border-bottom: 1px solid #bbb; padding-bottom: .5em; }
+	#content footer, #comments, #comments article, #comments section { clear: both; }
+	#content aside, #comments article p { clear: right; }
+	
+	#content footer p,
+	#comments article header p { float: none; }
+
+	/* teasers */
 	#content .teasers { width: 860px; }
 	#content .teasers article { float: left; }
 	#content .teasers article:first-child { border-right: 1px solid #ddd; margin-right: 20px; padding-right: 20px; }
 	#content .teasers.two article { width: 409px; }
 	#content .teasers.three article { width: 259px; }
 	#content .teasers.three article:last-child { border-left: 1px solid #ddd; margin-left: 20px; padding-left: 20px; }
+		
+	/* comments */
+	#comments article { border-top: 1px solid #bbb; padding-top: .5em; }
+	#comments article p { float: right; width: 370px; }
+	#comments article header { float: left; margin-right: 20px; width: 130px; }
+	#comments article header p { width: 130px; }
 	
-	#content > aside { width: 320px; }
-	section#content > article, section#content > section { float: left; width: 520px; }
-	section#content > aside { margin-left: 540px; }
-	
-	article#content { width: 860px; }
-	article#content > aside { float: right; margin: 0 0 1em 20px; }
-	
-	#content > * aside { border: 1px solid #ddd; border-width: 1px 0; padding: 10px; }
+	#comments form input, #comments form textarea { font-family: monospace; }
+	#comments form textarea { line-height: 1.5; padding: 5px 10px; width: 500px; }
 }
 
 @media print {
