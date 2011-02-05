@@ -5,3 +5,5 @@ code .ilc { color: #181; }
 code .rtn { color: #900; }
 code .doc { color: #06c; }
 code .kwd, code .rtn, code .doc-kwd { font-weight: 700; }
+
+span.dir, span.file, span.var { background: #ddd; font-family: monospace; padding: .25em; }

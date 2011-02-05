@@ -99,7 +99,7 @@
 	
 	pre, code { overflow: auto; }
 	
-	h1:target, h2:target, h3:target { border: 1px dotted #eee; border-width: 1px 0 1px; padding: 0 .3em; }
+	h1:target, h2:target, h3:target { border: 1px dotted #ddd; border-width: 1px 0 1px; padding: 0 .3em; }
 	
 	#content, #content article, #content section, #content aside { overflow: hidden; }
 
