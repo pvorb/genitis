@@ -30,8 +30,8 @@ define('ERROR_404', 'error/404');
 define('ENDL', "\n");
 define('INDENT', "\t");
 
-define('DATE_FORMAT', 'M d, Y');
-define('TIME_FORMAT', 'g:m a');
+define('DATE_FORMAT', 'd.m.Y');
+define('TIME_FORMAT', 'H:m \U\h\r');
 
 $file_ext = array(
 	'.html',

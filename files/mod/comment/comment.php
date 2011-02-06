@@ -36,8 +36,12 @@ define('COMMENT_MODE_SAVE', 2);
 define('COMMENT_MODE_SAVED', 3);
 
 class comment {
-	private $mode = 0, $message = '', $user = '', $email = '', $website = '',
-		$date = '', $time = '', $errors = array(), $is_valid = FALSE;
+	private $mode = 0, $message = '', $user = '', $email = '',
+		$website = '', $spam = '', $datetime = '',
+		$date = '', $time = '';
+
+	private $errors = array(),
+		$is_valid = FALSE;
 
 	/**
 	 * Creates a new comment object.
@@ -57,10 +61,13 @@ class comment {
 			$this->user    = $_POST['cf-name'];
 			//$this->email   = $_POST['cf-email'];
 			$this->website = $_POST['cf-website'];
+			$this->spam    = isset($_POST['cf-spam']) ? TRUE : FALSE;
 
 			// Set current date and time.
-			$this->date    = current_date();
-			$this->time    = current_time();
+			$now = time();
+			$this->datetime = date('c', $now);
+			$this->date     = format_date($now+3600);
+			$this->time     = format_time($now+3600);
 		}
 	}
 
@@ -140,6 +147,8 @@ class comment {
 			$this->errors['website'] = 'website';
 		//if (!validate_email($this->email))
 		//	$this->errors['email'] = 'email';
+		if (!$this->spam)
+			$this->errors['spam'] = 'spam';
 
 		if (count($this->errors) == 0)
 			$this->is_valid = TRUE;
@@ -155,10 +164,6 @@ class comment {
 		$this->name    = sanitize_string($_POST['cf-name']);
 		//$this->email   = $_POST['cf-email'];
 		$this->website = sanitize_url($_POST['cf-website']);
-
-		// Get date, time
-		$this->date    = current_date();
-		$this->time    = current_time();
 	}
 
 	/**
@@ -172,6 +177,7 @@ class comment {
 		$comment = str_replace('{{{comment_by}}}', $this->website
 				? '<a href="'.$this->website.'">'.$this->name.'</a>'
 				: '<span>'.$this->name.'</span>', $comment);
+		$comment = str_replace('{{{comment_datetime}}}', $this->datetime, $comment);
 		$comment = str_replace('{{{comment_date}}}', $this->date, $comment);
 		$comment = str_replace('{{{comment_time}}}', $this->time, $comment);
 

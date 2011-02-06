@@ -12,7 +12,7 @@ define('PREG_PROTOCOL', '#^([[:alpha:]]+://|mailto:)#i');
 define('PREG_MESSAGE', '#^[[:^cntrl:]]+$#');
 define('PREG_NAME', '#^[^[:cntrl:]<>]+$#');
 define('PREG_EMAIL', '#^[[:alnum:]\\.!\#\%&\'*+-/=?\^_`{|}\~" ]+@([[:alnum:]äöü\-]+\.)+[[:alpha:]]+$#i'); // not very strict
-define('PREG_URL', '#^(((https?:)?//)?([[:alnum:]äöü\-]+.)+[[:alpha:]]+(/[^[:cntrl:]<>]*)?)?$#i');
+define('PREG_URL', '#^(((https?:)?//)?([[:alnum:]äöü\-]+\.)+[[:alpha:]]+(/[^[:cntrl:]<>]*)?)?$#i');
 
 /**
  * Matches strings that begin with a protocol.

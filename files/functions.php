@@ -62,19 +62,19 @@ function load_modules(&$modules) {
 }
 
 /**
- * Returns the current date as defined in DATE_FORMAT.
+ * Returns the given timestamp as defined in DATE_FORMAT.
  * @return string
  */
-function current_date() {
-	return date(DATE_FORMAT);
+function format_date($timestamp) {
+	return date(DATE_FORMAT, $timestamp);
 }
 
 /**
- * Return the current time as defined in TIME_FORMAT.
+ * Return the given timestamp as defined in TIME_FORMAT.
  * @return string
  */
-function current_time() {
-	return date(TIME_FORMAT);
+function format_time($timestamp) {
+	return date(TIME_FORMAT, $timestamp);
 }
 
 /**

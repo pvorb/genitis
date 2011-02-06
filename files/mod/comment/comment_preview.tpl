@@ -1,4 +1,15 @@
-<a id="new-comment"></a>
+<h3 id="new-comment">Vorschau</h3>
+<article class="new">
+	<header>
+		<p><?php
+if ($this->website)
+	echo '<a href="'.$this->website.'">'.$this->name.'</a>';
+else
+	echo $this->name;
+?> schrieb <time datetime="<?php echo $this->datetime; ?>">am <?php echo $this->date; ?> um <?php echo $this->time; ?></time></p>
+	</header>
+<?php echo $this->message; ?>
+</article>
 <?php if ($this->errors): ?>
 <h3>Der Kommentar enthält Fehler.</h3>
 <ol>
@@ -18,21 +29,12 @@
 			case 'email':
 				echo 'Die eingegebene E-Mail-Adresse war ungültig. Dieses Feld kann auch leer bleiben.';
 			break;
+			case 'spam':
+				echo 'Sorry, aber Spambots werden nicht geduldet.';
+			break;
 		}
 		echo '</a></li>'.ENDL;
 	}
 ?>
 </ol>
 <?php endif; ?>
-<h3>Vorschau</h3>
-<article class="preview">
-	<header>
-		<p><?php
-if ($this->website)
-	echo '<a href="'.$this->website.'">'.$this->name.'</a>';
-else
-	echo $this->name;
-?> schrieb <time>am <?php echo $this->date; ?> um <?php echo $this->time; ?></time>.</p>
-	</header>
-<?php echo $this->message; ?>
-</article>

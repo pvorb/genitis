@@ -3,14 +3,14 @@
 // Depending on if the user has pressed the commit button or the preview button
 // an empty form will be included or not.
 if ($this->mode != COMMENT_MODE_LIST && $this->mode != COMMENT_MODE_SAVED): ?>
-	<h3 id="">Dein Kommentar</h3>
+	<h3>Dein Kommentar</h3>
 	<textarea name="cf-message" rows="15" cols="60" id="cf-message"<?php if(isset($this->errors['message'])) echo ' class="error"'; ?>><?php echo $_POST['cf-message']; ?></textarea><br />
 	<input name="cf-name" value="<?php echo $this->name; ?>" type="text" size="25" id="cf-name"<?php if (isset($this->errors['name'])) echo ' class="error"'?> />
 	<label for="cf-name">Name</label><br>
 	<input name="cf-website" value="<?php echo $this->website; ?>" type="text" size="25" id="cf-website"<?php if (isset($this->errors['website'])) echo ' class="error"'?> />
 	<label for="cf-website">Website</label><br>
-	<!--<input name="cf-email" value="<?php echo $this->email; ?>" type="text" size="25" id="cf-email"<?php if (isset($this->errors['email'])) echo ' class="error"'?> />
-	<label for="cf-email">E-Mail</label><br>-->
+	<input name="cf-spam"<?php if($this->spam) echo ' checked="checked"'?> type="checkbox" id="cf-spam" <?php if(isset($this->errors['spam'])) echo ' class="error"'; ?>>
+	<label for="cf-spam">Bin weder Hund noch Spambot.</label><br>
 <?php else: ?>
 	<h3>Schreibe einen Kommentar</h3>
 	<textarea name="cf-message" rows="12" cols="60" placeholder="Kommentar" id="cf-message"></textarea><br>
@@ -18,10 +18,8 @@ if ($this->mode != COMMENT_MODE_LIST && $this->mode != COMMENT_MODE_SAVED): ?>
 	<label for="cf-name">Name</label><br>
 	<input name="cf-website" type="text" size="30" id="cf-website">
 	<label for="cf-website">Website</label><br>
-	<!--<input name="cf-email" type="text" size="30" id="cf-email">
-	<label for="cf-email">E-Mail</label><br>
 	<input name="cf-spam" type="checkbox" id="cf-spam">
-	<label for="cf-spam">Bin weder Hund noch Spambot.</label><br>-->
+	<label for="cf-spam">Bin weder Hund noch Spambot.</label><br>
 <?php endif; ?>
 	<input name="cf-save" type="submit" value="Kommentar abschicken"><input name="cf-preview" type="submit" value="Vorschau">
 </form>
