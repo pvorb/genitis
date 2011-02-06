@@ -14,7 +14,9 @@
 	/* general styles */
 	/* text */
 	p { margin: 0; }
-	p + p { text-indent: 1em; }
+	p + p,
+	p + figure + p,
+	p + aside + p { text-indent: 1em; }
 	em > em, strong > strong { letter-spacing: 1pt; }
 	sup, sub { font-size: 0.8em; }
 	address { font-style: italic; margin: .5em 0; }
@@ -22,6 +24,12 @@
 	pre, code { font-family: monospace; }
 	dt { display: list-item; font-size: 1.25em; list-style: square; margin: .5em 0 .2em 2em; }
 	dd { margin-left: 2.5em; }
+	
+	textarea:target, input:target { border-width: 3px; }
+	input[type=text], textarea { font-family: monospace; line-height: 1.5; }	
+	.error { border: 1px solid #d00; background: #fdd; }
+	input[type=checkbox].error { outline: 1px solid #d00; }
+	input[type=checkbox].error:target { outline: 2px solid #d00; }
 
 	blockquote { font-style: italic; padding: .70em; background: #eee; border: 1px solid #bbb; margin: 1em; overflow: hidden; }
 	blockquote p > cite { display: block; text-align: right; font-style: normal; }
@@ -70,6 +78,8 @@
 	#content.dig > h1, section#content > hgroup { text-align: center; }
 	#content.dig > h1, section#content > hgroup * { font-size: 1.2em; }
 	#content.dig > hgroup { margin-bottom: .5em; }
+	
+	#comments article.new { border-top: 1px solid #3a3; }
 }
 
 @media
@@ -98,9 +108,10 @@
 	
 	pre, code { overflow: auto; }
 	
-	h1:target, h2:target, h3:target { border: 1px dotted #ddd; border-width: 1px 0 1px; padding: 0 .3em; }
+	h1:target, h2:target, h3:target { border: 1px dotted #ddd; border-width: 1px 0 1px; padding: .3em 0; }
 	
-	#content, #content article, #content section, #content aside { overflow: hidden; }
+	#content, #content article, #content footer,
+	#comments, #comments article { overflow: hidden; }
 
 	#comments { margin: 1em 0; }
 	#about { font-size: .8em; margin-top: 3em; margin-bottom: 4em; padding: 1em 0; }
@@ -168,55 +179,94 @@
 	projection and (min-width: 980px),
 	tv and (min-width: 980px)
 {
-	body { margin-left: 100px; width: 860px; }   
-	
-	/* top bar */
-	#branches { width: 520px; }
-	
-	#search, #sf legend { color: #fff; }
-	#search { position: absolute; top: 0; left: 640px; width: 320px; }
-	#sf { background: #000; }
-	#sf fieldset { border-color: #333; }
-	#sf input, #sf legend { margin: 0; }
-	
-	#path { width: 520px; margin-bottom: 1em; margin-top: 0; }
+	/* widths */
+	body { margin-left: 100px; }
 
-	/* content */
-	#content header h1, #content header h2, #content header h3 { margin: 0 0 .1em; }
+	body,
+	#content header,
+	#content .teasers,
+	#comments > section { width: 860px; }
+	
+	#content > footer { width: 840px; }
 
-	#content h1,
-	#content p,
+	#branches, #path,
+	#content > *, #content header h1,
+	#comments h2, #comments h3,
+	#comments article, #comments form { width: 520px; }
+	
+	#content .meta,
+	#comments textarea { width: 500px; }
+	
+	#comments > ol { width: 480px; }
+	
+	#comments article > * { width: 370px; } 
+
+	#content aside,
+	#comments aside,
+	#search { width: 320px; }
+	
+	#comments article header { width: 130px; }
+	
+	#comments form input[type=text] { width: 50%; }
+	
+	/* floating */
+	#content .teasers article,
+	#content .meta,
+	#comments article header,
+	#comments form { float: left; }
+	
+	#content .teaser,
+	#content aside,
+	#comments article p,
+	#comments aside { float: right; }
+	
+	#content footer p { float: none; }
+
+	/* clearing */
 	#comments article,
-	#comments form { width: 520px; }
+	#comments section { clear: both; }
 
-	#content p, #comments form { float: left; }
-	#content header p { margin-bottom: .8em; width: 500px; }
-	#content header figure,
-	#content aside { float: right; }
-	#content aside * { width: 320px; }
-	#content aside { border-bottom: 1px solid #bbb; padding-bottom: .5em; }
-	#content footer, #comments, #comments article, #comments section { clear: both; }
-	#content aside, #comments article p { clear: right; }
+	#content footer,
+	#content aside { clear: right; }
+
+	/* edging */
+	#content,
+	#content footer,
+	#comments { margin-top: 1em; }
 	
-	#content footer p,
-	#comments article header p { float: none; }
+	#path { margin-bottom: 1em; }
+
+	#comments article,
+	#content header .meta { margin-bottom: .5em;}
+	
+	#comments article header { margin-right: 20px; }
+
+	#content header h1,
+	#content header h2,
+	#content header h3 { margin: 0 0 .1em; }
+	
+	#sf input, #sf legend { margin: 0; }
+
+	#comments ol { padding-left: 40px; } 
+	#content aside { padding-bottom: .5em; }
+	#comments article { padding-top: .5em; }
+	#comments textarea { padding: .5em 10px; }
+
+	#content aside { border-bottom: 1px solid #bbb; }
+	#comments article { border-top: 1px solid #bbb; }
+	#sf fieldset { border-color: #333; }
+
+	/* misc */
+	#search, #sf legend { color: #fff; }
+	#search { position: absolute; top: 0; left: 640px; }
+	#sf { background: #000; }
 
 	/* teasers */
-	#content .teasers { width: 860px; }
 	#content .teasers article { float: left; }
 	#content .teasers article:first-child { border-right: 1px solid #ddd; margin-right: 20px; padding-right: 20px; }
 	#content .teasers.two article { width: 409px; }
 	#content .teasers.three article { width: 259px; }
 	#content .teasers.three article:last-child { border-left: 1px solid #ddd; margin-left: 20px; padding-left: 20px; }
-		
-	/* comments */
-	#comments article { border-top: 1px solid #bbb; padding-top: .5em; }
-	#comments article p { float: right; width: 370px; }
-	#comments article header { float: left; margin-right: 20px; width: 130px; }
-	#comments article header p { width: 130px; }
-	
-	#comments form input, #comments form textarea { font-family: monospace; }
-	#comments form textarea { line-height: 1.5; padding: 5px 10px; width: 500px; }
 }
 
 @media print {
