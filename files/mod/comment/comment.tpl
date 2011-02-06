@@ -1,8 +1,6 @@
-<div class="comment">
-	<div class="content">
+<article>
+	<header>
+		<p>{{{comment_by}}} schrieb <time>am {{{comment_date}}} um {{{comment_time}}}</time>.</p>
+	</header>
 {{{comment_message}}}
-	</div>
-	<div class="meta">
-		Comment by {{{comment_by}}} on {{{comment_date}}} at {{{comment_time}}}.
-	</div>
-</div>
+</article>

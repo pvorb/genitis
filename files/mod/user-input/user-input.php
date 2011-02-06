@@ -9,7 +9,7 @@
 
 define('PREG_IP', '#(\d{0,3}\.){3}\d{0,3}#i');
 define('PREG_PROTOCOL', '#^([[:alpha:]]+://|mailto:)#i');
-define('PREG_MESSAGE', '#^[[:space:]]*$#');
+define('PREG_MESSAGE', '#^[[:^cntrl:]]+$#');
 define('PREG_NAME', '#^[^[:cntrl:]<>]+$#');
 define('PREG_EMAIL', '#^[[:alnum:]\\.!\#\%&\'*+-/=?\^_`{|}\~" ]+@([[:alnum:]äöü\-]+\.)+[[:alpha:]]+$#i'); // not very strict
 define('PREG_URL', '#^(((https?:)?//)?([[:alnum:]äöü\-]+.)+[[:alpha:]]+(/[^[:cntrl:]<>]*)?)?$#i');

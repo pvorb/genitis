@@ -1,29 +1,27 @@
-<form action="" method="post">
+<form action="#new-comment" method="post" id="cf">
 <?php
 // Depending on if the user has pressed the commit button or the preview button
 // an empty form will be included or not.
-if ($this->mode != COMMENT_MODE_LIST): ?>
-	<h3>Dein Kommentar</h3>
-	<label for="comment-form-message">Kommentar</label><br>
-	<textarea name="comment-message" rows="15" cols="60" id="comment-form-message"<?php if(isset($this->errors['message'])) echo ' class="error"'; ?>><?php echo $_POST['comment-message']; ?></textarea><br />
-	<input name="comment-name" value="<?php echo $this->name; ?>" type="text" size="25" id="comment-form-name"<?php if (isset($this->errors['name'])) echo ' class="error"'?> />
-	<label for="comment-form-name">Name</label><br>
-	<input name="comment-website" value="<?php echo $this->website; ?>" type="text" size="25" id="comment-form-website"<?php if (isset($this->errors['website'])) echo ' class="error"'?> />
-	<label for="comment-form-website">Website</label><br>
-	<input name="comment-email" value="<?php echo $this->email; ?>" type="text" size="25" id="comment-form-email"<?php if (isset($this->errors['email'])) echo ' class="error"'?> />
-	<label for="comment-form-email">E-Mail</label><br>
+if ($this->mode != COMMENT_MODE_LIST && $this->mode != COMMENT_MODE_SAVED): ?>
+	<h3 id="">Dein Kommentar</h3>
+	<textarea name="cf-message" rows="15" cols="60" id="cf-message"<?php if(isset($this->errors['message'])) echo ' class="error"'; ?>><?php echo $_POST['cf-message']; ?></textarea><br />
+	<input name="cf-name" value="<?php echo $this->name; ?>" type="text" size="25" id="cf-name"<?php if (isset($this->errors['name'])) echo ' class="error"'?> />
+	<label for="cf-name">Name</label><br>
+	<input name="cf-website" value="<?php echo $this->website; ?>" type="text" size="25" id="cf-website"<?php if (isset($this->errors['website'])) echo ' class="error"'?> />
+	<label for="cf-website">Website</label><br>
+	<!--<input name="cf-email" value="<?php echo $this->email; ?>" type="text" size="25" id="cf-email"<?php if (isset($this->errors['email'])) echo ' class="error"'?> />
+	<label for="cf-email">E-Mail</label><br>-->
 <?php else: ?>
 	<h3>Schreibe einen Kommentar</h3>
-	<label for="comment-form-message">Kommentar</label><br>
-	<textarea name="comment-message" rows="18" cols="55" id="comment-form-message"></textarea><br>
-	<input name="comment-name" type="text" size="25" id="comment-form-name">
-	<label for="comment-form-name">Name</label><br>
-	<input name="comment-website" type="text" size="25" id="comment-form-website">
-	<label for="comment-form-website">Website</label><br>
-	<input name="comment-email" type="text" size="25" id="comment-form-email">
-	<label for="comment-form-email">E-Mail</label><br>
-	<input name="comment-spam" type="checkbox" id="comment-form-spam">
-	<label for="comment-form-spam">Diese Nachricht enthält keinen Spam.</label><br>
+	<textarea name="cf-message" rows="12" cols="60" placeholder="Kommentar" id="cf-message"></textarea><br>
+	<input name="cf-name" type="text" size="30" id="cf-name">
+	<label for="cf-name">Name</label><br>
+	<input name="cf-website" type="text" size="30" id="cf-website">
+	<label for="cf-website">Website</label><br>
+	<!--<input name="cf-email" type="text" size="30" id="cf-email">
+	<label for="cf-email">E-Mail</label><br>
+	<input name="cf-spam" type="checkbox" id="cf-spam">
+	<label for="cf-spam">Bin weder Hund noch Spambot.</label><br>-->
 <?php endif; ?>
-	<input name="comment-save" type="submit" value="Kommentar abschicken"><input name="comment-preview" type="submit" value="Vorschau">
+	<input name="cf-save" type="submit" value="Kommentar abschicken"><input name="cf-preview" type="submit" value="Vorschau">
 </form>

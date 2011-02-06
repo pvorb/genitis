@@ -1,39 +1,38 @@
-<div class="preview">
+<a id="new-comment"></a>
 <?php if ($this->errors): ?>
-	<h3>Your comment is invalid.</h3>
-	<ol>
+<h3>Der Kommentar enthält Fehler.</h3>
+<ol>
 <?php
 	foreach ($this->errors as $error) {
-		echo '<li><a href="#comment-form-'.$error.'">';
+		echo '<li><a href="#cf-'.$error.'">';
 		switch ($error) {
 			case 'message':
-				echo 'The message must not be empty.';
+				echo 'Die Nachricht darf nicht leer sein.';
 			break;
 			case 'name':
-				echo 'You must enter a name.';
+				echo 'Der Name darf nicht leer sein.';
 			break;
 			case 'website':
-				echo 'The website you entered was invalid. You may also leave this field empty.';
+				echo 'Die eingegebene Website war ungültig. Dieses Feld kann auch leer bleiben.';
 			break;
 			case 'email':
-				echo 'You must enter a valid e-mail address.';
+				echo 'Die eingegebene E-Mail-Adresse war ungültig. Dieses Feld kann auch leer bleiben.';
 			break;
 		}
 		echo '</a></li>'.ENDL;
 	}
 ?>
-	</ol>
+</ol>
 <?php endif; ?>
-	<h3>Preview</h3>
-	<div class="content">
-<?php echo $this->message; ?>
-	</div>
-	<div class="meta">
-		Comment by <?php
+<h3>Vorschau</h3>
+<article class="preview">
+	<header>
+		<p><?php
 if ($this->website)
 	echo '<a href="'.$this->website.'">'.$this->name.'</a>';
 else
 	echo $this->name;
-?> on <?php echo $this->date; ?> at <?php echo $this->time; ?>.
-	</div>
-</div>
+?> schrieb <time>am <?php echo $this->date; ?> um <?php echo $this->time; ?></time>.</p>
+	</header>
+<?php echo $this->message; ?>
+</article>

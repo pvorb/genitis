@@ -15,9 +15,25 @@
  * @package org.genitis.yuki.mod.comment
  */
 
+/**
+ * List all existing comments.
+ */
 define('COMMENT_MODE_LIST', 0);
+
+/**
+ * Preview the comment.
+ */
 define('COMMENT_MODE_PREVIEW', 1);
+
+/**
+ * Save the comment.
+ */
 define('COMMENT_MODE_SAVE', 2);
+
+/**
+ * Comment has been saved.
+ */
+define('COMMENT_MODE_SAVED', 3);
 
 class comment {
 	private $mode = 0, $message = '', $user = '', $email = '', $website = '',
@@ -27,9 +43,9 @@ class comment {
 	 * Creates a new comment object.
 	 */
 	function __construct() {
-		if (isset($_POST['comment-preview'])) {
+		if (isset($_POST['cf-preview'])) {
 			$this->mode = COMMENT_MODE_PREVIEW;
-		} elseif (isset($_POST['comment-save'])) {
+		} elseif (isset($_POST['cf-save'])) {
 			$this->mode = COMMENT_MODE_SAVE;
 		} else {
 			$this->mode = COMMENT_MODE_LIST;
@@ -37,10 +53,10 @@ class comment {
 
 		if ($this->mode != COMMENT_MODE_LIST) {
 			// Set new comment data.
-			$this->message = $_POST['comment-message'];
-			$this->user    = $_POST['comment-name'];
-			$this->email   = $_POST['comment-email'];
-			$this->website = $_POST['comment-website'];
+			$this->message = $_POST['cf-message'];
+			$this->user    = $_POST['cf-name'];
+			//$this->email   = $_POST['cf-email'];
+			$this->website = $_POST['cf-website'];
 
 			// Set current date and time.
 			$this->date    = current_date();
@@ -88,6 +104,8 @@ class comment {
 			if ($this->is_valid) {
 				$this->save();
 				include 'comment_new.tpl';
+				// Set to saved.
+				$this->mode = COMMENT_MODE_SAVED;
 			}
 			// Do not save it, if it is not valid and show the preview.
 			else {
@@ -120,8 +138,8 @@ class comment {
 			$this->errors['name'] = 'name';
 		if (!validate_url($this->website))
 			$this->errors['website'] = 'website';
-		if (!validate_email($this->email))
-			$this->errors['email'] = 'email';
+		//if (!validate_email($this->email))
+		//	$this->errors['email'] = 'email';
 
 		if (count($this->errors) == 0)
 			$this->is_valid = TRUE;
@@ -133,10 +151,10 @@ class comment {
 	 */
 	private function sanitize() {
 		// Sanitize user input
-		$this->message = sanitize_html($_POST['comment-message']);
-		$this->name    = sanitize_string($_POST['comment-name']);
-		$this->email   = $_POST['comment-email'];
-		$this->website = sanitize_url($_POST['comment-website']);
+		$this->message = sanitize_html($_POST['cf-message']);
+		$this->name    = sanitize_string($_POST['cf-name']);
+		//$this->email   = $_POST['cf-email'];
+		$this->website = sanitize_url($_POST['cf-website']);
 
 		// Get date, time
 		$this->date    = current_date();
