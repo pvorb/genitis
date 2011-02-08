@@ -27,35 +27,49 @@
         <li><a href="#content">Inhalt</a>
       </ol>
     </nav>
-    <section id="content">
-      <h1>Dies ist eine sehr lange Überschrift, die sogar mehrere Zeilen
-      umspannt</h1>
-      <article>
+    <article id="content">
+      <header>
+        <h1>Dies ist eine sehr lange Überschrift, die sogar mehrere Zeilen
+        umspannt</h1>
+        <p class="meta">Geschrieben von Autor <time>am 7.2.2011 um 23:00 Uhr</time></p>
+      </header>
+      <section>
         <h2>Spalte 1</h2>
-        <dl class="oview">
-          <dt>Yuki</dt>
-          <dd>Content Management</dd>
-        </dl>
-        <dl>
-          <dt>Genitis</dt>
-          <dd>Meine Website</dd>
-        </dl>
-      </article>
-      <aside>
-        <h2>Seitenleiste</h2>
-        <p>Dies ist eine Seitenleiste.</p>
-      </aside>
-      <article>
+        <p>Vorher noch ein wenig Text.</p>
+        <figure class="full">
+          <img src="/img/teaser.png">
+          <div>Beschreibung des Bilds</div>
+        </figure>
+      </section>
+      <section>
         <h2>Spalte 2</h2>
         <p>Mini-Absatz</p>
-      </article>
+        <figure class="huge">
+          <img src="/img/teaser.png">
+        </figure>
+      </section>
       <aside>
         <h2>Seitenleiste</h2>
         <p>Hier ist die Seitenleiste länger.</p>
         <p>Wirklich.</p>
       </aside>
+    </article>
+    <section id="comments">
+      <h2>Kommentare</h2>
+<?php
+$c = new comment();
+$c->print_list();
+$c->print_form();
+?>
     </section>
-    <aside id="">
+    <aside id="extra">
+      <form id="sf" action="/search" method="get">
+        <fieldset>
+          <legend>Suche</legend>
+          <input name="s" type="text">
+          <input name="submit" type="submit" value="OK">
+        </fieldset>
+      </form>
     </aside>
     <footer id="about">
       <p>© 2011 Paul Vorbach. <a href="/about/legal">Impressum</a>.</p>
