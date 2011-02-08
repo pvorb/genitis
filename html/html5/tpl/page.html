@@ -2,8 +2,9 @@
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>Template | Genitis</title>
+    <title>Page | Genitis</title>
     <link rel="stylesheet" href="/res/css/gorn.css">
+    <link rel="icon" href="/res/img/gorn.ico">
     <link rel="alternate" href="alternate" href="/feed.xml"
     type="application/atom+xml">
     <meta name="author" content="Paul Vorbach">
@@ -15,11 +16,12 @@
     <nav id="nav">
       <ul id="branches">
 	<li><a href="/projects/">Projekte</a>
-        <li><a href="/log/">Blog</a>
+        <li class="active"><a href="/log/">Blog</a>
         <li><a href="/about/">Über</a>
       </ul>
       <ol id="path">
-        <li><span>Template</span>
+        <li><span>Vorlagen</span>
+        <li><span>Seite</span>
       </ol>
       <ol id="access">
         <li><a href="#brand">Top</a>
@@ -55,7 +57,14 @@
         <p>Wirklich.</p>
       </aside>
     </section>
-    <aside id="">
+    <aside id="extra">
+      <form id="sf" action="/search" method="get">
+        <fieldset>
+          <legend>Suche</legend>
+          <input class="term" name="s" type="text">
+          <input class="submit" name="submit" type="submit" value="OK">
+        </fieldset>
+      </form>
     </aside>
     <footer id="about">
       <p>© 2011 Paul Vorbach. <a href="/about/legal">Impressum</a>.</p>

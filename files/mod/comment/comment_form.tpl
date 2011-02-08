@@ -4,7 +4,7 @@
 // an empty form will be included or not.
 if ($this->mode != COMMENT_MODE_LIST && $this->mode != COMMENT_MODE_SAVED): ?>
 	<h3>Dein Kommentar</h3>
-	<textarea name="cf-message" rows="15" cols="60" id="cf-message"<?php if(isset($this->errors['message'])) echo ' class="error"'; ?>><?php echo $_POST['cf-message']; ?></textarea><br />
+	<textarea name="cf-message" rows="15" cols="40" id="cf-message"<?php if(isset($this->errors['message'])) echo ' class="error"'; ?>><?php echo $_POST['cf-message']; ?></textarea><br />
 	<input name="cf-name" value="<?php echo $this->name; ?>" type="text" size="25" id="cf-name"<?php if (isset($this->errors['name'])) echo ' class="error"'?> />
 	<label for="cf-name">Name</label><br>
 	<input name="cf-website" value="<?php echo $this->website; ?>" type="text" size="25" id="cf-website"<?php if (isset($this->errors['website'])) echo ' class="error"'?> />
@@ -13,7 +13,7 @@ if ($this->mode != COMMENT_MODE_LIST && $this->mode != COMMENT_MODE_SAVED): ?>
 	<label for="cf-spam">Bin weder Hund noch Spambot.</label><br>
 <?php else: ?>
 	<h3>Schreibe einen Kommentar</h3>
-	<textarea name="cf-message" rows="12" cols="60" placeholder="Kommentar" id="cf-message"></textarea><br>
+	<textarea name="cf-message" rows="12" cols="40" placeholder="Kommentar" id="cf-message"></textarea><br>
 	<input name="cf-name" type="text" size="30" id="cf-name">
 	<label for="cf-name">Name</label><br>
 	<input name="cf-website" type="text" size="30" id="cf-website">
