@@ -7,9 +7,10 @@
  * @package org.genitis.yuki.mod.user-input
  */
 
+
 define('PREG_IP', '#(\d{0,3}\.){3}\d{0,3}#i');
 define('PREG_PROTOCOL', '#^([[:alpha:]]+://|mailto:)#i');
-define('PREG_MESSAGE', '#^[[:^cntrl:]]+$#');
+define('PREG_MESSAGE', '#^([^ \n]+[ \n]*)+$#');
 define('PREG_NAME', '#^[^[:cntrl:]<>]+$#');
 define('PREG_EMAIL', '#^[[:alnum:]\\.!\#\%&\'*+-/=?\^_`{|}\~" ]+@([[:alnum:]äöü\-]+\.)+[[:alpha:]]+$#i'); // not very strict
 define('PREG_URL', '#^(((https?:)?//)?([[:alnum:]äöü\-]+\.)+[[:alpha:]]+(/[^[:cntrl:]<>]*)?)?$#i');
@@ -52,6 +53,10 @@ function validate_email($email) {
  */
 function validate_url($url) {
 	return preg_match(PREG_URL, $url);
+}
+
+function validate_spam($spam) {
+	return ($spam) ? TRUE : FALSE;
 }
 
 /**

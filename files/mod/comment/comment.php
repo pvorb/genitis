@@ -59,7 +59,7 @@ class comment {
 			// Set new comment data.
 			$this->message = $_POST['cf-message'];
 			$this->user    = $_POST['cf-name'];
-			//$this->email   = $_POST['cf-email'];
+			$this->email   = $_POST['cf-email'];
 			$this->website = $_POST['cf-website'];
 			$this->spam    = isset($_POST['cf-spam']) ? TRUE : FALSE;
 
@@ -139,16 +139,11 @@ class comment {
 		global $comment_required;
 
 		// Validate values.
-		if (!validate_message($this->message))
-			$this->errors['message'] = 'message';
-		if (!validate_name($this->name))
-			$this->errors['name'] = 'name';
-		if (!validate_url($this->website))
-			$this->errors['website'] = 'website';
-		//if (!validate_email($this->email))
-		//	$this->errors['email'] = 'email';
-		if (!$this->spam)
-			$this->errors['spam'] = 'spam';
+		foreach ($comment_required as $field => $req) {
+			$fn = 'validate_'.$field;
+			if ($req && (empty($this->$field) || !$fn($this->$field)))
+				$this->errors[$field] = $field;
+		}
 
 		if (count($this->errors) == 0)
 			$this->is_valid = TRUE;
@@ -162,7 +157,7 @@ class comment {
 		// Sanitize user input
 		$this->message = sanitize_html($_POST['cf-message']);
 		$this->name    = sanitize_string($_POST['cf-name']);
-		//$this->email   = $_POST['cf-email'];
+		$this->email   = $_POST['cf-email'];
 		$this->website = sanitize_url($_POST['cf-website']);
 	}
 
@@ -180,6 +175,7 @@ class comment {
 		$comment = str_replace('{{{comment_datetime}}}', $this->datetime, $comment);
 		$comment = str_replace('{{{comment_date}}}', $this->date, $comment);
 		$comment = str_replace('{{{comment_time}}}', $this->time, $comment);
+		$comment = str_replace('{{{comment_emailhash}}}', md5($this->email), $comment);
 
 		// Open comments file for writing
 		// If this is a directory, open DEFAULT_FILE.comments
