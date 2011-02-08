@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/res/css/gorn.css">
     <link rel="icon" href="/res/img/gorn.ico">
     <link rel="alternate" href="alternate" href="/feed.xml"
-    type="application/atom+xml">
+      type="application/atom+xml">
     <meta name="author" content="Paul Vorbach">
     <meta name="keywords" content="Kategorien">
     <meta name="description" content="Beschreibung">
@@ -16,16 +16,18 @@
     <nav id="nav">
       <ul id="branches">
 	<li><a href="/projects/">Projekte</a>
-        <li><a href="/log/">Blog</a>
+        <li class="active"><a href="/log/">Blog</a>
         <li><a href="/about/">Über</a>
       </ul>
       <ol id="path">
-        <li><span>Template</span>
+        <li><span>Vorlagen</span>
+        <li><span>Kategorie</span>
       </ol>
       <ol id="access">
         <li><a href="#brand">Top</a>
         <li><a href="#nav">Navigation</a>
         <li><a href="#content">Inhalt</a>
+        <li><a href="#sf">Suche</a>
       </ol>
     </nav>
     <section id="content">
@@ -41,6 +43,7 @@
               <figure><img src="/img/teaser.png"></figure>
             </aside>
           </header>
+          <p>Inhalt des Artikels.</p>
         </article>
       </section>
       <section class="teasers three">
@@ -56,10 +59,13 @@
         </article>
         <article>
           <header>
-            <h2>Artikel 3</h2>
+            <h2>Artikel 4</h2>
           </header>
         </article>
       </section>
+      <footer>
+        <p class="meta">Update</p>
+      </footer>
     </section>
     <aside id="extra">
       <form id="sf" action="/search" method="get">

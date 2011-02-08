@@ -43,6 +43,14 @@ $modules = array(
 	'comment/comment.php'
 );
 
+$comment_required = array(
+	'message' => TRUE,
+	'name' => TRUE,
+	'email' => FALSE,
+	'website' => FALSE,
+	'spam' => TRUE
+);
+
 // ---------------------
 // Standard definitions:
 // ---------------------
