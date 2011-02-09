@@ -34,6 +34,8 @@ p, #branches, #sf input { margin: 0; }
 h1, h2, h3, h4 { margin: .6em 0 .3em; }
 #sf fieldset { margin: 0 2px 2px; }
 #about { margin: 3em 0; }
+p { margin: 0 0 .5em; }
+.meta p { margin: .5em 0; }
 
 #path,
 h1:first-child,
@@ -111,8 +113,6 @@ h1, h2, h3 { line-height: 1.2; }
 
 a { text-decoration: none; }
 
-p + p, p + aside + p { text-indent: 1.5em; }
-
 figure img { vertical-align: bottom; }
 
 /* misc */
@@ -126,7 +126,6 @@ header, footer, article, section, aside, nav { display: block; }
 
 abbr, *[title] { cursor: help; }
 a, a[title], *[title] a, a *[title] { cursor: pointer; }
-
 
 /* temporary form */
 textarea, input { margin: 0 0 .5em; }

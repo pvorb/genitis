@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /dev/
+Disallow: /error/404
+Disallow: /about/legal
+Disallow: /blog/

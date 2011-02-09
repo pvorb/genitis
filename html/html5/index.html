@@ -2,14 +2,16 @@
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>Digest | Genitis</title>
+    <title>Genitis</title>
     <link rel="stylesheet" href="/res/css/gorn.css">
     <link rel="icon" href="/res/img/gorn.ico">
     <link rel="alternate" href="alternate" href="/feed.xml"
       type="application/atom+xml">
     <meta name="author" content="Paul Vorbach">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <link rel="author" href="http://vorb.de">
+    <meta name="keywords" content="Paul Vorbach, Genitis, Homepage">
+    <meta name="description" content="Paul Vorbach sammelt hier seit 2008 seine
+      privaten Projekte und berichtet darüber.">
   </head>
   <body>
     <header id="brand"><a href="/">Genitis</a></header>
@@ -20,8 +22,7 @@
         <li><a href="/about/">Über</a>
       </ul>
       <ol id="path">
-        <li><span>Vorlagen</span>
-        <li><span>Kategorie</span>
+        <li><span>Startseite</span>
       </ol>
       <ol id="access">
         <li><a href="#brand">Top</a>
@@ -32,47 +33,26 @@
     </nav>
     <section id="content">
       <header>
-        <h1>Kategorie</h1>
+        <h1>Willkommen</h1>
       </header>
-      <section class="digest">
-        <article>
-          <header>
-            <h2>Artikel 1</h2>
-            <p class="meta">Geschrieben von Autor <time>am 7.2.2011 um 23:00 Uhr</time></p>
-            <aside class="teaser">
-              <figure><img src="/img/teaser.png"></figure>
-            </aside>
-          </header>
-          <p>Inhalt des Artikels.</p>
-        </article>
-      </section>
-      <section class="teasers three">
-        <article>
-          <header>
-            <h2>Artikel 2</h2>
-          </header>
-        </article>
-        <article>
-          <header>
-            <h2>Artikel 3</h2>
-          </header>
-        </article>
-        <article>
-          <header>
-            <h2>Artikel 4</h2>
-          </header>
-        </article>
-      </section>
-      <footer class="meta">
-        <p>Update</p>
-      </footer>
+      <article>
+        <p>Hier gibt es Informationen rund um</p>
+        <ul>
+          <li><a href="/projects/">meine Projekte</a> und
+          <li><a href="/about/" title="Über Genitis">über diese Website</a>
+            sowie
+          <li><a href="/log/">mein Weblog</a>.
+        </ul>
+        <p>Das Weblog steht ab sofort zur Verfügung, enthält aber bisher noch
+          nicht sehr viele Informationen.</p>
+      </article>
     </section>
     <aside id="extra">
       <form id="sf" action="/search" method="get">
         <fieldset>
           <legend>Suche</legend>
-          <input name="s" type="text">
-          <input name="submit" type="submit" value="OK">
+          <input class="term" name="s" type="text">
+          <input class="submit" name="submit" type="submit" value="OK">
         </fieldset>
       </form>
     </aside>
