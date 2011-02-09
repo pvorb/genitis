@@ -1,19 +1,21 @@
 <h3 id="new-comment">Vorschau</h3>
-<article class="new">
+<article class="new comment">
   <header>
 <?php if ($this->email): ?>
-    <figure class="avatar">
+      <figure class="avatar">
       <img src="http://www.gravatar.com/avatar/<?php echo md5($this->email); ?>?s=60&d=http%3A%2F%2Fgenitis.org%2Fres%2Fimg%2Favatar.png" alt="Avatar" width="60" height="60">
     </figure>
 <?php endif; ?>
-    <p><?php
+    <p class="meta"><?php
 if ($this->website)
 	echo '<a href="'.$this->website.'">'.$this->name.'</a>';
 else
 	echo $this->name;
 ?> schrieb <time datetime="<?php echo $this->datetime; ?>">am <?php echo $this->date; ?> um <?php echo $this->time; ?></time></p>
-	</header>
+    </header>
+  <section class="matter">
 <?php echo $this->message; ?>
+  </section>
 </article>
 <?php if ($this->errors): ?>
 <h3>Der Kommentar enthält Fehler.</h3>
