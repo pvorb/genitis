@@ -18,7 +18,8 @@ body { margin: 0 20px 3em; }
 #brand { top: 0; left: 0; right: 0; }
 
 /* floating */
-#branches li { float: left; }
+#branches li,
+#comments header { float: left; }
 
 hr,
 #brand, #nav, #content footer, #comments, #about,
@@ -46,7 +47,8 @@ dl dt { margin-right: 10px; }
 
 #path,
 #content section, #content article, #content aside,
-#content header .meta { margin-bottom: 1em; }
+#content header .meta,
+#comments article { margin-bottom: 1em; }
 
 /* paddings */
 #brand, #branches, #path { padding: .2em 0; }
@@ -55,6 +57,8 @@ dl dt { margin-right: 10px; }
 #content .meta { padding: .2em 10px; }
 
 #brand { padding-left: 20px; }
+
+#comments article { padding-top: .5em; }
 
 /* borders */
 #cf textarea, #cf input[type=text] { border: 1px solid #666; }
@@ -65,10 +69,10 @@ textarea:target, input:target { border-width: 2px; }
 a:hover, thead th { border-bottom: 1px solid; }
 abbr { border-bottom: 1px dotted; }
 
-#content .meta { border-bottom: 1px solid #bbb; }
-#content .meta { border-top: 1px solid #bbb; }
+#content .meta, #comments header { border-bottom: 1px solid #bbb; }
+#content .meta, #comments article, #comments header { border-top: 1px solid #bbb; }
 
-#comments article.new { border-top: 1px solid #3a3; }
+#comments article.new { border-top: 3px double lime; }
 
 /* colors */
 a { color: #a00; }
@@ -126,17 +130,16 @@ a, a[title], *[title] a, a *[title] { cursor: pointer; }
 /* temporary form */
 textarea, input { margin: 0 0 .5em; }
 #cf textarea, #cf input[type=text] { padding: 5px; }
-#cf textarea { width: 508px; }
 #cf .opt { padding: 0 5px; color: white; background: #a33; }
 
 /*** Resolutions ***/
 
 /* Handheld screens */
 @media
-        screen and (max-width: 619px),
-        projection and (max-width: 619px),
-        tv and (max-width: 619px),
-        handheld
+  screen and (max-width: 639px),
+  projection and (max-width: 639px),
+  tv and (max-width: 639px),
+  handheld
 {
   /* dimensions */
   figure img { width: 100%; }
@@ -151,19 +154,25 @@ textarea, input { margin: 0 0 .5em; }
   
   /* margins */
   #path { margin-top: 1.9em; }
+  
+  /* padding */
+  #comments .avatar { margin: .5em; }
 }
 
 /* Small (e.g. netbook) to large (e.g. desktop) screens */
 @media
-        screen and (min-width: 620px),
-        projection and (min-width: 620px),
-        tv and (min-width: 620px)
+  screen and (min-width: 640px),
+  projection and (min-width: 640px),
+  tv and (min-width: 640px)
 {
   /* dimensions */
   body { width: 520px; }
   #path { width: 210px; }
   
   #content header .meta { width: 500px; }
+  
+  #comments header { width: 130px; }
+  #cf textarea { width: 508px; }
 
   /* positioning */
   #extra { position: absolute; top: 2em; left: 392px; }
