@@ -20,11 +20,11 @@ if (isset($_GET['s'])) {
       die angeforderte Seite nicht gefunden.">
   </head>
   <body>
-    <header id="brand"><a href="/">Genitis</a></header>
+    <header id="top"><a href="/">Genitis</a></header>
     <nav id="nav">
       <ul id="branches">
 	<li><a href="/projects/">Projekte</a>
-        <li class="active"><a href="/log/">Blog</a>
+        <li><a href="/log/">Blog</a>
         <li><a href="/about/">Über</a>
       </ul>
       <ol id="path">
@@ -32,57 +32,82 @@ if (isset($_GET['s'])) {
         <li><span>404</span>
       </ol>
       <ol id="access">
-        <li><a href="#brand">Top</a>
+        <li><a href="#top" title="Anfang" id="back">↑</a>
         <li><a href="#nav">Navigation</a>
         <li><a href="#content">Inhalt</a>
         <li><a href="#sf">Suche</a>
       </ol>
     </nav>
-    <section id="content">
+    <article id="content">
       <header>
         <h1>Seite nicht gefunden</h1>
       </header>
-      <article>
+      <aside>
+        <figure>
+          <a href="http://www.flickr.com/photos/random_j/303093542/"><img
+            src="img/zelda-error-110213.png" alt="I am error 110213." /></a>
+          <figcaption>Ein netter Bürger aus <em lang="en">The Legend of
+              Zelda</em> klärt auf.<br>
+            <cite><a href="http://www.flickr.com/photos/random_j/" lang="en">J
+              from the UK</a></cite></figcaption>
+        </figure>
+      </aside>
+      <section>
 <?php if (isset($missing_page)): ?>
-        <p>Die Seite <code class="url">http://genitis.org/<?php echo $missing_page ?></code> konnte nicht gefunden werden.</p>
+        <p>Die Seite <code class="url">http://genitis.org/<?php
+          echo $missing_page; ?></code> konnte nicht gefunden werden.</p>
 <?php else: ?>
         <p>Die angeforderte Seite konnte nicht gefunden werden.</p>
 <?php endif; ?>
         <p>Dies kann mehrere Gründe haben:</p>
         <ol>
           <li>
-            <p>Es besteht ein <span lang="en">Hyperlink</span> auf eine Datei, <em>die nicht mehr existiert</em> oder verschoben wurde.</p>
-            <p>Bitte benachrichtigen Sie mich in diesem Fall <a href="mailto:vorbach&#064;genitis&#046;org">per <span lang="en">E-Mail</span></a>, damit ich mich um eine Lösung bemühen kann.</p>
-          </li>
-          <li><p>Sie haben eine Adresse falsch in das Adressfeld Ihres Browsers eingetragen.</p></li>
+            <p>Es besteht ein <span lang="en">Hyperlink</span> auf eine Datei,
+              <em>die nicht mehr existiert</em> oder verschoben wurde.</p>
+            <p>Bitte benachrichtigen Sie mich in diesem Fall
+              <a href="mailto:vorbach&#064;genitis&#046;org">per <span
+                lang="en">E-Mail</span></a>, damit ich mich um eine Lösung
+              bemühen kann.</p>
+          <li>
+            <p>Sie haben eine Adresse falsch in das Adressfeld Ihres Browsers
+              eingetragen.</p>
         </ol>
+      </section>
+      <section>
         <p>Vielleicht kann Ihnen die Suche weiterhelfen.</p>
         <form class="sf" action="../../search" method="get">
           <fieldset>
             <legend>Suche</legend>
-            <input name="s" type="text" size="40" <?php if (isset($_GET['s'])) echo 'value="'.$_GET['s'].'" '; ?>/>
+            <input name="s" type="text" size="40" <?php if (isset($_GET['s']))
+              echo 'value="'.$_GET['s'].'" '; ?>/>
             <input name="submit" type="submit" value="Suchen" />
           </fieldset>
         </form>
+      </section>
+      <section>
         <h2 id="item-1-1">Problematik</h2>
-        <p>Manchmal ist es nötig, eine <abbr title="Uniform Resource Locator">URL</abbr> zu ändern. <a href="http://www.w3.org/Provider/Style/URI.html" hreflang="en" title="Cool URIs don’t change">Gutes Design kann dies jedoch verhindern.</a></p>
-        <p>Da jedoch niemand perfekt ist, – ich am allerwenigsten – passiert es doch ab und zu, dass mal eine URL geändert wird.</p>
+        <p>Manchmal ist es nötig, eine <abbr
+            title="Uniform Resource Locator">URL</abbr> zu ändern. <a
+            href="http://www.w3.org/Provider/Style/URI.html" hreflang="en"
+            title="Cool URIs don’t change">Gutes Design kann dies jedoch
+          verhindern.</a></p>
+        <p>Da jedoch niemand perfekt ist, – ich am allerwenigsten – passiert es
+          doch ab und zu, dass mal eine URL geändert wird.</p>
         <p>Damit kommen die Probleme:</p>
         <ul>
-          <li>Alle <span lang="en">Hyperlinks</span> zu dieser Ressource werden unbrauchbar.</li>
-          <li>Suchmaschinen finden verlinkte Inhalte nicht mehr und zeigen teilweise noch Wochen später auf die alten Inhalte.</li>
+          <li>Alle <span lang="en">Hyperlinks</span> zu dieser Ressource werden
+            unbrauchbar.
+          <li>Suchmaschinen finden verlinkte Inhalte nicht mehr und zeigen
+            teilweise noch Wochen später auf die alten Inhalte.
         </ul>
-        <p>Die größten Nachteile entstehen aber für den Benutzer, für den es nicht immer leicht ist, seine gewünschten Inhalte wiederzufinden. Und eigentlich ist es auch nicht seine Aufgabe, danach zu suchen.</p>
-        <p>Deshalb versuche ich, sämtliche URLs persistent zu halten, damit den Benutzern dieser <span lang="en">Website</span> solche Dinge erspart bleiben.</p>
-      </article>
-      <aside>
-        <a href="http://www.flickr.com/photos/random_j/303093542/"><img src="img/zelda-error-110213.png" alt="I am error 110213." /></a>
-        <p class="desc">
-          Ein netter Bürger aus <em lang="en">The Legend of Zelda</em> klärt auf.<br />
-          <cite><a href="http://www.flickr.com/photos/random_j/" lang="en">J from the UK</a></cite>, <a href="http://creativecommons.org/licenses/by/2.0/deed.de" lang="en">CC Attribution-License 2.0</a>
-        </p>
-      </aside>
-    </section>
+        <p>Die größten Nachteile entstehen aber für den Benutzer, für den es
+          nicht immer leicht ist, seine gewünschten Inhalte wiederzufinden. Und
+          eigentlich ist es auch nicht seine Aufgabe, danach zu suchen.</p>
+        <p>Deshalb versuche ich, sämtliche URLs persistent zu halten, damit den
+          Benutzern dieser <span lang="en">Website</span> solche Dinge erspart
+          bleiben.</p>
+      </section>
+    </article>
     <aside id="extra">
       <form id="sf" action="/search" method="get">
         <fieldset>
@@ -93,7 +118,7 @@ if (isset($_GET['s'])) {
       </form>
     </aside>
     <footer id="about">
-      <p>© 2011 Paul Vorbach. <a href="/about/legal">Impressum</a>.</p>
+      <p>© 2010 - 2011 Paul Vorbach. <a href="/about/legal">Impressum</a>.</p>
     </footer>
   </body>
 </html>
