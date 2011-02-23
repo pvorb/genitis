@@ -18,7 +18,8 @@ body { margin: 0 20px 3em; }
 #top { top: 0; left: 0; right: 0; }
 
 /* floating */
-#branches li { float: left; }
+#branches li,
+.digest header > time { float: left; }
 
 h1, h2, h3, h4,
 #top, #nav, #content footer, #comments, #about,
@@ -45,6 +46,7 @@ h3:first-child { margin-top: 0; }
 
 dl.oview dt { margin-right: 10px; }
 #branches li { margin-right: 4px; }
+.digest header > time { margin-right: 10px; }
 
 #path,
 #content section, #content article, #content aside,
@@ -54,7 +56,9 @@ dl.oview dt { margin-right: 10px; }
 
 /* paddings */
 #top, #branches, #path { padding: .2em 0; }
-#branches a, #sf legend { padding: 0 4px; }
+#branches a,
+.digest header > time,
+#sf legend { padding: 0 4px; }
 
 #content .meta { padding: .2em 10px; }
 
@@ -75,7 +79,7 @@ a:hover, thead th { border-bottom: 1px solid; }
 abbr { border-bottom: 1px dotted; }
 
 .meta { border-bottom: 1px solid #bbb; }
-#content .meta, .comment { border-top: 1px solid #bbb; }
+#content .meta, .teasers, .comment { border-top: 1px solid #bbb; }
 
 .comment.new { border-top: 3px double lime; }
 
@@ -84,14 +88,17 @@ a { color: #a00; }
 a:visited { color: #821; }
 a:active { color: red; }
 
+#top, #top a, #branches a,
+.digest header > time { color: white; }
+
 #top { background: black; }
 #branches a { background: #800; }
 #branches a:hover, #branches a:focus { background: #b30; }
 #branches li.active a { background: #c00; }
 #branches li.active:hover a, #branches li.active a:focus { background: #c40; }
 
-#top, #top a, #branches a { color: white; }
-
+.digest header > time { background: #800; }
+  
 #content .meta { background: #eee; }
 .error { background: #fdd; outline: 1px solid red; }
 
@@ -220,6 +227,7 @@ textarea, input { margin: 0 0 .5em; }
   #nav, #content h1,
   section#content article,
   article#content section,
+  .digest article h1,
   .digest article > p,
   .comment { width: 520px; }
   
@@ -243,13 +251,15 @@ textarea, input { margin: 0 0 .5em; }
   
   /* margins */
   #content { margin-top: 0; }
-  #content .teasers.three article { margin-right: 10px; }
-  #content .teasers.three article:last-child { margin-right: 0; }
+  .teasers.three article { margin-right: 10px; }
+  .teasers.three article:last-child { margin-right: 0; }
   
   /* paddings */
+  .teasers article { padding-top: .5em; }
   #sf fieldset { padding: 2px; }
   
   /* borders */
+  .teasers { border: none; }
   #sf fieldset { border: 1px solid #666; }
   #content .teasers article { border-top: 1px solid #bbb; }
 
