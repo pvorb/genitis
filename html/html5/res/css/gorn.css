@@ -59,6 +59,8 @@ dl.oview dt { margin-right: 10px; }
 #content .meta { padding: .2em 10px; }
 
 #top { padding-left: 20px; }
+.toc { padding-left: 0; }
+.toc ul { padding-left: 30px; }
 
 .comment { padding-top: .5em; }
 .comment .meta { padding-bottom: .5em; }
@@ -94,8 +96,8 @@ a:active { color: red; }
 .error { background: #fdd; outline: 1px solid red; }
 
 /* list styles */
-#branches, #path, #seq { list-style: none; }
 ul { list-style: square; }
+#branches, #path, #seq, .toc, .toc ul { list-style: none; }
 
 /* typo */
 #top, #branches, #extra,
