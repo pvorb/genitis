@@ -51,6 +51,7 @@ dl.oview dt { margin-right: 10px; }
 #path,
 #content section, #content article, #content aside,
 #content header .meta,
+figcaption,
 .comment header,
 .comment .matter { margin-bottom: 1em; }
 
@@ -113,6 +114,7 @@ pre, code, #cf input[type=text], #cf textarea { font-family: monospace; }
 
 #top, #branches, #extra { font-size: 1.1em; }
 #about, sup { font-size: .8em; }
+.sub { font-size: .6em; font-style: italic; }
 
 h1, h2, h3 { font-weight: normal; }
 dl dt { font-weight: bold; }
@@ -133,7 +135,7 @@ figure img { vertical-align: bottom; }
 
 #path li { display: inline; }
 #branches a,
-header, footer, article, section, aside, nav { display: block; }
+header, footer, article, section, aside, nav, figcaption { display: block; }
 
 abbr, *[title] { cursor: help; }
 a, a[title], *[title] a, a *[title] { cursor: pointer; }
