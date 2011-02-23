@@ -71,6 +71,8 @@ header > time,
 .comment .meta { padding-bottom: .5em; }
 
 /* borders */
+iframe { border: none; }
+
 #cf textarea, #cf input[type=text] { border: 1px solid #666; }
 #cf textarea:focus, #cf input[type=text]:focus { border-color: #f60; }
 
@@ -203,8 +205,10 @@ textarea, input { margin: 0 0 .5em; }
 
   .comment header { margin-right: 20px; }
 
-  #content figure.huge img,
-  #content figure.full img,
+  .huge img,
+  .huge iframe,
+  .full img,
+  .full iframe,
   .comment .avatar { margin-left: -80px; }
 
   /* colors */
