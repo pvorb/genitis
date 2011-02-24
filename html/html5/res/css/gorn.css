@@ -7,6 +7,7 @@ body { margin: 0 20px 3em; }
 #access { visibility: hidden; position: absolute; }
 
 /* dimensions */
+table { width: 100%; }
 #sf { max-width: 240px; }
 .teaser { max-width: 320px; }
 .avatar { width: 60px; height: 60px; }
@@ -60,14 +61,15 @@ figcaption,
 #branches a,
 header > time,
 #sf legend { padding: 0 4px; }
-
 #content .meta { padding: .2em 10px; }
+th, td { padding: .1em 6px; }
 
 #top { padding-left: 20px; }
 .toc { padding-left: 0; }
 .toc ul { padding-left: 30px; }
 
 .comment { padding-top: .5em; }
+
 .comment .meta { padding-bottom: .5em; }
 
 /* borders */
@@ -81,7 +83,7 @@ textarea:target, input:target { border-width: 2px; }
 a:hover, thead th { border-bottom: 1px solid; }
 abbr { border-bottom: 1px dotted; }
 
-.meta { border-bottom: 1px solid #bbb; }
+.meta, caption { border-bottom: 1px solid #bbb; }
 #content .meta, .teasers, .comment { border-top: 1px solid #bbb; }
 
 .comment.new { border-top: 3px double lime; }
@@ -100,6 +102,9 @@ header > time { color: white; }
 #branches li.active a { background: #c00; }
 #branches li.active:hover a, #branches li.active a:focus { background: #c40; }
 
+.rows tr:nth-child(even) { background: rgba(0, 0, 0, .05); }
+.cols col:nth-child(even) { background: rgba(0, 0, 0, .05); }
+
 header > time { background: #800; }
   
 #content .meta { background: #eee; }
@@ -111,12 +116,14 @@ ul { list-style: square; }
 
 /* typo */
 #top, #branches, #extra,
-h1, h2, h3, h4 { font-family: Candara, sans-serif; }
+h1, h2, h3, h4, caption, th { font-family: Candara, sans-serif; }
 pre, code, #cf input[type=text], #cf textarea { font-family: monospace; }
 
-#top, #branches, #extra { font-size: 1.1em; }
+#top, #branches, #extra, caption { font-size: 1.1em; }
 #about, sup { font-size: .8em; }
-.sub { font-size: .6em; font-style: italic; }
+.sub { font-size: .6em; }
+
+caption, .sub { font-style: italic; }
 
 h1, h2, h3 { font-weight: normal; }
 dl dt { font-weight: bold; }
