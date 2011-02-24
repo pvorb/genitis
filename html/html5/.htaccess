@@ -5,11 +5,11 @@ RewriteBase	/
 
 RewriteCond	%{HTTP_HOST}			^ip\.genitis\.org			[OR]
 RewriteCond	%{HTTP_HOST}			^ip\.localhost
-RewriteRule	^(.*)$				manager.php?dir&sub&url=project/ip/$1	[L,QSA,NC]
+RewriteRule	^(.*)$				manager.php?dir&sub&url=projects/ip/$1	[L,QSA,NC]
 
 RewriteCond	%{HTTP_HOST}			^yuki\.genitis\.org			[OR]
 RewriteCond	%{HTTP_HOST}			^yuki\.localhost
-RewriteRule	^(.*)$				manager.php?dir&sub&url=project/yuki/$1	[L,QSA,NC]
+RewriteRule	^(.*)$				manager.php?dir&sub&url=projects/yuki/$1	[L,QSA,NC]
 
 RewriteCond	%{HTTP_HOST}			^www\.genitis\.org$			[NC,OR]
 RewriteCond	%{HTTP_HOST}			^(www\.)?paulvorbach\.de$		[NC]
