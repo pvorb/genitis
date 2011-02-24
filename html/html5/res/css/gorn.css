@@ -189,7 +189,7 @@ textarea, input { margin: 0 0 .5em; }
 {
   /* dimensions */
   body { width: 520px; }
-  #path { width: 210px; }
+  #path { width: 270px; }
   
   #content header .meta { width: 500px; }
   
@@ -234,6 +234,7 @@ textarea, input { margin: 0 0 .5em; }
   /* dimensions */
   #sf { width: 207px; }
   #content aside, #extra { width: 320px; }
+  #path { width: 520px; }
   
   #content .teasers.three article { width: 280px; }
   
