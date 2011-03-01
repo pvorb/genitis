@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+	<title>Genitis</title>
+	<subtitle>Computer und so</subtitle>
+	<updated>2011-03-01T07:22:00+01:00</updated>
+	<id>http://genitis.org/log/</id>
+	<author>
+		<name>Paul Vorbach</name>
+		<uri>http://vorb.de</uri>
+	</author>
+	<rights>© 2008 - 2011 Paul Vorbach</rights>
+	<link href="http://genitis.org/log/"/>
+	<link rel="self" href="http://genitis.org/log/feed.xml"/>
+	<category term="computer"/>
+	<category term="web"/>
+	<category term="development"/>
+	<icon>/res/img/gorn.ico</icon>
+
+	<entry>
+		<title>Sonnenaufgang</title>
+		<updated>2011-03-01T07:22:00+01:00</updated>
+
+		<id>http://genitis.org/log/2011/03/01/sonnenaufgang</id>
+		<link rel="alternate" href="http://genitis.org/log/2011/03/01/sonnenaufgang"/>
+
+		<content type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				<p>Hier kommt die Sonne.</p>
+				<p>Endlich kommt nun mein Weblog online. Rund drei Jahre nach meinem ersten Versuch, will ich es nun mit meiner Eigenentwicklung besser machen. Mal sehen, wie es sich im Alltag schlägt.</p>
+			</div>
+		</content>
+	</entry>
+</feed>
