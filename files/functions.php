@@ -7,6 +7,13 @@
  * @package org.genitis.yuki
  */
 
+require 'content-types.php';
+
+/**
+ * Returns the current domain as a string.
+ *
+ * @return string
+ */
 function get_domain() {
 	$parts = explode('.', $_SERVER['SERVER_NAME']);
 	$parts_len = sizeof($parts);
@@ -16,6 +23,12 @@ function get_domain() {
 		return $parts[$parts_len - 2].'.'.$parts[$parts_len - 1];
 }
 
+/**
+ * Returns the current server URI including protocol, domain and protocol as a
+ * string.
+ *
+ * @return string
+ */
 function get_server() {
 	$server = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != '' ? 'https://' : 'http://';
 	$server .= get_domain();
@@ -44,7 +57,9 @@ function redirect($type, $location, $search = FALSE, $abs = FALSE) {
 	// Determine the protocol, domain and (optionally) port of the server.
 	$server = get_server();
 	if (!$abs)
-		header('Location: '.$server.'/'.$location.($search != FALSE ? '?s='.trim(strtr($search, array('/' => '+', '%20' => '+')), '+') : ''));
+		header('Location: '.$server.'/'.$location.($search != FALSE
+			? '?s='.trim(strtr($search, array('/' => '+', '%20' => '+')), '+')
+			: ''));
 	else
 		header('Location: '.$location);
 	exit;
@@ -63,6 +78,7 @@ function load_modules(&$modules) {
 
 /**
  * Returns the given timestamp as defined in DATE_FORMAT.
+ *
  * @return string
  */
 function format_date($timestamp) {
@@ -71,6 +87,7 @@ function format_date($timestamp) {
 
 /**
  * Return the given timestamp as defined in TIME_FORMAT.
+ *
  * @return string
  */
 function format_time($timestamp) {
@@ -78,48 +95,20 @@ function format_time($timestamp) {
 }
 
 /**
- * Includes the contents of a requested file.
- * @param string $url URL that was requested
+ * Checks $url for files with file extensions of $file_ext and includes the
+ * first that is found.
+ *
+ * @param string $url
  */
-function get_file($url) {
-	$path = DIR_PUB.$url;
-
-	// If a file with one of the file extensions in $file_ext exists, include
-	// it.
+function include_file($url) {
 	global $file_ext;
-	foreach ($file_ext as $ext) {
-		if (file_exists($path.$ext)) {
-			include $path.$ext;
+
+	foreach ($file_ext as $ext => $mime) {
+		$file = DIR_PUB.$url.'.'.$ext;
+		if (file_exists($file)) {
+			header('content-type: '.$mime);
+			include $file;
 			exit;
 		}
 	}
-
-	// If none was found, redirect to the 404 error page.
-	redirect(404, ERROR_404, $url);
-}
-
-/**
- * Includes the contents of the index file of a requested
- * @param unknown_type $url
- */
-function get_dir($url) {
-	// Requested folder
-	$path = DIR_PUB.$url;
-
-	global $file_ext;
-	// If dir is empty, redirect to the root index.html file.
-	if (($url == '' || $url == '/') && file_exists(DIR_PUB.DEFAULT_FILE.$file_ext[0])) {
-		include DIR_PUB.DEFAULT_FILE.$file_ext[0];
-		exit;
-	}
-	// If folder exists, include its index.html.
-	elseif (file_exists($path)) {
-		foreach ($file_ext as $ext) {
-			if (file_exists($path.DEFAULT_FILE.$ext)) {
-				include $path.DEFAULT_FILE.$ext;
-				exit;
-			}
-		}
-	}
-	redirect(404, ERROR_404, $url);
 }
