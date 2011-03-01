@@ -52,6 +52,7 @@ function redirect($type, $location, $search = FALSE, $abs = FALSE) {
 	switch ($type) {
 		case 301: header('HTTP/1.1 301 Moved Permanently'); break;
 		case 307: header('HTTP/1.1 307 Temporary Redirect'); break;
+		case 403: header('HTTP/1.1 403 Forbidden'); break;
 		case 404: header('HTTP/1.1 404 Not Found'); break;
 	}
 	// Determine the protocol, domain and (optionally) port of the server.
