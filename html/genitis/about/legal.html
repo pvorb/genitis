@@ -1,57 +1,60 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-		<title>Impressum | Genitis</title>
-		<link rel="stylesheet" href="../../res/css/gorn.css" />
-		<link rel="shortcut icon" href="../../res/img/gorn.ico" />
-		<meta name="author" content="Paul Vorbach" />
-		<meta name="description" content="Paul Vorbach. Eberbacher Straße 4. 74673 Mulfingen-Simprechtshausen" />
-		<meta name="keywords" content="Impressum, Genitis" />
-	</head>
-	<body>
-		<div id="title"><a href="../">Genitis</a></div>
-		<ul id="branch" class="nav">
-			<li><a href="../project/">Projekte</a></li>
-			<li class="active"><a href="./">Über</a></li>
-		</ul>
-		<ol id="path" class="nav">
-			<li><a href="../">Startseite</a></li>
-			<li><a href="./">Über</a></li>
-			<li><span title="Sie sind hier.">Impressum</span></li>
-		</ol>
-		<div id="container">
-			<h1>Impressum</h1>
-			<address class="content">
-				<span class="name">Paul Vorbach</span><br />
-				<span class="road">Eberbacher Straße 4</span><br />
-				<span class="pc">74673</span> <span class="place">Mulfingen-Simprechtshausen</span><br />
-				<span class="email"><a href="mailto:vorbach&#64;genitis&#46;org">vorbach&#64;genitis&#46;org</a> – <a href="http://vorb.de/public.asc">(PGP Public key)</a></span>
-			</address>
-			<div class="note">
-				<div class="fig teaser">
-					<div class="img">
-						<a href="http://www.flickr.com/photos/specialkrb/3805699025/" title="quills"><img src="img/quills.jpg" alt="Federkiele" /></a>
-					</div>
-					<div class="subtitle">
-						<cite><a href="http://www.flickr.com/photos/specialkrb/" xml:lang="en">SpecialKRB</a></cite>, <a href="http://creativecommons.org/licenses/by/2.0/deed.de" xml:lang="en">CC Attribution-License 2.0</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="nav extra">
-			<form id="sf" action="../search" method="get">
-				<fieldset>
-					<legend>Suche</legend>
-					<input name="s" type="text" />
-					<input name="submit" type="submit" value="OK" />
-				</fieldset>
-			</form>
-		</div>
-		<div id="about">
-			<p>© 2008 - 2011 – Paul Vorbach. <a href="legal">Impressum</a>.</p>
-		</div>
-		<!--[if lte IE 8]><script src="../res/js/css3-mediaqueries.js"></script><![endif]-->
-	</body>
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>Impressum | Genitis</title>
+    <link rel="stylesheet" href="/res/css/gorn.css">
+    <link rel="icon" href="/res/img/gorn.ico">
+    <meta name="author" content="Paul Vorbach">
+    <link rel="author" href="http://vorb.de">
+    <meta name="keywords" content="Impressum">
+    <meta name="description" content="Impressum">
+  </head>
+  <body>
+    <header id="top"><a href="/">Genitis</a></header>
+    <nav id="nav">
+      <ul id="branches">
+	<li><a href="/projects/">Projekte</a>
+        <li><a href="/log/">Blog</a>
+        <li class="active"><a href="/about/">Über</a>
+      </ul>
+      <ol id="path">
+        <li><a href=".">Über</a>
+        <li><span>Impressum</span>
+      </ol>
+      <ol id="access">
+        <li><a href="#top" title="Anfang" id="back">↑</a>
+        <li><a href="#nav">Navigation</a>
+        <li><a href="#content">Inhalt</a>
+        <li><a href="#sf">Suche</a>
+      </ol>
+    </nav>
+    <section id="content">
+      <header>
+        <h1>Impressum</h1>
+        <aside class="teaser">
+          <figure>
+            <a href="http://www.flickr.com/photos/specialkrb/3805699025/" title="quills"><img src="img/quills.jpg"></a>
+            <figcaption><a href="http://www.flickr.com/photos/specialkrb/">SpecialKRB</a></figcaption>
+          </figure>
+        </aside>
+      </header>
+      <article>
+        <p class="name">Paul Vorbach</p>
+        <p class="email"><a href="mailto:vorbach&#64;genitis&#46;org">vorbach&#64;genitis&#46;org</a> – <a href="http://vorb.de/public.asc" lang="en">(PGP Public key)</a></p>
+      </article>
+    </section>
+    <aside id="extra">
+      <form id="sf" action="/search" method="get">
+        <fieldset>
+          <legend>Suche</legend>
+          <input class="term" name="s" type="text">
+          <input class="submit" name="submit" type="submit" value="OK">
+        </fieldset>
+      </form>
+    </aside>
+    <footer id="about">
+      <p>© 2008 - 2011 – Paul Vorbach.</p>
+    </footer>
+  </body>
 </html>
