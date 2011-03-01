@@ -3,55 +3,26 @@
 RewriteEngine	On
 RewriteBase	/
 
-RewriteCond	%{HTTP_HOST}			^ip\.genitis\.org			[OR]
-RewriteCond	%{HTTP_HOST}			^ip\.localhost
-RewriteRule	^(.*)$				manager.php?dir&sub&url=project/ip/$1	[L,QSA,NC]
-
-RewriteCond	%{HTTP_HOST}			^yuki\.genitis\.org			[OR]
-RewriteCond	%{HTTP_HOST}			^yuki\.localhost
-RewriteRule	^(.*)$				manager.php?dir&sub&url=project/yuki/$1	[L,QSA,NC]
-
-RewriteCond	%{HTTP_HOST}			^www\.genitis\.org$			[NC,OR]
-RewriteCond	%{HTTP_HOST}			^(www\.)?paulvorbach\.de$		[NC]
-RewriteRule	^(.*)$				http://genitis.org/$1			[L,R=301]
-
-##################################
-# Handle directories
-##################################
-
-# Map /dir to /dir/, if /dir/ is a directory.
+# URL fixes
 RewriteCond	%{REQUEST_FILENAME}/		-d
-RewriteCond	%{REQUEST_URI}			!(.*)/$
+RewriteCond	%{REQUEST_URI}			!^(.*)/$
 RewriteRule	^(.*)$				/$1/					[L,R=301]
 
-# Map path/to/file to /manager.php?dir&url=path/to/file.
-RewriteCond	%{REQUEST_FILENAME}		-d
-RewriteCond	%{REQUEST_URI}			(.*)/$
-RewriteRule	^(.*)$				/manager.php?dir&url=$1			[L,QSA,NC]
+RewriteCond	%{REQUEST_URI}			//$
+RewriteRule	^(.*)/$				/$1					[L,R=301]
 
-##################################
-# Handle files
-##################################
-
-# Redirect file.html to file.
-RewriteRule	^(.*)\.html$			/$1					[L,R=301]
-
-# Redirect path/index to path/. Remove index, because it is unnessecary.
-RewriteRule	^((.*/)*)index$			/$1					[L,R=301]
-
-# Redirect file/ to file.
 RewriteCond	%{REQUEST_FILENAME}		!-d
 RewriteRule	^(.*)/$				/$1					[L,R=301]
 
-# Map path/to/file to /manager.php?file&url=path/to/file, if the file exists.
-RewriteCond	%{REQUEST_FILENAME}.html	-f					[OR]
-RewriteCond	%{REQUEST_FILENAME}.php		-f
-RewriteCond	%{REQUEST_URI}			!(.*)/$
-RewriteRule	^(.*)$				/manager.php?file&url=$1		[L,QSA,NC]
+RewriteCond	%{HTTP_HOST}			^www\.genitis\.org$			[OR]
+RewriteCond	%{HTTP_HOST}			^(www)?\.paulvorbach.de$
+RewriteRule	^(.*)$				http://genitis.org/$1			[L,R=301]
 
-# Map bad requests to /index.php?err&url=path/to/file, if the file does not exist.
-RewriteCond	%{REQUEST_FILENAME}		!-d
-RewriteCond	%{REQUEST_FILENAME}/		!-d
-RewriteCond	%{REQUEST_FILENAME}		!-f
-RewriteCond	%{REQUEST_FILENAME}.html	!-f
-RewriteRule	^(.*)$				/manager.php?err&url=$1			[L,QSA,NC]
+# Subdomains
+RewriteCond	%{HTTP_HOST}			^(.+)\.genitis\.org			[OR]
+RewriteCond	%{HTTP_HOST}			^(.+)\.localhost
+RewriteRule	^(.*)$				manager.php?sub=%1&url=$1		[L,QSA]
+
+# Normal
+RewriteCond	%{REQUEST_URI}			!manager\.php	
+RewriteRule	^(.*)$				/manager.php?url=$1			[L,QSA]

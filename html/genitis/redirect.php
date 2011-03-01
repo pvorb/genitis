@@ -1,19 +1,18 @@
 <?php
-$redirections = array(
-	'project/yuki/' => 'http://yuki.genitis.org',
-	'project/ip/' => 'http://ip.genitis.org',
-	'project/edu/sia/' => 'project/sia/',
-	'project/web/g08' => 'project/g08',
-	'project/web/pv' => 'project/pv',
-	'project/edu/sia/doc/documentation.pdf' => 'project/sia/documentation.pdf',
-	'project/edu/sia/doc/presentation.pdf' => 'project/sia/presentation.pdf',
-	'dev' => 'project/',
-	'dev/web/g08' => 'project/g08',
-	'dev/sia' => 'project/sia/',
-	'blog' => 'project/pv',
-	'ref/ganerben-2008' => 'project/g08',
+$redir_prefix = array(
+	'project/'	=> 'projects/',
+	'projects/web/'	=> 'projects/',
+	'projects/edu/'	=> 'projects/',
+	'dev/'		=> 'projects/',
+	'blog/'		=> 'log/'
+);
+
+$redir = array(
+	'projects/edu/sia/' => 'projects/sia/',
+	'projects/g08' => 'projects/ganerben2008.de',
+	'projects/pv' => 'projects/paulvorbach.de',
 	'about/contact' => 'about/legal',
 	'src/css/default.css' => 'res/css/alma.css',
-	'res/doc/sia/dokumentation.pdf' => 'project/sia/documentation.pdf',
-	'res/doc/sia/praesentation.pdf' => 'project/sia/presentation.pdf'
+	'res/doc/sia/dokumentation.pdf' => 'projects/sia/doc/documentation.pdf',
+	'res/doc/sia/praesentation.pdf' => 'projects/sia/doc/presentation.pdf'
 );
