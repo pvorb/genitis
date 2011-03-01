@@ -48,20 +48,12 @@ elseif (file_exists(DIR_PUB.$url)) {
 	// Get the content type from the file.
 	if (isset($content_types[$ext])) {
 		// Send the 'Content-Type' header.
-		$ct = $content_types[$ext];
-		header('Content-Type: '.$ct);
+		header('Content-Type: '.$content_types[$ext]);
 
-		$tmp = explode('/', $ct);
-		// If the content type is not a text
-		if ($tmp[0] != 'text') {
-			// send 'Last-Modified' header.
-			header('Last-Modified: '.date('r', filemtime(DIR_PUB.$url)));
-			// Directly read the file contents to output buffer.
-			readfile(DIR_PUB.$url);
-		} else {
-			// Interprete the file.
-			include DIR_PUB.$url;
-		}
+		// Send 'Last-Modified' header.
+		header('Last-Modified: '.date('r', filemtime(DIR_PUB.$url)));
+		// Directly read the file contents to output buffer.
+		readfile(DIR_PUB.$url);
 	} else {
 		// if content type is not defined throw HTTP 403 error (forbidden)
 		redirect(403, ERROR_403, $url);
