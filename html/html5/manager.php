@@ -55,7 +55,7 @@ elseif (file_exists(DIR_PUB.$url)) {
 		// If the content type is not a text
 		if ($tmp[0] != 'text') {
 			// send 'Last-Modified' header.
-			header('Last-Modified: '.date('r', filemtime($DIR_PUB.$url)));
+			header('Last-Modified: '.date('r', filemtime(DIR_PUB.$url)));
 			// Directly read the file contents to output buffer.
 			readfile(DIR_PUB.$url);
 		} else {
