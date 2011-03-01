@@ -41,25 +41,33 @@ if (is_dir(DIR_PUB.$url)) {
 }
 // If it is an existing file
 elseif (file_exists(DIR_PUB.$url)) {
-	// get the file extension
+	// get the file extension.
 	$info = explode('.', $url);
 	$ext = $info[count($info) - 1];
 
-	// get the content type from the file
+	// Get the content type from the file.
 	if (isset($content_types[$ext])) {
+		// Send the 'Content-Type' header.
 		$ct = $content_types[$ext];
 		header('Content-Type: '.$ct);
 
 		$tmp = explode('/', $ct);
+		// If the content type is not a text
 		if ($tmp[0] != 'text') {
+			// send 'Last-Modified' header.
+			header('Last-Modified: '.date('r', filemtime($DIR_PUB.$url)));
+			// Directly read the file contents to output buffer.
 			readfile(DIR_PUB.$url);
 		} else {
+			// Interprete the file.
 			include DIR_PUB.$url;
 		}
 	} else {
+		// if content type is not defined throw HTTP 403 error (forbidden)
 		redirect(403, ERROR_403, $url);
 	}
 } else {
+	// Load modules and include the file.
 	load_modules($modules);
 	include_file($url);
 
