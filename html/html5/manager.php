@@ -49,7 +49,7 @@ elseif (file_exists(DIR_PUB.$url)) {
 	if (isset($content_types[$ext]))
 		header('content-type: '.$content_types[$ext]);
 	else
-		redirect(403, ERROR_403);
+		redirect(403, ERROR_403, $url);
 
 	include DIR_PUB.$url;
 } else {
