@@ -42,16 +42,23 @@ if (is_dir(DIR_PUB.$url)) {
 // If it is an existing file
 elseif (file_exists(DIR_PUB.$url)) {
 	// get the file extension
-	$info = pathinfo(DIR_PUB.$url);
-	$ext = $info['extension'];
+	$info = explode('.', $url);
+	$ext = $info[count($info) - 1];
 
 	// get the content type from the file
-	if (isset($content_types[$ext]))
-		header('content-type: '.$content_types[$ext]);
-	else
-		redirect(403, ERROR_403, $url);
+	if (isset($content_types[$ext])) {
+		$ct = $content_types[$ext];
+		header('Content-Type: '.$ct);
 
-	include DIR_PUB.$url;
+		$tmp = explode('/', $ct);
+		if ($tmp[0] != 'text') {
+			readfile(DIR_PUB.$url);
+		} else {
+			include DIR_PUB.$url;
+		}
+	} else {
+		redirect(403, ERROR_403, $url);
+	}
 } else {
 	load_modules($modules);
 	include_file($url);
