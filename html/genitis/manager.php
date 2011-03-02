@@ -27,9 +27,16 @@ $url = '';
 
 // Check for GET variable 'sub', which means a sumdomain.
 if (isset($_GET['sub'])) {
-	// Append the subdomain directory to $path.
-	$url .= $subdomains[$_GET['sub']];
+	// If subdomain exists
+	if (isset($subdomains[$_GET['sub']])) {
+		// append the subdomain directory to $path.
+		$url .= $subdomains[$_GET['sub']];
+	} else {
+		// Otherwise, redirect to 404 error page.
+		redirect(404, ERROR_404, $_GET['sub'].'/'.$_GET['url']);
+	}
 }
+
 
 // Append the url part to $path.
 $url .= $_GET['url'];
