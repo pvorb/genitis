@@ -77,7 +77,7 @@ class comment {
 	 * This method may be used by any html file to show the already posted comments.
 	 */
 	function print_list() {
-		if (isset($_GET['dir'])) {
+		if (strrpos($_GET['url'], '/') === 0) {
 			$file = DIR_PUB.str_replace('/', DIR_SEP, $_GET['url']).DEFAULT_FILE.'.comments';
 
 			if (file_exists($file))
@@ -179,10 +179,10 @@ class comment {
 
 		// Open comments file for writing
 		// If this is a directory, open DEFAULT_FILE.comments
-		if (isset($_GET['dir']))
+		if (strrpos($_GET['url'], '/') === 0)
 			$f = fopen(DIR_PUB.str_replace('/', DIR_SEP, $_GET['url']).DEFAULT_FILE.'.comments', 'ab');
 		// Otherwise open
-		elseif (isset($_GET['file']))
+		else
 			$f = fopen(DIR_PUB.str_replace('/', DIR_SEP, $_GET['url']).'.comments', 'ab');
 
 		// Write $comment to the end of the file
