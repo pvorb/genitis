@@ -189,5 +189,12 @@ class comment {
 		fwrite($f, $comment);
 		// Close
 		fclose($f);
+
+		@mail(
+			'Paul <vorbach@genitis.org>',
+			'Neuer Beitrag: '.$_GET['url'],
+			"Neuer Beitrag auf Genitis: <http://genitis.org/".$_GET['url'].">",
+			'From: Genitis <info@genitis.org>'
+		);
 	}
 }
