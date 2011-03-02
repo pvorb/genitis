@@ -2,14 +2,14 @@
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>Register | Genitis</title>
+    <title>Archiv | Genitis</title>
     <link rel="stylesheet" href="/res/css/gorn.css">
     <link rel="icon" href="/res/img/gorn.ico">
     <link rel="alternate" href="alternate" href="/log/feed.xml"
       type="application/atom+xml">
     <meta name="author" content="Paul Vorbach">
     <link rel="author" href="http://vorb.de">
-    <meta name="keywords" content="Alles, Index, Liste, Artikel">
+    <meta name="keywords" content="Archiv, Index, Liste, Verzeichnis, Artikel">
     <meta name="description" content="Verzeichnis aller Artikel des Blogs">
   </head>
   <body>
@@ -21,8 +21,8 @@
         <li><a href="/about/">Über</a>
       </ul>
       <ol id="path">
-        <li><a href=".">Blog</a>
-        <li><span>Register</span>
+        <li><a href="/log/">Blog</a>
+        <li>Archiv
       </ol>
       <ol id="access">
         <li><a href="#top" title="Anfang" id="back">↑</a>
@@ -33,10 +33,11 @@
     </nav>
     <article id="content">
       <header>
-        <h1>Register</h1>
+        <h1>Archiv</h1>
         <aside class="teaser">
           <figure>
-            <img src="img/numbers.jpg" alt="„Numbers“ von Ulrik">
+            <img src="img/numbers.jpg" alt="„Numbers“ von Ulrik"
+              width="320" height="213">
           </figure>
         </aside>
       </header>
@@ -52,7 +53,8 @@
               <th>Name
           <tbody>
 <?php
-$f = fopen(DIR_PUB.'log'.DIR_SEP.'register.txt', 'r');
+$f = fopen(DIR_PUB.'log'.DIR_SEP.'archive'.DIR_SEP.'index.txt', 'r');
+$count = 0;
 while (!feof($f)) {
 	$line = fgets($f);
 	if (trim($line) != '' && strpos($line, '#') !== 0) {
@@ -60,13 +62,18 @@ while (!feof($f)) {
 		$date = explode('/', $entry[0]);
 		echo "\n".'<tr>';
 		echo "\n".'  <td>'.$date[2].'.'.$date[1].'.'.$date[0];
-		echo "\n".'  <td><a href="'.$entry[0].'">'.$entry[1].'</a>';
+		echo "\n".'  <td><a href="/log/'.$entry[0].'">'.$entry[1].'</a>';
+		$count++;
 	}
 }
 fclose($f);
 ?>
         </table>
       </section>
+      <footer class="meta">
+        <p>Insgesamt sind das <?php echo $count; ?> Artikel.</p>
+        <p><a href="/log/tag/">Kategorien</a></p>
+      </footer>
     </article>
     <aside id="extra">
       <form id="sf" action="/search" method="get">
