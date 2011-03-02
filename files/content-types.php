@@ -18,5 +18,6 @@ $content_types = array(
 	'pdf'	=> 'application/pdf',
 	'png'	=> 'image/png',
 	'svg'	=> 'image/svg+xml',
+	'txt'	=> 'text/plain',
 	'xml'	=> 'text/xml'
 );
