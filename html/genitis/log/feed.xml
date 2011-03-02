@@ -14,7 +14,7 @@
 	<category term="computer"/>
 	<category term="web"/>
 	<category term="development"/>
-	<icon>/res/img/gorn.ico</icon>
+	<icon>http://genitis.org/res/img/gorn.ico</icon>
 
 	<entry>
 		<title>Sonnenaufgang</title>
@@ -25,6 +25,7 @@
 
 		<content type="xhtml">
 			<div xmlns="http://www.w3.org/1999/xhtml">
+				<p><img src="http://genitis.org/log/2011/03/01/img/sunset.thumb.jpg" /></p>
 				<p>Endlich kommt nun mein Weblog online. Rund drei Jahre nach meinem ersten Versuch, will ich es nun mit meiner Eigenentwicklung besser machen. Mal sehen, wie es sich im Alltag schlägt.</p>
 			</div>
 		</content>
