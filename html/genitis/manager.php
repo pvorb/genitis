@@ -59,12 +59,12 @@ elseif (file_exists(DIR_PUB.$url)) {
 		redirect(403, ERROR_403, $url);
 	}
 } else {
-	// Load modules and include the file.
+	// Load modules and include the file if possible.
 	load_modules($modules);
 	include_file($url);
 
 	// Redirect, if there is an redirection exactly for this file.
-	if (isset($redirects[$url])) {
+	if (isset($redir[$url])) {
 		redirect(301, $redir[$url], FALSE, (strpos($goto, '//') != FALSE));
 	}
 
