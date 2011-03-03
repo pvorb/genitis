@@ -8,7 +8,6 @@
  */
 
 require 'conf.php';
-require DIR_LIB.'functions.php';
 
 // Check for prefix redirections.
 require DIR_PUB.'redirect.php';
@@ -25,56 +24,51 @@ foreach ($redir_prefix as $from => $to) {
 // Initialize $path
 $url = '';
 
-// Check for GET variable 'sub', which means a sumdomain.
-if (isset($_GET['sub'])) {
-	// If subdomain exists
-	if (isset($subdomains[$_GET['sub']])) {
-		// append the subdomain directory to $path.
-		$url .= $subdomains[$_GET['sub']];
-	} else {
-		// Otherwise, redirect to 404 error page.
-		redirect(404, ERROR_404, $_GET['sub'].'/'.$_GET['url']);
-	}
-}
-
+// Handle subdomains.
+handle_subdomains();
 
 // Append the url part to $path.
 $url .= $_GET['url'];
 
+// Send 'Cache-Control' header.
+header_cache($url);
+
 // If $path is a directory
 if (is_dir(DIR_PUB.$url)) {
 	// include its default file.
-	include_file($url.DEFAULT_FILE);
+	read_file($url.DEFAULT_FILE);
+
+	// If nothing was found, redirect to 404 error page.
+	redirect(404, ERROR_404, $url);
 }
+
 // If it is an existing file
 elseif (file_exists(DIR_PUB.$url)) {
-	// get the file extension.
-	$info = explode('.', $url);
-	$ext = $info[count($info) - 1];
+	// check if there its file extension is unnecessary.
+	remove_ext($url);
 
-	// Get the content type from the file.
-	if (isset($content_types[$ext])) {
-		// Send the 'Content-Type' header.
-		header('Content-Type: '.$content_types[$ext]);
+	// If nothing was found,
+	read_file_ext($url);
+}
 
-		// Send 'Last-Modified' header.
-		header('Last-Modified: '.date('r', filemtime(DIR_PUB.$url)));
-		// Directly read the file contents to output buffer.
-		readfile(DIR_PUB.$url);
-	} else {
-		// if content type is not defined throw HTTP 403 error (forbidden)
-		redirect(403, ERROR_403, $url);
-	}
-} else {
-	// Load modules and include the file if possible.
-	load_modules($modules);
-	include_file($url);
+// If a URL like dir/DEFAULT_FILE is requested
+elseif (strrpos($url, DEFAULT_FILE)
+		// (Get difference of string lengths.)
+		=== ($diff = strlen($url) - strlen(DEFAULT_FILE))) {
+	// redirect to dir/.
+	redirect(301, substr($url, 0, $diff));
+}
 
-	// Redirect, if there is an redirection exactly for this file.
-	if (isset($redir[$url])) {
-		redirect(301, $redir[$url], FALSE, (strpos($goto, '//') != FALSE));
-	}
+// If there is an redirection in $redirect exactly for this file
+elseif (isset($redir[$url])) {
+	// redirect according to $redirect
+	redirect(301, $redir[$url], FALSE, (strpos($goto, '//') != FALSE));
+}
 
-	// Redirect to the 404 error page.
+// Load modules and include the file.
+else {
+	read_file($url);
+
+	// If nothing was found, redirect to 404 error page.
 	redirect(404, ERROR_404, $url);
 }

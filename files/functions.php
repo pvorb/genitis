@@ -7,7 +7,6 @@
  * @package org.genitis.yuki
  */
 
-require 'content-types.php';
 
 /**
  * Returns the current domain as a string.
@@ -96,20 +95,118 @@ function format_time($timestamp) {
 }
 
 /**
- * Checks $url for files with file extensions of $file_ext and includes the
- * first that is found.
+ * Returns the filename extension of a filename.
+ *
+ * @param string $file
+ */
+function get_file_ext($file) {
+	$tmp = explode('.', $file);
+	return $tmp[count($tmp) - 1];
+}
+
+/**
+ * Removes the filename extension of the URL if possible.
  *
  * @param string $url
  */
-function include_file($url) {
+function remove_ext($url) {
 	global $file_ext;
 
-	foreach ($file_ext as $ext => $mime) {
+	$ext = get_file_ext($url);
+
+	if (isset($file_ext[$ext])) {
+		$url_no_ext = str_replace('.'.$ext, '', $url);
+		redirect(301, $url_no_ext);
+	}
+}
+
+/**
+ * Handles subdomains.
+ */
+function handle_subdomains() {
+	global $url, $subdomains;
+
+	// Check for GET variable 'sub', which means a sumdomain.
+	if (isset($_GET['sub'])) {
+		// If subdomain exists
+		if (isset($subdomains[$_GET['sub']])) {
+			// append the subdomain directory to $path.
+			$url .= $subdomains[$_GET['sub']];
+		} else {
+			// Otherwise, redirect to 404 error page.
+			redirect(404, ERROR_404, $_GET['sub'].'/'.$_GET['url']);
+		}
+	}
+}
+
+/**
+ * Sends 'Cache-Control' header.
+ *
+ * @param string $url
+ */
+function header_cache($url) {
+	global $cache;
+
+	if (isset($cache[$url])) {
+		header('Cache-Control: '.$cache[$url]);
+	} else {
+		header('Cache-Control: public');
+	}
+}
+
+/**
+ * Checks $url for files with file extensions of $file_ext and writes the
+ * content of the first that is found to the output buffer.
+ *
+ * Files with the file extension 'php' are getting evaluated.
+ *
+ * @param string $url
+ */
+function read_file($url) {
+	global $file_ext, $mime_types;
+
+	foreach ($file_ext as $ext => $dyn) {
+
 		$file = DIR_PUB.$url.'.'.$ext;
+
 		if (file_exists($file)) {
-			header('content-type: '.$mime);
-			include $file;
+
+			if (isset($mime_types[$ext]))
+				header('Content-Type: '.$mime_types[$ext]);
+
+			if ($dyn) {
+				include $file;
+			} else {
+				readfile($file);
+			}
+
 			exit;
 		}
+	}
+}
+
+/**
+ * Reads the contents of DIR_PUB.$url and write it to the output buffer.
+ *
+ * @param string $url
+ */
+function read_file_ext($url) {
+	global $mime_types;
+
+	$ext = get_file_ext($url);
+
+	// Get the content type from the file.
+	if (isset($mime_types[$ext])) {
+		// Send the 'Content-Type' header.
+		header('Content-Type: '.$mime_types[$ext]);
+
+		// Send 'Last-Modified' header.
+		header('Last-Modified: '.date('r', filemtime(DIR_PUB.$url)));
+
+		// Directly read the file contents to output buffer.
+		readfile(DIR_PUB.$url);
+	} else {
+		// if content type is not defined throw HTTP 403 error (forbidden)
+		redirect(403, ERROR_403, $url);
 	}
 }

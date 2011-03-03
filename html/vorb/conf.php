@@ -32,7 +32,8 @@ $dir[sizeof($dir) - 2] = 'files';
 $dir = implode($dir, DIR_SEP);
 define('DIR_LIB', $dir);
 
-require DIR_LIB.'content-types.php';
+require DIR_LIB.'conf.php';
+require DIR_LIB.'functions.php';
 
 // -----------------
 // User definitions:
@@ -46,14 +47,11 @@ define('DATE_FORMAT', 'M d, Y');
 define('TIME_FORMAT', 'g:m a');
 
 $file_ext = array(
-	'html' => 'text/html',
-	'php' => 'text/html',
-	'txt' => 'text/plain'
+	'php'	=> TRUE,
+	'html'	=> FALSE,
+	'txt'	=> FALSE
 );
 
-$modules = array(
-);
-
-
-$subdomains = array(
-);
+$cache = array();
+$modules = array();
+$subdomains = array();

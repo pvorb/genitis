@@ -3,7 +3,7 @@
  * Default content type definition table.
  * @var array content_types
  */
-$content_types = array(
+$mime_types = array(
 	'asc'	=> 'text/plain',
 	'bin'	=> 'application/octet-stream',
 	'css'	=> 'text/css',
@@ -16,6 +16,7 @@ $content_types = array(
 	'jpeg'	=> 'image/jpeg',
 	'js'	=> 'text/javascript',
 	'pdf'	=> 'application/pdf',
+	'php'	=> 'text/html',
 	'png'	=> 'image/png',
 	'svg'	=> 'image/svg+xml',
 	'txt'	=> 'text/plain',
