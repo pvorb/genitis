@@ -33,6 +33,9 @@ $url .= $_GET['url'];
 // Send 'Cache-Control' header.
 header_cache($url);
 
+// Load the modules.
+load_modules($modules);
+
 // If $path is a directory
 if (is_dir(DIR_PUB.$url)) {
 	// include its default file.
