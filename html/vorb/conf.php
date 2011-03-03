@@ -20,6 +20,20 @@
  * @license http://opensource.org/licenses/mit-license.php MIT License
  */
 
+// ---------------------
+// Standard definitions:
+// ---------------------
+define('DIR_SEP', DIRECTORY_SEPARATOR);
+define('DIR_PUB', dirname(__FILE__).DIR_SEP);
+
+$dir = explode(DIR_SEP, dirname(__FILE__));
+$dir[sizeof($dir) - 1] = '';
+$dir[sizeof($dir) - 2] = 'files';
+$dir = implode($dir, DIR_SEP);
+define('DIR_LIB', $dir);
+
+require DIR_LIB.'content-types.php';
+
 // -----------------
 // User definitions:
 // -----------------
@@ -32,21 +46,14 @@ define('DATE_FORMAT', 'M d, Y');
 define('TIME_FORMAT', 'g:m a');
 
 $file_ext = array(
-	'.html',
-	'.php'
+	'html' => 'text/html',
+	'php' => 'text/html',
+	'txt' => 'text/plain'
 );
 
 $modules = array(
 );
 
-// ---------------------
-// Standard definitions:
-// ---------------------
-define('DIR_SEP', DIRECTORY_SEPARATOR);
-define('DIR_PUB', dirname(__FILE__).DIR_SEP);
 
-$dir = explode(DIR_SEP, dirname(__FILE__));
-$dir[sizeof($dir) - 1] = '';
-$dir[sizeof($dir) - 2] = 'files';
-$dir = implode($dir, DIR_SEP);
-define('DIR_LIB', $dir);
+$subdomains = array(
+);

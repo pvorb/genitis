@@ -1,3 +1,3 @@
 <?php
-$redirections = array(
+$redirect = array(
 );
