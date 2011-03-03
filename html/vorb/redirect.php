@@ -1,3 +1,6 @@
 <?php
-$redirect = array(
+$redir_prefix = array(
+);
+
+$redir = array(
 );
