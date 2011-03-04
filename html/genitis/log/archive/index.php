@@ -53,7 +53,7 @@
               <th>Name
           <tbody>
 <?php
-$f = fopen(DIR_PUB.'log'.DIR_SEP.'archive'.DIR_SEP.'index.txt', 'r');
+$f = fopen(DIR_PUB.'log'.DIR_SEP.'archive'.DIR_SEP.'index.list', 'r');
 $count = 0;
 while (!feof($f)) {
 	$line = fgets($f);
