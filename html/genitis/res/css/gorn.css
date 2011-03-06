@@ -186,6 +186,11 @@ textarea, input { margin: 0 0 .5em; }
   .comment .avatar { margin: .5em; }
 }
 
+/* Everything up to 979px width */
+@media (max-width: 979px) {
+  header > time { margin-bottom: .5em; }
+}
+
 /* Small (e.g. netbook) to large (e.g. desktop) screens */
 @media
   screen and (min-width: 640px),
