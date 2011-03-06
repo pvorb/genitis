@@ -45,6 +45,38 @@
         </nav>
         <article>
           <header>
+            <h1><a href="2011/03/06/feinschliff">Feinschliff</a></h1>
+            <time>06.03.2011</time>
+            <aside class="teaser">
+              <img src="2011/03/06/img/finishing.thumb.jpg" alt="„Fabrication“ von kavitha"
+                width="320" height="240">
+            </aside>
+          </header>
+          <p>Während der vergangenen beiden Tage habe ich dem Weblog und der
+            ganzen Website den letzten Feinschliff verpasst.</p>
+          <p>Ein Problem war bisher, dass die Bilder (und auch andere Dateien) vom
+            Browser nicht gecached wurden. Dies lag daran, dass jeder Request
+            zunächst von einem PHP-Skript behandelt wird, welches dann die
+            angeforderte Datei lädt, um eine einfache URL-Behandlung zu bieten.
+            Nun werden zusätzliche Informationen im HTTP-Header versendet, um
+            korrektes Cacheing zu begünstigen.</p>
+          <p>Außerdem wurde die URL-Behandlung verbessert. Um doppelten Inhalt zu
+            vermeiden, habe ich einige Weiterleitungen eingeführt:</p>
+          <p>Überflüssige Dateiendungen in URLs werden nun entfernt
+            (<code>http://genitis.org/about/legal.html -&gt;
+            http://genitis.org/about/legal</code>). Fehlende Schrägstriche bei
+            Verzeichnissen werden automatisch hinzugefügt
+            (<code>http://genitis.org/about -&gt;
+            http://genitis.org/about/</code>). Ebenso werden überflüssige
+            Schrägstriche in Dateinamen entfernt. Unnötige Verweise auf den
+            Verzeichnisindex werden ebenfalls entfernt
+            (<code>http://genitis.org/about/index -&gt;
+            http://genitis.org/about/</code>).</p>
+          <p>In den kommenden Tagen werde ich mir die Zeit nehmen und die
+            Realisierung genauer beschreiben.</p>
+        </article>
+        <article>
+          <header>
             <h1><a href="2011/03/02/fehlstart">Fehlstart</a></h1>
             <time>02.03.2011</time>
             <aside class="teaser">
