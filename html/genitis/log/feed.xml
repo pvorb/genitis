@@ -18,14 +18,14 @@
 
 	<entry>
 		<title>Feinschliff</title>
-		<updated>2011-03-06T21:55:00+01:00</updated>
+		<updated>2011-03-06T23:55:00+01:00</updated>
 
 		<id>http://genitis.org/log/2011/03/06/feinschliff</id>
 		<link rel="alternate" href="http://genitis.org/log/2011/03/06/feinschliff"/>
 
 		<content type="xhtml">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<p><img src="http://genitis.org/log/2011/03/06/img/finishing.jpg" /></p>
+				<p><img src="http://genitis.org/log/2011/03/06/img/finishing.thumb.jpg" /></p>
 				<p>Während der vergangenen beiden Tage habe ich dem Weblog und der ganzen Website den letzten Feinschliff verpasst.</p>
 				<p>Ein Problem war bisher, dass die Bilder (und auch andere Dateien) vom Browser nicht gecached wurden. Dies lag daran, dass jeder Request zunächst von einem PHP-Skript behandelt wird, welches dann die angeforderte Datei lädt, um eine einfache URL-Behandlung zu bieten. Nun werden zusätzliche Informationen im HTTP-Header versendet, um korrektes Cacheing zu begünstigen.</p>
 				<p>Außerdem wurde die URL-Behandlung verbessert. Um doppelten Inhalt zu vermeiden, habe ich einige Weiterleitungen eingeführt:</p>
