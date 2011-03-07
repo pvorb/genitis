@@ -69,8 +69,7 @@
           Realisierung genauer beschreiben.</p>
       </section>
       <footer class="meta">
-        <p>Kategorien: <a href="/log/tag/blog">Blog</a>,
-          <a href="/log/tag/misc">Sonstiges</a></p>
+        <p>Kategorien: <a href="/log/tag/blog">Blog</a>
       </footer>
     </article>
     <section id="comments">
