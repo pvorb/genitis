@@ -22,7 +22,6 @@
         <li><a href="/log/">Blog</a>
         <li>2011
         <li>03
-        <li>06
         <li>Feinschliff
       </ol>
       <ol id="access">
@@ -35,8 +34,8 @@
     <article id="content">
       <header>
         <h1>Feinschliff</h1>
-        <p class="meta">Geschrieben von Paul <time>am 6.3.2011 um 21:55
-          Uhr</time> – <a href="#comments">Kommentare</a></p>
+        <p class="meta">Geschrieben von Paul <?php ctime(__FILE__); ?>
+          – <a href="#comments">Kommentare</a></p>
         <aside class="teaser">
           <figure>
             <img src="img/finishing.jpg" alt="„Fabrication“ von kavitha"

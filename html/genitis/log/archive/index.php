@@ -58,9 +58,9 @@ while (!feof($f)) {
 	$line = fgets($f);
 	if (trim($line) != '' && strpos($line, '#') !== 0) {
 		$entry = explode(';', $line, 2);
-		$date = explode('/', $entry[0]);
+		$tstmp = filectime(DIR_PUB.'log'.DIR_SEP.$entry[0].'.php');
 		echo "\n".'<tr>';
-		echo "\n".'  <td>'.$date[2].'.'.$date[1].'.'.$date[0];
+		echo "\n".'  <td>'.date('d.m.Y', $tstmp);
 		echo "\n".'  <td><a href="/log/'.$entry[0].'">'.$entry[1].'</a>';
 		$count++;
 	}

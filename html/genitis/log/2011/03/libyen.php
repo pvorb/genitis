@@ -2,14 +2,15 @@
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>Kategorien | Genitis</title>
+    <title>Libyen | Genitis</title>
     <link rel="stylesheet" href="/res/css/gorn.css">
     <link rel="icon" href="/res/img/gorn.ico">
-    <link rel="alternate" href="/log/feed.xml" type="application/atom+xml">
+    <link rel="alternate" href="alternate" href="/log/feed.xml"
+      type="application/atom+xml">
     <meta name="author" content="Paul Vorbach">
     <link rel="author" href="http://vorb.de">
-    <meta name="keywords" content="Liste, Kategorien">
-    <meta name="description" content="Liste aller verwendeter Kategorien">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
   </head>
   <body>
     <header id="top"><a href="/">Genitis</a></header>
@@ -21,7 +22,9 @@
       </ul>
       <ol id="path">
         <li><a href="/log/">Blog</a>
-        <li>Kategorien
+        <li>2011
+        <li>03
+        <li>Libyen
       </ol>
       <ol id="access">
         <li><a href="#top" title="Anfang" id="back">↑</a>
@@ -32,29 +35,38 @@
     </nav>
     <article id="content">
       <header>
-        <h1>Kategorien</h1>
+        <h1>Libyen</h1>
+        <p class="meta">Geschrieben von Paul <?php ctime(__FILE__); ?>
+          – <a href="#comments">Kommentare</a></p>
         <aside class="teaser">
           <figure>
-            <img src="img/hand-tag.jpg" alt="„hand tag“ von marceloto">
+            <img src="img/dune.jpg" width="320" height="240">
           </figure>
         </aside>
       </header>
       <section>
-        <p>Eine Liste der in diesem Blog verwendeten Kategorien.</p>
-        <ul>
-          <li><a href="blog">Blog</a>
-        </ul>
+        <p>Ich bin enttäuscht darüber, dass es wichtiger ist, einen deutschen
+          Politiker zu verhöhnen als einem Volk zu helfen.</p>
       </section>
       <footer class="meta">
-        <p><a href="/log/archive/">Archiv</a></p>
+        <p>Kategorien: <a href="/log/tag/war">Krieg</a>,
+          <a href="/log/tag/politics">Politik</a></p>
       </footer>
     </article>
+    <section id="comments">
+      <h2>Kommentare</h2>
+<?php
+$c = new comment();
+$c->print_list();
+$c->print_form();
+?>
+    </section>
     <aside id="extra">
       <form id="sf" action="/search" method="get">
         <fieldset>
           <legend>Suche</legend>
-          <input class="term" name="s" type="text">
-          <input class="submit" name="submit" type="submit" value="OK">
+          <input name="s" type="text">
+          <input name="submit" type="submit" value="OK">
         </fieldset>
       </form>
     </aside>

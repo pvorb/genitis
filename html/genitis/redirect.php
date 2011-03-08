@@ -5,6 +5,10 @@ $redir_prefix = array(
 	'projects/edu/'		=> 'projects/',
 	'dev/'			=> 'projects/',
 	'blog/'			=> 'log/',
+	'log/2011/03/01/'	=> 'log/2011/03/',
+	'log/2011/03/02/'	=> 'log/2011/03/',
+	'log/2011/03/06/'	=> 'log/2011/03/',
+	'log/2011/03/07/'	=> 'log/2011/03/',
 	'about/version/'	=> 'about/versions/'
 );
 

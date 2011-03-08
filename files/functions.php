@@ -86,12 +86,24 @@ function format_date($timestamp) {
 }
 
 /**
- * Return the given timestamp as defined in TIME_FORMAT.
+ * Returns the given timestamp as defined in TIME_FORMAT.
  *
  * @return string
  */
 function format_time($timestamp) {
 	return date(TIME_FORMAT, $timestamp);
+}
+
+/**
+ * Prints the creation time (Windows) or the time of the last inode modification
+ * (UNIX) of the file at $file.
+ *
+ * @param string $file
+ */
+function ctime($file) {
+	$t = filectime($file);
+	echo '<time datetime="' . date('c', $t).'">am ' . date('j.n.Y \u\m G:i', $t)
+			. ' Uhr</time>';
 }
 
 /**
